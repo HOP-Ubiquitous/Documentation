@@ -5,7 +5,7 @@ HOP Ubiquitous - Relevant Links
         :width: 300px
         :align: center
         :alt: HOP Ubiquitous
-        :target: #
+        :target:
 
 * HOP Ubiquitous Web: http://www.hopu.eu/
 * HOP Ubiquitous Smartcities: http://smartcities.hopu.eu/

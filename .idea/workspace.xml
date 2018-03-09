@@ -2,16 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e562c8c7-9bac-40ac-a4bd-0ee4da72bf19" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/development.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/development.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" afterPath="$PROJECT_DIR$/docs/build/doctrees/environment.pickle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/index.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/links.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/links.doctree" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/doctrees/quick.doctree" afterPath="$PROJECT_DIR$/docs/build/doctrees/quick.doctree" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/fiware-architecture.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/fiware-architecture.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/homard-apiRestful-diagram.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/homard-apiRestful-diagram.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/homard-apn-connection.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/homard-apn-connection.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/homard-logo.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/homard-logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/homard-wifi-connection.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/homard-wifi-connection.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/hop-logo.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/hop-logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-back-complet-diagram.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-back-complet-diagram.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-back-diagram.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-back-diagram.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-diagram.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-diagram.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-install-1.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-install-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-install-2.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-install-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-install-3.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-install-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-top-complet-diagram.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-top-complet-diagram.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-top-diagram.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-top-diagram.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-top-open-diagram.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-top-open-diagram.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-top-screws-close-diagram.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-top-screws-close-diagram.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-top-screws-diagram.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/smart-spot-top-screws-diagram.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/nstatic/url-manager.png" afterPath="$PROJECT_DIR$/docs/source/nstatic/url-manager.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/links.rst.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/links.rst.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/_sources/quick.rst.txt" afterPath="$PROJECT_DIR$/docs/build/html/_sources/quick.rst.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/links.html" afterPath="$PROJECT_DIR$/docs/build/html/links.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/build/html/quick.html" afterPath="$PROJECT_DIR$/docs/build/html/quick.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/development.rst" afterPath="$PROJECT_DIR$/docs/source/development.rst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/index.rst" afterPath="$PROJECT_DIR$/docs/source/index.rst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/links.rst" afterPath="$PROJECT_DIR$/docs/source/links.rst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/source/quick.rst" afterPath="$PROJECT_DIR$/docs/source/quick.rst" />
     </list>
@@ -28,7 +45,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.rst" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/source/index.rst">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -42,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/docs/source/links.rst">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+              <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -58,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="development.rst" pinned="false" current-in-tab="false">
+      <file leaf-file-name="development.rst" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/source/development.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-24097">
-              <caret line="966" column="18" lean-forward="false" selection-start-line="966" selection-start-column="18" selection-end-line="966" selection-end-column="18" />
+            <state relative-caret-position="765">
+              <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -71,8 +88,8 @@
       <file leaf-file-name="quick.rst" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/source/quick.rst">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="280" column="18" lean-forward="false" selection-start-line="280" selection-start-column="18" selection-end-line="280" selection-end-column="18" />
+            <state relative-caret-position="119">
+              <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -86,10 +103,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/docs/source/quick.rst" />
-        <option value="$PROJECT_DIR$/docs/source/links.rst" />
-        <option value="$PROJECT_DIR$/docs/source/development.rst" />
         <option value="$PROJECT_DIR$/docs/source/index.rst" />
+        <option value="$PROJECT_DIR$/docs/source/links.rst" />
+        <option value="$PROJECT_DIR$/docs/source/quick.rst" />
+        <option value="$PROJECT_DIR$/docs/source/development.rst" />
       </list>
     </option>
   </component>
@@ -161,6 +178,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Documentation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Documentation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="docs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nstatic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -318,12 +357,12 @@
       <option name="presentableId" value="Default" />
       <updated>1520604934777</updated>
       <workItem from="1520604936151" duration="622000" />
-      <workItem from="1520609068987" duration="273000" />
+      <workItem from="1520609068987" duration="2055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="895000" />
+    <option name="totallyTimeSpent" value="2677000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -334,7 +373,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16576381" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -357,10 +396,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docs/source/quick.rst">
+    <entry file="file://$PROJECT_DIR$/docs/source/index.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="280" column="18" lean-forward="false" selection-start-line="280" selection-start-column="18" selection-end-line="280" selection-end-column="18" />
+        <state relative-caret-position="68">
+          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -368,7 +407,7 @@
     <entry file="file://$PROJECT_DIR$/docs/source/links.rst">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <caret line="7" column="16" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -381,18 +420,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/source/development.rst">
+    <entry file="file://$PROJECT_DIR$/docs/source/quick.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24097">
-          <caret line="966" column="18" lean-forward="false" selection-start-line="966" selection-start-column="18" selection-end-line="966" selection-end-column="18" />
+        <state relative-caret-position="119">
+          <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/source/index.rst">
+    <entry file="file://$PROJECT_DIR$/docs/source/development.rst">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="15" lean-forward="false" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        <state relative-caret-position="765">
+          <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
           <folding />
         </state>
       </provider>
