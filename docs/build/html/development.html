@@ -1,0 +1,3606 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Smart Spot - Development Guide &mdash; HOP Ubiquitous Documentation 1.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="HOP Ubiquitous Documentation 1.4.0 documentation" href="index.html"/>
+        <link rel="next" title="HOP Ubiquitous - Relevant Links" href="links.html"/>
+        <link rel="prev" title="Smart Spot - Quick Guide" href="quick.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> HOP Ubiquitous Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.4.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Smart Spot - Quick Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Smart Spot - Development Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#homard-api-rest">Homard API REST</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#api-restful">API-RESTFul</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cached-synchronous-restful-api">Cached Synchronous RESTFul API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asynchronous-restful-api">Asynchronous RESTFul API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#historical-data-restful-api">Historical Data RESTFul API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#homard-restful-api-examples">Homard RESTFul API Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#synchronous-restful-api-examples">Synchronous RESTFul API Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asynchronous-restful-api-examples">Asynchronous RESTFul API Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asynchronous-api-observes">Asynchronous API: Observes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#asynchronous-api-customizing-observer-notification-message-integrating-with-third-party-platform-that-requires-a-specific-format">Asynchronous API: Customizing observer notification message (integrating with third party platform that requires a specific format)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#url-manager-physical-web-configuration-for-advertising-urls">URL Manager (Physical Web configuration for advertising URLs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#url-manager-restful-api">URL Manager RESTFul API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#url-manager-restful-api-examples">URL Manager RESTFul API Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fiware-integration">Fiware Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#oma-lwm2m-iot-agent">OMA LwM2M IoT Agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#orion-context-broker">Orion Context Broker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cygnus">Cygnus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fiware-architecture">FIWARE architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#orion-context-broker-ngsi-restful-api">Orion Context Broker NGSI RESTFul API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-entity-v2">Create entity v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entity-v2">Retrieve entity v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entity-as-data-model-v2">Retrieve entity as data model v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entities-v2">Retrieve entities v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entities-as-data-model-v2">Retrieve entities as data model v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-entity-v2">Update entity v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-entity-v2">Delete entity v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-attribute-for-entity-v2">Create attribute for entity v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entity-attribute-v2">Retrieve entity attribute v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entity-attribute-as-data-model-v2">Retrieve entity attribute as data model v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-attribute-for-entity-v2">Delete attribute for entity v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-types-v2">Retrieve types v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-subscription-v2">Create subscription v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-subscriptions-v2">Retrieve subscriptions v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#remove-subscriptions-v2">Remove subscriptions v2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-context-entity-v1">Create context entity v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-context-entity-v1">Retrieve context entity v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-update-entity-v1">Create/update entity v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-entity-v1">Create entity v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entity-standard-v1">Retrieve entity standard v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entity-as-object-standard-v1">Retrieve entity as object standard v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entity-convenience-v1">Retrieve entity convenience v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entities-as-object-convenience-v1">Retrieve entities as object convenience v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entities-v1">Retrieve entities v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entities-as-object-v1">Retrieve entities as object v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entities-for-type-v1">Retrieve entities for type v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entities-for-type-as-object-v1">Retrieve entities for type as object v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-entity-v1">Delete entity v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-update-entity-attribute-v1">Create/update entity attribute v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entity-attribute-v1">Retrieve entity attribute v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-entity-attribute-as-object-v1">Delete entity attribute as object v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entities-attribute-for-type-v1">Retrieve entities attribute for type v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-entities-attribute-for-type-as-object-v1">Retrieve entities attribute for type as object v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-entity-attribute-v1">Delete entity attribute v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-type-v1">Retrieve type v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#retrieve-types-v1">Retrieve types v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-context-subscription-standard-v1">Create context subscription standard v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-context-subscription-standard-v1">Update context subscription standard v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-context-subscription-convenience-v1">Update context subscription convenience v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-context-subscription-standard-v1">Delete context subscription standard v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-context-subscription-convenience-v1">Delete context subscription convenience v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-subscription-standard-v1">Create subscription standard v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-subscription-convenience-v1">Create subscription convenience v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-subscription-standard-v1">Update subscription standard v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#update-subscription-convenience-v1">Update subscription convenience v1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-subscription-v1">Delete subscription v1</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#annex-1-oma-lwm2m">ANNEX 1: OMA LwM2M</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#resource-model">Resource model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objects">Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clients-and-servers">Clients and servers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bootstrap-interface">Bootstrap Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#client-registration-interface">Client Registration Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-management-and-service-enablement-interface">Device Management and Service Enablement Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#information-reporting-interface">Information Reporting Interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="links.html">HOP Ubiquitous - Relevant Links</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">HOP Ubiquitous Documentation</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Smart Spot - Development Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/development.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="smart-spot-development-guide">
+<h1>Smart Spot - Development Guide<a class="headerlink" href="#smart-spot-development-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="homard-api-rest">
+<h2>Homard API REST<a class="headerlink" href="#homard-api-rest" title="Permalink to this headline">¶</a></h2>
+<p>Homard offers in top of the OMA LwM2M server a RESTFul services such as mechanism to communicate with the OMA LwM2M server. This HTTP/HTTPS API RESTFul allows users to manage connected devices connected to the server.</p>
+<p>Homard shows connected devices, and manages each of them. Inherit from OMA, the devices expose a set of objects/resources, which can contain one or more instances, and each instance, contains the final resources. Some objects allow multiple instances (such as a Digital I/O Object, which represents the different digital inputs and outputs from the Smart Spot, which can be used to control relays, read external added digital sensors etc.) and others only one instance (such as Device Object). Numbers are used to identify the tuple (Object ID / Instance ID / Resource ID).</p>
+<p>There are two API types: Synchronous and Asynchronous:</p>
+<ul class="simple">
+<li><strong>Synchronous API</strong> provides the data as part of the reply to a request in near-real time; it is used mainly for data which is available in Homard platform internally. Therefore, non-external delays are introduced and a very fast reply can be offered.</li>
+<li><strong>Asynchronous API</strong> is required mainly for the data coming from the sensors (i.e. Smart Spot); since the value will be available when the Smart Spot replies to the request to Homard; delays can be introduced due to issues such as communication latency (GPRS, WiFi etc. latency), sensors reading time (specially sensors such as air quality which includes a processing time of few seconds), and finally due to duty cycle from the Smart Spot in order to optimize energy (battery or solar panels powered). For that reason, Asynchronous API will requires a callback address to inform when the value is available.</li>
+</ul>
+<p>Information returned by the API is encapsulated into a JSON data structure, since is the best way to communicate with high level applications (commonly developed in Java, JavaScript and Android).</p>
+<p>More info in: <a class="reference external" href="https://homard.hopu.eu/indexPage/wiki.html">https://homard.hopu.eu/indexPage/wiki.html</a></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="4%" />
+<col width="60%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HTTP PATH</th>
+<th class="head">Method</th>
+<th class="head">Description</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/api/rest</td>
+<td>GET</td>
+<td>Returns all OMA clients connected to HOMARD</td>
+<td>[{client1},{client2},…{clientN}]</td>
+</tr>
+<tr class="row-odd"><td>/api/rest/{endpoint_id}</td>
+<td>GET</td>
+<td>Returns the client description for a {endpoint_id}</td>
+<td>{client}</td>
+</tr>
+<tr class="row-even"><td>/api/rest/{endpoint_id}/{resource}?proto={https|http}&amp;cburl={DESTINATION_URL}</td>
+<td>GET</td>
+<td>Returns resource {resource} from client {endpoint_id} to destination callback URL</td>
+<td>[{resource1},{resource2},…,{resourceN}]</td>
+</tr>
+<tr class="row-odd"><td>/api/rest/{endpoint_id}/{resource}?proto={http|https}&amp;cburl={DESTINATION_URL}</td>
+<td>PUT</td>
+<td>Changes value of the resource {resource} on client {endpoint_id}. Content type need to be application/JSON and in the request body {“id”: 2, “value”: new_value}</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>/api/rest/{endpoint_id}/{resource}/co (Requires POST JSON payload)</td>
+<td>POST</td>
+<td>Sets observe on the resource {resource} and, when the resource value is between ‘cbmin’ and ‘cbmax’, posts its value on ‘URL’. Note that if cbmin and cbmax are omitted then all values will be tracked.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>/api/rest/{endpoint_id}/{resource}/observe</td>
+<td>DELETE</td>
+<td>Stops the monitoring on resource {resource}</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="api-restful">
+<h3>API-RESTFul<a class="headerlink" href="#api-restful" title="Permalink to this headline">¶</a></h3>
+<p>There are two API types synchronous and asynchronous, on one hand it is synchronous API, that corresponds with Server request such as get the client list, get a client specific data or list the observes set on a device. On the other hand it is device request. The device requests are launched on background, this means that the response will send to a callback URL defined by the client. This API requires the HTTP basic authentication using a Homard account.</p>
+<p>The following diagram shows the differences between synchronous and asynchronous API.</p>
+<a class="reference internal image-reference" href="_images/homard-apiRestful-diagram.png"><img alt="Homard API RESTFul Diagram" class="align-center" src="_images/homard-apiRestful-diagram.png" style="width: 527px; height: 174px;" /></a>
+<p>This subsection will present the synchronous API and an example. The available synchronous API resources are as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="40%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HTTP METHOD</th>
+<th class="head">Path</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GET</td>
+<td>/api/rest/</td>
+<td>Lists all connected clients with their current data</td>
+</tr>
+<tr class="row-odd"><td>GET</td>
+<td>/api/rest/{endpoint_id}</td>
+<td>Get specific connected client data</td>
+</tr>
+<tr class="row-even"><td>GET</td>
+<td>/api/rest/cached/{endpoint_id}/{resource}</td>
+<td>Read the resource cached value (last value)</td>
+</tr>
+<tr class="row-odd"><td>GET</td>
+<td>/api/rest/{endpoint_id}/co</td>
+<td>List client observes</td>
+</tr>
+<tr class="row-even"><td>POST</td>
+<td>/api/rest/{endpoint_id}/{resource}/observe</td>
+<td>Observes the selected resource and updates the internal cache.</td>
+</tr>
+<tr class="row-odd"><td>DELETE</td>
+<td>/api/rest/{endpoint_id}/{resource_path}/observe</td>
+<td>Removes selected client observer</td>
+</tr>
+<tr class="row-even"><td>DELETE</td>
+<td>/api/rest/{endpoint_id}/{resource_path}/co/{coID}</td>
+<td>Removes selected client composite observer</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cached-synchronous-restful-api">
+<h3>Cached Synchronous RESTFul API<a class="headerlink" href="#cached-synchronous-restful-api" title="Permalink to this headline">¶</a></h3>
+<p>Synchronous APIs are for requests which are directly resolved by Homard Server. Thereby, we get the last values cached on the server directly, without any delay. At this way, Homard can be seen as a data broker.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="37%" />
+<col width="9%" />
+<col width="43%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HTTP METHOD</th>
+<th class="head">Path</th>
+<th class="head">Parameters</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GET</td>
+<td>/api/rest /cached /{endpoint_id}/{resource}</td>
+<td>None</td>
+<td>Read the resource cached value</td>
+</tr>
+</tbody>
+</table>
+<p>The API is very useful in special for applications that can not setup a HTTP server in its architecture. This synchronous API can be outdated, to solve it, the user can enable a simple observer, which constantly updates the resource. In order to create an internal observer to maintain the value updated for a specific resource is as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="34%" />
+<col width="8%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HTTP METHOD</th>
+<th class="head">Path</th>
+<th class="head">Parameters</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>POST</td>
+<td>/api/rest /{endpoint_id}/{resource}/observe</td>
+<td>None</td>
+<td>Observes the selected resource and updates the internal cache</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="asynchronous-restful-api">
+<h3>Asynchronous RESTFul API<a class="headerlink" href="#asynchronous-restful-api" title="Permalink to this headline">¶</a></h3>
+<p>This subsection present the asynchronous API and an execution example. The available asynchronous API resources are as follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="26%" />
+<col width="28%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HTTP METHOD</th>
+<th class="head">Path</th>
+<th class="head">Parameters</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>GET</td>
+<td>/api/rest/{endpoint_id}/{resource}</td>
+<td><ul class="first last simple">
+<li><strong>cburl:</strong> Destination callback url</li>
+<li><strong>proto:</strong> Destination callback url protocol</li>
+</ul>
+</td>
+<td>Read the value and returns it to the destination callback url</td>
+</tr>
+<tr class="row-odd"><td>PUT</td>
+<td>/api/rest/{endpoint_id}/{resource}</td>
+<td><ul class="first last simple">
+<li><strong>cburl:</strong> Destination callback url</li>
+<li><strong>proto:</strong> Destination callback url protocol</li>
+</ul>
+</td>
+<td>Write the value on resource and returns the status to callback url</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="historical-data-restful-api">
+<h3>Historical Data RESTFul API<a class="headerlink" href="#historical-data-restful-api" title="Permalink to this headline">¶</a></h3>
+<p>Homard offers in top of the OMA LwM2M server a RESTFul services such as mechanism to communicate with the OMA LwM2M server. This HTTP/HTTPS RESTFul API allow users to query the stored information such as temperature and humidity. In addition, sensor status and maintenance parameters can be queried in order to know if there are any problem with network connectivity.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="3%" />
+<col width="22%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HTTP PATH</th>
+<th class="head">Method</th>
+<th class="head">Description</th>
+<th class="head">Result</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/api/hist</td>
+<td>GET</td>
+<td>Returns historic of OMA clients connected to HOMARD.</td>
+<td>[ { “name”: “HOPf4b85eab98de”, “cn”: “HopCore2” }, { “name”: “HOPf4b85eab98d6”, “cn”: “HopCore9” } ]</td>
+</tr>
+<tr class="row-odd"><td>/api/hist/{endpoint_id}[?from={timestamp}}[&amp;to={timestamp}][&amp;limit={max_records}][&amp;page={limited_page_requested}]</td>
+<td>GET</td>
+<td>Returns all historic values of {enpoint_id} device.</td>
+<td>[ { “eid”: “HOPf4b85eab98de”, “temperature”: 27.36767578125, “humidity”: 45.654815673828125, “date”: “Jun 21, 2016 2:10:36 PM” }, … ]</td>
+</tr>
+<tr class="row-even"><td>/api/hist/{endpoint_id}/temp[?from={timestamp}][&amp;to={timestamp}][&amp;limit={max_records}][&amp;page={limited_page_requested}]</td>
+<td>GET</td>
+<td>Returns temperature historic values of {enpoint_id} device.</td>
+<td>{ values: [ 27.36767578125, 27.96767578125, … ], dates:[ “Jun 21, 2016 2:10:36 PM”, “Jun 21, 2016 2:10:37 PM”, “Jun 21, 2016 2:10:48 PM”, …. ] }</td>
+</tr>
+<tr class="row-odd"><td>/api/hist/{endpoint_id}/hum[?from={timestamp}][&amp;to={timestamp}][&amp;limit={max_records}][&amp;page={limited_page_requested}]</td>
+<td>GET</td>
+<td>Returns humidity historic values of {enpoint_id} device.</td>
+<td>{ values: [ 27.36767578125, 27.96767578125, … ], dates:[ “Jun 21, 2016 2:10:36 PM”, “Jun 21, 2016 2:10:37 PM”, “Jun 21, 2016 2:10:48 PM”, …. ] }</td>
+</tr>
+<tr class="row-even"><td>/api/hist/events/{endpoint_id}/[?from={timestamp}][&amp;to={timestamp}][&amp;limit={max_records}][&amp;page={limited_page_requested}]</td>
+<td>GET</td>
+<td>Returns device events such as when {enpoint_id} was registered, updated or deregistered.</td>
+<td>[ { “name”: “HOPf4b85eab98de”, “event”: “REGISTRATION”, “ts”: “Jun 21, 2016 2:08:09 PM” }, { “name”: “HOPf4b85eab98de”, “event”: “UPDATED”, “ts”: “Jun 21, 2016 2:08:56 PM” }, … ]</td>
+</tr>
+<tr class="row-odd"><td>/api/hist/events/recount/{endpoint_id}/[?from={timestamp}][&amp;to={timestamp}]</td>
+<td>GET</td>
+<td>Returns a count of {enpoint_id} events.</td>
+<td>[ { “count”: 2, “event”: “DEREGISTRATION” }, { “count”: 4, “event”: “REGISTRATION” }, { “count”: 841, “event”: “UPDATED” } ]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="homard-restful-api-examples">
+<h2>Homard RESTFul API Examples<a class="headerlink" href="#homard-restful-api-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="synchronous-restful-api-examples">
+<h3>Synchronous RESTFul API Examples<a class="headerlink" href="#synchronous-restful-api-examples" title="Permalink to this headline">¶</a></h3>
+<p><strong>List connected clients: GET /api/rest/</strong></p>
+<p>Query:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">GET</span> <span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">rest</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>[
+        {
+                “endpoint”:”HOP-Sensor-Debug”,
+                “registrationId”:”MTKt5ejSeu”,
+                “registrationDate”:”2015-02-16T01:06:27+01:00”,
+                “address”:”/127.0.0.1:54604”,
+                “lwM2MmVersion”:”1.0”,
+                “lifetime”:120,
+                “bindingMode”:”UQ”,
+                “rootPath”:”/”,
+                “objectLinks”:[
+                        {
+                                “url”:”/1/0”,
+                                “attributes”:{
+                                },
+                               “objectId”:1,
+                                “objectInstanceId”:0
+                        },
+                        {
+                                “url”:”/3”,
+                                “attributes”:{
+                                },
+                                “objectId”:3
+                        },
+                        {
+                                “url”:”/4”,
+                                “attributes”:{
+                                },
+                                “objectId”:4
+                        },
+                        {
+                                “url”:”/5”,
+                                “attributes”:{
+                                },
+                                “objectId”:5
+                        },
+                        {
+                                “url”:”/3201/0”,
+                                “attributes”:{
+                                },
+                                “objectId”:3201,
+                                “objectInstanceId”:0
+                        },
+                        {
+                                “url”:”/3201/1”,
+                                “attributes”:{
+                                },
+                                “objectId”:3201,
+                                “objectInstanceId”:1
+                        }
+                ]
+        }
+]
+</pre></div>
+</div>
+<p><strong>Get specific client: GET /api/rest/{endpoint_id}</strong></p>
+<p>Query:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">GET</span> <span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">rest</span><span class="o">/</span><span class="nx">HOP</span><span class="o">-</span><span class="nx">Sensor</span><span class="o">-</span><span class="nx">Debug</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “endpoint”:”HOP-Sensor-Debug”,
+        “registrationId”:”MTKt5ejSeu”,
+        “registrationDate”:”2015-02-16T01:06:27+01:00”,
+        “address”:”/127.0.0.1:54604”,
+        “lwM2MmVersion”:”1.0”,
+        “lifetime”:120,
+        “bindingMode”:”UQ”,
+        “rootPath”:”/”,
+        “objectLinks”:[
+                {
+                        “url”:”/1/0”,
+                        “attributes”:{
+                        },
+                        “objectId”:1,
+                        “objectInstanceId”:0
+                },
+                {
+                        “url”:”/3”,
+                        “attributes”:{
+                        },
+                        “objectId”:3
+                },
+                {
+                        “url”:”/4”,
+                        “attributes”:{
+                        },
+                        “objectId”:4
+                },
+                {
+                        “url”:”/5”,
+                        “attributes”:{
+                        },
+                        “objectId”:5
+                },
+                {
+                        “url”:”/3201/0”,
+                        “attributes”:{
+                        },
+                        “objectId”:3201,
+                        “objectInstanceId”:0
+                },
+                {
+                        “url”:”/3201/1”,
+                        “attributes”:{
+                        },
+                        “objectId”:3201,
+                        “objectInstanceId”:1
+                }
+        ]
+}
+</pre></div>
+</div>
+<p><strong>Get client observes: GET /api/rest/{endpoint_id}/co</strong></p>
+<p>Query:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">GET</span> <span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">rest</span><span class="o">/</span><span class="nx">UBI8086f2759cbb</span><span class="o">/</span><span class="nx">observes</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>[
+        {
+                “client”: “HOPf4b85eab962b”,
+                “path”:
+                {
+                        “objectId”: 3303,
+                        “objectInstanceId”: 0,
+                        “resourceId”: 5700
+                },
+                “ocos”:
+                [
+                        {
+                                “url”: “homard.hopu.eu:8090/co”,
+                                “protocol”: “https://”,
+                                “threshold”: 0,
+                                “condition”: “&gt;=”,
+                                “method”: “POST”,
+                                “oneShot”: false,
+                                “outputFormat”:
+                                [
+                                        {
+                                                “field”: “sensor”,
+                                                “value”: “$eID”
+                                        },
+                                        {
+                                                “field”: “value”,
+                                                “value”: “$value”
+                                        },
+                                        {
+                                                “field”: “r”,
+                                                “value”: “$resource”
+                                        },
+                                        {
+                                                “field”: “threshold”,
+                                                “value”: “$threshold”
+                                        }
+                                ],
+                                “id”: 1,
+                                “type”: 0,
+                                “endpoint”: “HOPf4b85eab962b”,
+                                “path”: “/3303/0/5700”
+                        }
+                ]
+        }
+]
+</pre></div>
+</div>
+<p><strong>Remove client observe: DELETE /api/rest/{endpoint_id}/{resource_path}/observe</strong></p>
+<p>Query:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">DELETE</span> <span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">rest</span><span class="o">/</span><span class="nx">HOPf4b85eab9b03</span><span class="o">/</span><span class="mi">3303</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">5700</span><span class="o">/</span><span class="nx">observe</span>
+</pre></div>
+</div>
+<p>Result:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">HTTP</span> <span class="nx">Response</span> <span class="mi">200</span> <span class="nx">OK</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="asynchronous-restful-api-examples">
+<h3>Asynchronous RESTFul API Examples<a class="headerlink" href="#asynchronous-restful-api-examples" title="Permalink to this headline">¶</a></h3>
+<p><strong>Read device resource: GET /api/rest/{endpoint_id}/{resource}</strong></p>
+<p>GET parameters:</p>
+<ul class="simple">
+<li><strong>proto</strong> (mandatory): Determines the protocol to use (HTTP or HTTPS).</li>
+<li><strong>cburl</strong> (mandatory): Determines the response destination url.</li>
+<li><strong>cbauthusr</strong> (optional): Used if the destination server requires Basic authentication.</li>
+<li><strong>cbauthpass</strong> (optional): Used if the destination server requires Basic authentication.</li>
+</ul>
+<p>Read Device Resource Query:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">GET</span> <span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">rest</span><span class="o">/</span><span class="nx">HOPf4b85eab9b03</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">5</span><span class="o">?</span><span class="nx">proto</span><span class="o">=</span><span class="nx">https</span><span class="o">&amp;</span><span class="nx">cburl</span><span class="o">=</span><span class="nx">homard</span><span class="p">.</span><span class="nx">hopu</span><span class="p">.</span><span class="nx">eu</span><span class="o">:</span><span class="mi">8090</span><span class="o">/</span><span class="nx">co</span>
+</pre></div>
+</div>
+<p>Post Result on Callback Url:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “eid”:”HOPf4b85eab98de”,
+        ”url”:”/1/0/5”,
+        ”oID”:1,
+        ”iID”:0,
+        ”rID”:5,
+        ”type”:”INTEGER”,
+        ”value”:1
+}
+</pre></div>
+</div>
+<p>Post Error on Callback Url:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “eid”:”HOPf4b85eab98de”,
+        “operation”:”read”,
+        “resource”:”/1/0/5”,
+        “status”:”ERROR”
+}
+</pre></div>
+</div>
+<p><strong>Write device resource: PUT /api/rest/{endpoint_id}/{resource}</strong></p>
+<p>PUT parameters: proto (mandatory), cburl (mandatory), cbauthusr (optative), cbauthpass (optative).</p>
+<p>Write Device Resource Query:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">PUT</span> <span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">rest</span><span class="o">/</span><span class="nx">HOPf4b85eab9b03</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">5</span><span class="o">?</span><span class="nx">proto</span><span class="o">=</span><span class="nx">https</span><span class="o">&amp;</span><span class="nx">cburl</span><span class="o">=</span><span class="nx">homard</span><span class="p">.</span><span class="nx">hopu</span><span class="p">.</span><span class="nx">eu</span><span class="o">:</span><span class="mi">8090</span><span class="o">/</span><span class="nx">co</span>
+</pre></div>
+</div>
+<p>Required Payload (Data to write):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “id”: 5,
+        “value”: 2
+}
+</pre></div>
+</div>
+<p>Post Result on Callback Url:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “eid”:”HOPf4b85eab98de”,
+        ”url”:”/1/0/5”,
+        ”oID”:1,
+        ”iID”:0,
+        ”rID”:5,
+        ”type”:”INTEGER”,
+        ”value”:1
+}
+</pre></div>
+</div>
+<p>Post Error on Callback Url:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “eid”:”HOPf4b85eab98de”,
+        “operation”:”write”,
+        “resource”:”/1/0/5”,
+        “status”:”ERROR”
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="asynchronous-api-observes">
+<h3>Asynchronous API: Observes<a class="headerlink" href="#asynchronous-api-observes" title="Permalink to this headline">¶</a></h3>
+<p>Observation creation requires a specific POST payload. This is a JSON object that contains the necessary parameters. The necessary data to create an observer is as follows:</p>
+<ul class="simple">
+<li>Observe resource: POST /api/rest/{endpoint_id/{resource}/co</li>
+<li><dl class="first docutils">
+<dt>Payload:</dt>
+<dd><ul class="first last">
+<li><strong>threshold:</strong> Threshold value</li>
+<li><strong>op:</strong> Operation condition (&lt;=, &gt;=, …)</li>
+<li><strong>typeShot:</strong> Type shot could be “repeat” or “oneshot”</li>
+<li><strong>method:</strong> The method of the request, usually POST</li>
+<li><strong>durl:</strong> Destination URL where the observer will send the notifications</li>
+<li><strong>proto:</strong> Protocol to use (“<a class="reference external" href="https://">https://</a>” or “<a class="reference external" href="http://">http://</a>”)</li>
+<li><strong>authUsr:</strong> Destination URL Basic authentication user (Optional)</li>
+<li><strong>authPass:</strong> Destination URL Basic authentication password (Optional)</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Also the JSON schema for this object is:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “$schema”: “http://json-schema.org/draft-04/schema#”,
+        “id”: “http://jsonschema.net”,
+        “type”: “object”,
+        “properties”: {
+                “threshold”: {
+                        “id”: “http://jsonschema.net/threshold”,
+                        “type”: “string”
+                },
+                “op”: {
+                        “id”: “http://jsonschema.net/op”,
+                        “type”: “string”
+                },
+                “typeShot”: {
+                        “id”: “http://jsonschema.net/typeShot”,
+                        “type”: “string”
+                },
+                “method”: {
+                        “id”: “http://jsonschema.net/method”,
+                        “type”: “string”
+                },
+                “durl”: {
+                        “id”: “http://jsonschema.net/durl”,
+                        “type”: “string”
+                },
+                “proto”: {
+                        “id”: “http://jsonschema.net/proto”,
+                        “type”: “string”
+                },
+                “authUsr”: {
+                        “id”: “http://jsonschema.net/authUsr”,
+                        “type”: “string”
+                },
+                “authPass”: {
+                        “id”: “http://jsonschema.net/authPass”,
+                        “type”: “string”
+                }
+        },
+        “required”: [
+                “threshold”,
+                “op”,
+                “typeShot”,
+                “method”,
+                “durl”,
+                “proto”
+        ]
+}
+</pre></div>
+</div>
+<p><strong>Example of request</strong></p>
+<p>Create observation:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">POST</span> <span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">rest</span><span class="o">/</span><span class="nx">HOPf4b85eab9b3a</span><span class="o">/</span><span class="mi">3303</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">5700</span><span class="o">/</span><span class="nx">co</span>
+</pre></div>
+</div>
+<p>Required Payload:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “threshold”: “0”,
+        “op”: “&gt;=”,
+        “typeShot”:”repeat”,
+        “method”: “POST”,
+        “durl”:”homard.hopu.eu:8090/co”,
+        “proto”:”https://”,
+        “authUsr”: “”,
+        “authPass”: “”
+}
+</pre></div>
+</div>
+<p>Response Received:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">HTTP</span> <span class="nx">response</span> <span class="mi">200</span>
+</pre></div>
+</div>
+<p>Notification Received on Callback Url:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “eid”:”HOPf4b85eab9b3a”,
+        ”url”:”3303/0/5700”,
+        ”oID”:3303,
+        ”iID”:0,
+        ”rID”:5700,
+        ”value”:”17.028683”
+}
+</pre></div>
+</div>
+<p>Error Notification Received on Callback Url:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “eid”:”HOPf4b85eab9b3a”,
+        “operation”:”observe”,
+        “resource”:”/1/0/5”,
+        “status”:”ERROR”
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="asynchronous-api-customizing-observer-notification-message-integrating-with-third-party-platform-that-requires-a-specific-format">
+<h3>Asynchronous API: Customizing observer notification message (integrating with third party platform that requires a specific format)<a class="headerlink" href="#asynchronous-api-customizing-observer-notification-message-integrating-with-third-party-platform-that-requires-a-specific-format" title="Permalink to this headline">¶</a></h3>
+<p>Observation notifications have a standard output that can be formatted according to user needs. To achieve this we must add a JSON array called “outputPacket” that contains the format of the notification packet.</p>
+<p>This array contains field/value JSON objects This array contains one or more objects of type field/value ({“field”:”NameFile”, “value”:”Variable or Constant”}). The field “field” contains the attribute name of the notification final object. The field “value” represents the value of that attribute, It can be constant or variable. The allowed variable are the following:</p>
+<ul class="simple">
+<li><strong>$eID:</strong> The Endpoint ID of the observed device.</li>
+<li><strong>$resource:</strong> The OMA LwM2M resource observed.</li>
+<li><strong>$value:</strong> The observation value received.</li>
+<li><strong>$threshold:</strong> The observation threshold.</li>
+<li><a href="#id1"><span class="problematic" id="id2">**</span></a>$condition:* The observation condition.</li>
+</ul>
+<p>For example if we want to receive the following notification:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “sensor”: “HOPf4b85eab9b3a”,
+        “value”:15.32,
+        “uuid”: “067e6162-3b6f-4ae2-a171-2470b63dff00”
+}
+</pre></div>
+</div>
+<p>We have to set the following “outputPacket”:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        ...,
+        “outputPacket”:[
+                {
+                        “field”:”name”,
+                        “value”:”$eID”
+                },
+                {
+                        “field”: “value”,
+                        “value”:”$value”
+                },
+                {
+                        “field”: “uuid”,
+                        “value”:”067e6162-3b6f-4ae2-a171-2470b63dff00”
+                }
+        ]
+}
+</pre></div>
+</div>
+<p>The JSON schema of the complete object is:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+        “$schema”: “http://json-schema.org/draft-04/schema#”,
+        “id”: “http://jsonschema.net”,
+        “type”: “object”,
+        “properties”: {
+                “threshold”: {
+                        “id”: “http://jsonschema.net/threshold”,
+                        “type”: “string”
+                },
+                “op”: {
+                        “id”: “http://jsonschema.net/op”,
+                        “type”: “string”
+                },
+                “typeShot”: {
+                        “id”: “http://jsonschema.net/typeShot”,
+                        “type”: “string”
+                },
+                “method”: {
+                        “id”: “http://jsonschema.net/method”,
+                        “type”: “string”
+                },
+                “durl”: {
+                        “id”: “http://jsonschema.net/durl”,
+                        “type”: “string”
+                },
+                “proto”: {
+                        “id”: “http://jsonschema.net/proto”,
+                        “type”: “string”
+                },
+                “authUsr”: {
+                        “id”: “http://jsonschema.net/authUsr”,
+                        “type”: “string”
+                },
+                “authPass”: {
+                        “id”: “http://jsonschema.net/authPass”,
+                        “type”: “string”
+                },
+                “outputPacket”: {
+                        “id”: “http://jsonschema.net/outputPacket”,
+                        “type”: “array”,
+                        “items”: [
+                                {
+                                         “id”: “http://jsonschema.net/outputPacket/0”,
+                                         “type”: “object”,
+                                         “properties”: {
+                                                        “field”: {
+                                                                “id”: “http://jsonschema.net/outputPacket/0/field”,
+                                                                “type”: “string”
+                                                        },
+                                                                “value”: {
+                                                                        “id”: “http://jsonschema.net/outputPacket/0/value”,
+                                                                        “type”: “string”
+                                                        }
+                                                }
+                                },
+                                {
+                                        “id”: “http://jsonschema.net/outputPacket/1”,
+                                        “type”: “object”,
+                                        “properties”: {
+                                                “field”: {
+                                                        “id”: “http://jsonschema.net/outputPacket/1/field”,
+                                                        “type”: “string”
+                                                },
+                                                        “value”: {
+                                                                “id”: “http://jsonschema.net/outputPacket/1/value”,
+                                                                “type”: “string”
+                                                        }
+                                                }
+                                }
+                        ]
+                }
+        },
+        “required”: [
+                “threshold”,
+                “op”,
+                “typeShot”,
+                “method”,
+                “durl”,
+                “proto”
+        ]
+}
+</pre></div>
+</div>
+<p><strong>Example of request</strong></p>
+<p>Create Observation:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">POST</span> <span class="o">/</span><span class="nx">api</span><span class="o">/</span><span class="nx">rest</span><span class="o">/</span><span class="nx">HOPf4b85eab9b3a</span><span class="o">/</span><span class="mi">3303</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">5700</span><span class="o">/</span><span class="nx">observe</span>
+</pre></div>
+</div>
+<p>Required Payload:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “threshold”: “0”,
+    “op”: “&gt;=”,
+    “typeShot”:”repeat”,
+    “method”: “POST”,
+    “durl”:”homard.hopu.eu:8090/co”,
+    “proto”:”https://”,
+    “authUsr”: “”,
+    “authPass”: “”,
+    “outputPacket”:[
+        {
+            “field”:”name”,
+            “value”:”$eID”
+        },
+        {
+            “field”: “value”,
+            “value”:”$value”
+        }
+    ]
+}
+</pre></div>
+</div>
+<p>Response Received:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">HTTP</span> <span class="nx">response</span> <span class="mi">200</span>
+</pre></div>
+</div>
+<p>Notification Received on Callback Url:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “name”:”HOPf4b85eab9b03”,
+    ”value”:17.028683
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="url-manager-physical-web-configuration-for-advertising-urls">
+<h2>URL Manager (Physical Web configuration for advertising URLs)<a class="headerlink" href="#url-manager-physical-web-configuration-for-advertising-urls" title="Permalink to this headline">¶</a></h2>
+<p>Device URL Manager is the key component of the Industrial Physical Web solution offered to provide accessible and intuitive user interfaces. In details, the Device URL manager is used to administer the URL broadcasted / transmitted by the devices; this URL can be issued by BLE or Wi-Fi direct and must be coded with the Eddystone URL protocol1 from Google.</p>
+<p>Nowadays, there is more than 3 million Apps hosted on Google Play, most of them are used a few times for their temporal or location context and later they are forgotten wasting resources on mobile devices or at best cases uninstalled. Google wants to solve this problem through Physical Web, this technology will allows service providers to interact with users depending on the location, temporality context or directly with the objects surrounding the user without the need of install any application on any device, These applications will be developed as progressive webs and they will allow user to feel that they are interacting with the real world through native applications, these applications are capable of interacting directly with mobile device hardware or even receiving notifications.</p>
+<p>HOP Ubiquitous is a partner from Google for physical Web, and a service for the creation of secure and validated URLs is available in HPOI.info. Contact HOP Ubiquitous team for more details.</p>
+<p>Physical Web creates a communication channel that connects the physical and virtual worlds using the Bluetooth Low Energy connection to send “push” notifications to nearby Smartphones that are in their range of action. This connection does not need any tracker native app, only with Google Chrome installed and with bluetooth switched on every user can interact with digital content directly in this physical point.</p>
+<p>Thanks to technologies such as physical web and the Device URL Manager, Smart Spot is able to broadcast a URL with temporal and spatial context that will send to people around the Smart Spot for use cases such as tourism, infortainment, accesibility, marketing, make visible content or Webs available linked to a Physical place, etc</p>
+<p>Device URL Manager provides an Open Source Core2 for users to be able to develop their own solutions which is accessible through an API REST, which is developed in python using Open Source frameworks such as Django and Django REST Framework that provides to the developers an ecosystem that allows an easy extension of the system for introducing layers of security or registration of devices.</p>
+<p>URL Manager: <a class="reference external" href="https://github.com/HOP-Ubiquitous/DeviceUrlManager">https://github.com/HOP-Ubiquitous/DeviceUrlManager</a></p>
+<a class="reference internal image-reference" href="_images/url-manager.png"><img alt="URL Manager Diagram" class="align-center" src="_images/url-manager.png" style="width: 260px; height: 281px;" /></a>
+<div class="section" id="url-manager-restful-api">
+<h3>URL Manager RESTFul API<a class="headerlink" href="#url-manager-restful-api" title="Permalink to this headline">¶</a></h3>
+<p>This tool is used for manage the physical web URL of any device by software.</p>
+<p>Smart PhoneS detect the Eddystone URL advertisement with a fixed device url that point to the Device URL Manager, then the Device URL Manager will redirect the request to the real uRL.</p>
+<p>More information in the repository: <a class="reference external" href="https://github.com/HOP-Ubiquitous/DeviceUrlManager">https://github.com/HOP-Ubiquitous/DeviceUrlManager</a></p>
+</div>
+<div class="section" id="url-manager-restful-api-examples">
+<h3>URL Manager RESTFul API Examples<a class="headerlink" href="#url-manager-restful-api-examples" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Fixed device url</strong> (Request): <a class="reference external" href="https://hpoi.info/AA00BB11DD22">https://hpoi.info/AA00BB11DD22</a></li>
+<li><strong>Device URL Manager external device URL</strong> (Response): <a class="reference external" href="https://google.es">https://google.es</a></li>
+<li><strong>MAC address</strong>: is a normal MAC without the two dots. E.g: 00:11:22:33:44:55 &gt; shortened MAC: 001122334455</li>
+</ul>
+<p><strong>Create Device</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="8%" />
+<col width="11%" />
+<col width="31%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Data Params</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/api/v1/devices</td>
+<td>POST</td>
+<td>None</td>
+<td><ul class="first last">
+<li><p class="first"><strong>Type</strong>: application/json</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Body</strong>:</dt>
+<dd><dl class="first docutils">
+<dt>{</dt>
+<dd><p class="first">“mac”: “001122334455”,</p>
+<p class="last">“external_url”: “<a class="reference external" href="https://google.es/">https://google.es/</a>”</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</td>
+<td>Method to add a device with its MAC and a target URL</td>
+</tr>
+</tbody>
+</table>
+<p>Success Response:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Code</span><span class="o">:</span> <span class="mi">201</span> <span class="p">(</span><span class="nx">Created</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Content:
+{
+    “mac”:”001122334455”,
+    ”external_url”:“https://google.es/”
+}
+</pre></div>
+</div>
+<p>Error Response:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Code</span><span class="o">:</span> <span class="mi">400</span> <span class="p">(</span><span class="nx">Bad</span> <span class="nx">Request</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Content:
+{
+    “bad_field_name”:[error causes]
+}
+</pre></div>
+</div>
+<p>Sample Call:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    url: “/api/v1/devices”,
+    dataType: “json”,
+    data: {
+        “mac”: “001122334455”,
+        “external_url”: “https://google.es/”
+    },
+    type : “POST”,
+    success : function(r) {
+        console.log(r);
+    }
+}
+</pre></div>
+</div>
+<p><strong>Show Device Data</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="8%" />
+<col width="17%" />
+<col width="14%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Data Params</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/api/v1/devices/:shortened_mac</td>
+<td>GET</td>
+<td>shortened_mac=[String]</td>
+<td>None</td>
+<td>Method to show the device information</td>
+</tr>
+</tbody>
+</table>
+<p>Success Response:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Code</span><span class="o">:</span> <span class="mi">200</span> <span class="p">(</span><span class="nx">Ok</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Content:
+{
+    “mac”: “001122334455”,
+    “external_url”: “https://google.es/”
+}
+</pre></div>
+</div>
+<p>Error Response:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Code</span><span class="o">:</span> <span class="mi">404</span> <span class="p">(</span><span class="nx">Not</span> <span class="nx">Found</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Content:
+{
+    “detail”: “Device Not Found”,
+}
+</pre></div>
+</div>
+<p>Sample Call:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    url: “/api/v1/devices/001122334455”,
+    dataType: “json”,
+    type : “GET”,
+    success : function(r) {
+        console.log(r);
+    }
+}
+</pre></div>
+</div>
+<p><strong>Update Device Data</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="6%" />
+<col width="8%" />
+<col width="33%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Data Params</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/api/v1/devices/:shortened_mac</td>
+<td>PUT</td>
+<td>None</td>
+<td><ul class="first last">
+<li><p class="first"><strong>Type</strong>: application/json</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Body</strong>:</dt>
+<dd><dl class="first docutils">
+<dt>{</dt>
+<dd><p class="first">“mac”: “001122334455”,</p>
+<p class="last">“external_url”: “<a class="reference external" href="https://google.es/">https://google.es/</a>”</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+</li>
+</ul>
+</td>
+<td>Method to update the device information</td>
+</tr>
+</tbody>
+</table>
+<p>Success Response:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Code</span><span class="o">:</span> <span class="mi">200</span> <span class="p">(</span><span class="nx">Ok</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Content:
+{
+    “mac”: “001122334455”,
+    “external_url”: “https://google.es/”
+}
+</pre></div>
+</div>
+<p>Error Response:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">Code</span><span class="o">:</span> <span class="mi">404</span> <span class="p">(</span><span class="nx">Not</span> <span class="nx">Found</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Content:
+{
+    “detail”: “Device Not Found”,
+}
+</pre></div>
+</div>
+<p>Sample Call:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    url: “/api/v1/devices/001122334455”,
+    dataType: “json”,
+    data: {
+        “external_url”: “https://google.es/”
+    },
+    type : “PUT”,
+    success : function(r) {
+        console.log(r);
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="fiware-integration">
+<h2>Fiware Integration<a class="headerlink" href="#fiware-integration" title="Permalink to this headline">¶</a></h2>
+<p>FIWARE (www.fiware.org) in an open platform promoted by the European Commision and maintained by the FIWARE Foundation, where HOP Ubiquitous is Gold Member.</p>
+<p>FIWARE offers an Open Ecosystem that join different technology enablers for scalable data mangement and make feasible to integrate different services and Internet of Things devices into a common and interoperable framework based on Open Standards. In particular, FIWARE is based on Open Standards such as OMA NGSI for the Services Interface and ETSI ISG CIM for the data models. HOP Ubiquitous is an active member and contributor in ETSI ISG CIM and also an active contributor in OMA; being one of pioneer and main companies working around OMA LwM2M protocol.</p>
+<p>In details, FIWARE has a strong role in the Smart Cities market, since the is key to the growth and functionality of Smart Cities, for this reason we are committed to initiatives such as Open and Agile Smart Cities (OASC) association with over 100 cities enrolled and FIWARE technology as the basis for making it feasible.</p>
+<p>Smart Spot is a FIWARE-ready device, it means that Smart Spot has been validated, passed a set of tests, participated in plugfests and the most important is supporting the APIs, FIWARE data models based on ETSI ISG CIM and it is fully interoperable and integrated with key components from FIWARE such as Orion Context Broker.</p>
+<p>In details, Orion Context Broker is the core of FIWARE platform; since it enables the common integration of heterogenous data sources into a common component, which enables the capacity to carry out advanced queries, cross data among heterogenous domains (e.g., noise with crowd, weather and mobility, etc.), and finally it can exports data to several data analytics components such as Hadoop / COSMOS (Big Data), SHT (Time Series), CKAN (Open Data), MongoDB (Non-structured data), etc.</p>
+<p>FIWARE and the solutions from HOP Ubiquitous are contributing to the creation of adapted and standardized solutions to satisfy the described process from the cocreation and citizens engagement to the deployment of solutions based on IoT to reach the digitalization and enhancement of different areas in the city.</p>
+<p>Thanks to the LwM2M Bootstrap Server deployed and integrated in the Homard platform, it is really easy to setup the server configuration for a the device. In this way, anyone can deploy its own LwM2M IOTAgent with a public server IP and configure the device to integrate it in FIWARE.</p>
+<p>A tutorial about Orion Context Broker has been developed by FIWARE and HOP Ubiquitous, which can be downloaded in: <a class="reference external" href="http://goo.gl/o1KXcT">http://goo.gl/o1KXcT</a></p>
+<div class="section" id="oma-lwm2m-iot-agent">
+<h3>OMA LwM2M IoT Agent<a class="headerlink" href="#oma-lwm2m-iot-agent" title="Permalink to this headline">¶</a></h3>
+<p>OMA LwM2M is a device management protocol created by the Open Mobile alliance (OMA) which allows the remote manipulation of Internet of Things constrained devices. This complete protocol defines the procedures for provisioning, commissioning and management of a device through the definition of the resources exposed by the device.</p>
+<p>The functionality of LwM2M protocol is carried out through a set of basic objects such as “Server”, “Security”, “Device”, “Statistics”… but there are also more specific objects defined by the IPSO Alliance which aims to cover the need common definitions for sensors such as temperature, humidity, presence, etc. Or actuators such as power/light/load control, buzzers, etc.</p>
+<p>CoAP (Constrained Application Protocol) defines the message header, request/response codes, message options and retransmission mechanisms, this protocol together with UDP is used by LwM2M as a transport mechanism.</p>
+<p>There are a large variety of topologies on the IoT but they have three common parts; devices, routers and backends.</p>
+<p>In some scenarios, routers are transparent for the enddevices such as cellular technologies, examples are: GSM, SigFox, NarrowBand IoT or Wi-Fi Hallow, since they are already deployed by Telco’s. Others, such as Wi-Fi, Bluetooth, 6LoWPAN and Z-Wave are provided individually with the devices. In HOP Ubiquitous our technology is mainly based on GSM and Bluetooth 4.0.</p>
+<p>The FIWARE Foundation counts with its own set of services for the IOT. One of this kind of services is called FIWARE IOT Agent, and we can find one that is fully compatible with our device architecture and connection protocols. HOP Ubiquitous in collaboration with ATOS and Telefonica are maintaining the integration of OMA LwM2M protocol with FIWARE via the Orion Context Broker. It is fully Open Source (URL al IoT Agent de HOPU en GitHub), and it counts with a simple deployment over FIWARE and Linux-based platforms.</p>
+<p>In addition, HOP Ubiquitous offers containers and Cloudenabled services with the integration of FIWARE and Orion Context Broker (including OMA LwM2M IoT Agent). Contact HOP Ubiquitous support team for more details.</p>
+</div>
+<div class="section" id="orion-context-broker">
+<h3>Orion Context Broker<a class="headerlink" href="#orion-context-broker" title="Permalink to this headline">¶</a></h3>
+<p>In The architecture, a service for context and information storage, sharing and consumption is needed, in the FIWARE Architecture this is the Orion Context Broker. This service is the one in charge to connect with the OMA LwM2M IOT Agent in order to collect data coming from the IOT devices. One of the most important features of the Context Broker is that it allows to model and gain access to context information in a way that is independent from the source of that information. It uses a non-relational database (Mongodb) to store all the data, and counts with an easy to use REST API with makes data accessible.</p>
+</div>
+<div class="section" id="cygnus">
+<h3>Cygnus<a class="headerlink" href="#cygnus" title="Permalink to this headline">¶</a></h3>
+<p>This is the FIWARE Service in charge of persisting data. It is based on Apache Flume, Cygnus offers as a data bus the interconnection with several data sources and data platforms such as Hadoop, CKAN, STH Comet etc.</p>
+</div>
+<div class="section" id="fiware-architecture">
+<h3>FIWARE architecture<a class="headerlink" href="#fiware-architecture" title="Permalink to this headline">¶</a></h3>
+<p>Taking the previous two components into account the FIWARE IoT platform is composed, in the following lines the deployment of every service and the integration with the HOP Ubiquitous Smart Spot is described.</p>
+<a class="reference internal image-reference" href="_images/fiware-architecture.png"><img alt="FIWARE Architecture Diagram" class="align-center" src="_images/fiware-architecture.png" style="width: 488px; height: 303px;" /></a>
+<p><strong>Deployment and integration with FIWARE</strong></p>
+<p>A previous setting up is needed before things can be switched on, taking into account the following steps. We will assume that the user has a basic knowledge about DOCKER and LINUX CMD.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Get and configure the Hopu modifi ed FiWARE IOTAgent:</dt>
+<dd><ol class="first last arabic">
+<li>git clone <a class="reference external" href="https://github.com/HOP-Ubiquitous/lightweightm2m-iotagent/tree/hopu">https://github.com/HOP-Ubiquitous/lightweightm2m-iotagent/tree/hopu</a></li>
+<li>change the fi le content for <strong>config.js</strong>, <strong>omaRegistry.json</strong> and <strong>omaInverseRegistry.json</strong> in order to set up our device confi guration to connect with.</li>
+<li>execute: npm install</li>
+<li>Launch a mongoDB instance for the IOTAgent with external <strong>port 7900</strong>.</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Prepare The orion context broker infrastructure:</dt>
+<dd><ol class="first last arabic">
+<li>Launch a mongoDB instance for the IoTAgent with external <strong>port 1026</strong>.</li>
+<li>Launch a ORION Context Broker instance.</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Docker makes really simple the previous steps.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Make sure that the Smart Spot knows where is the IoTAgent to connect with:</dt>
+<dd><ol class="first last arabic">
+<li>Notify The Smart Spot about the IOTAgent IP with the bootstrap procedure.</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Rock &amp; Roll:</dt>
+<dd><ol class="first last arabic">
+<li>Change directory (cd) to the IOTAgent one and execute <strong>./bin/lwm2mAgent.js</strong>.</li>
+<li>Turn on the Smart Spot</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="orion-context-broker-ngsi-restful-api">
+<h2>Orion Context Broker NGSI RESTFul API<a class="headerlink" href="#orion-context-broker-ngsi-restful-api" title="Permalink to this headline">¶</a></h2>
+<p>Orion is a C++ implementation of the NGSIv2 REST API binding developed as a part of the FIWARE platform.</p>
+<p>Orion Context Broker allows you to manage the entire lifecycle of context information including updates, queries, registrations and subscriptions. It is an NGSIv2 server implementation to manage context information and its availability. Using the Orion Context Broker, you are able to create context elements and manage them through updates and queries. In addition, you can subscribe to context information so when some condition occurs (e.g. the context elements have changed) you receive a notification. These usage scenarios and the Orion Context Broker features are described in this documentation.</p>
+<div class="section" id="create-entity-v2">
+<h3>Create entity v2<a class="headerlink" href="#create-entity-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="5%" />
+<col width="38%" />
+<col width="27%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to put an entity in a service.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    id:”Entity ID”,
+    type:”Entity type”,
+    “attributeID0”: {
+        value:”Attribute value”,
+        type:”Attribute type”
+    },
+    “attributeID1”: {
+        value:”Attribute value”,
+        type:”Attribute type”
+    },...
+}
+</pre></div>
+</div>
+<p>Example of Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    id:”Room7”,
+    type:”Room”,
+    “temperature”: {
+        value: 23,
+        type: ”Float”
+    },
+    “preassure”: {
+        value: 720,
+        type: ”Integer”
+    },...
+}
+</pre></div>
+</div>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Return an error message, if already exists an entity in the service with the same id.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entity-v2">
+<h3>Retrieve entity v2<a class="headerlink" href="#retrieve-entity-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="4%" />
+<col width="42%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity which will be retrieved from the service.</li>
+</ul>
+</td>
+<td>Method to retrieve an entity of a service.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>If the search has been successful then it returns the information else it returns an message error.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entity-as-data-model-v2">
+<h3>Retrieve entity as data model v2<a class="headerlink" href="#retrieve-entity-as-data-model-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="3%" />
+<col width="39%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}?options=keyValues</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity which will be retrieved from the service.</li>
+</ul>
+</td>
+<td>Method to obtain an entity of a service.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>If the search has been successful then it returns the information of compressed way else returns an error message.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entities-v2">
+<h3>Retrieve entities v2<a class="headerlink" href="#retrieve-entities-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="5%" />
+<col width="37%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities?limit=50</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to retrieve all entities.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>All entities of the service and for each entity shows their information
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entities-as-data-model-v2">
+<h3>Retrieve entities as data model v2<a class="headerlink" href="#retrieve-entities-as-data-model-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="4%" />
+<col width="31%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities?options=keyValues&amp;limit=50</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to retrieve all entities of a service.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>All entities of the service and for each entity shows their information of compressed way.
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-entity-v2">
+<h3>Update entity v2<a class="headerlink" href="#update-entity-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="4%" />
+<col width="40%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs</td>
+<td>PATCH</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity where their attributes will be updated.</li>
+</ul>
+</td>
+<td>Method to update some attributes of the entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “attributeID”:{
+        value:”Attribute value”,
+        type:”Attribute type”
+    }
+}
+</pre></div>
+</div>
+<p>Example of Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “temperature”: {
+        “value”: 26.5,
+        “type”: “Float”
+    },
+    “pressure”: {
+        “value”: 763,
+        “type”: “Float”
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-entity-v2">
+<h3>Delete entity v2<a class="headerlink" href="#delete-entity-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="4%" />
+<col width="36%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}</td>
+<td>DELETE</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity which will be deleted.</li>
+</ul>
+</td>
+<td>Method to delete an entity of a service.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="create-attribute-for-entity-v2">
+<h3>Create attribute for entity v2<a class="headerlink" href="#create-attribute-for-entity-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="35%" />
+<col width="4%" />
+<col width="37%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs/</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity which will have new attributes.</li>
+</ul>
+</td>
+<td>Method to add a new attribute to the entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “attributeID”:{
+        value:”Attribute value”,
+        type:”Attribute type”
+    }
+}
+</pre></div>
+</div>
+<p>Example of Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “temperature”: {
+        “value”: 26.5,
+        “type”: “Float”
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entity-attribute-v2">
+<h3>Retrieve entity attribute v2<a class="headerlink" href="#retrieve-entity-attribute-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="4%" />
+<col width="31%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs/{{fiware-attr}}</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity where is the attribute.</li>
+<li><strong>fiware-attr</strong>: ID of the attribute.</li>
+</ul>
+</td>
+<td>Method to retrieve an attribute of an entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>If the search has been successful then the attribute is retrieved and shows their information else an error message is returned.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entity-attribute-as-data-model-v2">
+<h3>Retrieve entity attribute as data model v2<a class="headerlink" href="#retrieve-entity-attribute-as-data-model-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="4%" />
+<col width="32%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}?options=keyValues</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity where is the attribute.</li>
+<li><strong>fiware-attr</strong>: ID of the attribute.</li>
+</ul>
+</td>
+<td>Method to retrieve an attribute of an entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>If the search has been successful then the attribute is retrieved and shows their information, else it returns a message error.
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-attribute-for-entity-v2">
+<h3>Delete attribute for entity v2<a class="headerlink" href="#delete-attribute-for-entity-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="3%" />
+<col width="33%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs/{{fiware-attr}}</td>
+<td>DELETE</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity which will delete attributes</li>
+<li><strong>fiware-attr</strong>: ID of the attribute which will delete</li>
+</ul>
+</td>
+<td>Method to delete an attribute of an entity.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Retrieve type v2</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="3%" />
+<col width="43%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/types/{{fiware-service}}</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-service</strong>: ID of type of the entity which will be searched in the service.</li>
+</ul>
+</td>
+<td>Method to retrieve an entity type of the service.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>If the search has been successful then type is retrieved and shows all their information, else an error message is returned.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-types-v2">
+<h3>Retrieve types v2<a class="headerlink" href="#retrieve-types-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="4%" />
+<col width="33%" />
+<col width="39%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/types</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>The different entity types in the service and their information.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="create-subscription-v2">
+<h3>Create subscription v2<a class="headerlink" href="#create-subscription-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="4%" />
+<col width="33%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/subscriptions</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to create a subscription to one or many entities.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “description”: “Definition of the subscription”,
+    “subject”: {
+        “entinties”: [
+            {
+                “id”: “Room1”
+                “type: “Room”
+            }
+        ],
+        “condition”: {
+            “attrs”: [
+                “pressure”
+            ]
+        }
+    },
+    “notification”: {
+        “http”: {
+            “url”: “http://localhost:1028/accumulate”
+        },
+        “attrs”: [
+            “temperature”
+        ]
+    },
+    “expires”: “2040-01-01T14:00:00.00Z”,
+    “throttling”: “5”
+}
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>condition:</strong> It defines the “trigger” for the subscription.</li>
+<li><strong>url:</strong> URL where to send notifications</li>
+<li><strong>throttling:</strong> It is used to specify a minimum inter-notification arrival time.</li>
+<li><strong>notification.attr:</strong> Attributes which you will received in a notification when “condition.attr” changes.</li>
+</ul>
+</div>
+<div class="section" id="retrieve-subscriptions-v2">
+<h3>Retrieve subscriptions v2<a class="headerlink" href="#retrieve-subscriptions-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="4%" />
+<col width="34%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/subscriptions</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to retrieve all subscriptions of a service.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>All existing subscriptions of the service and for each subscription show their information.
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove-subscriptions-v2">
+<h3>Remove subscriptions v2<a class="headerlink" href="#remove-subscriptions-v2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="4%" />
+<col width="35%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v2/subscriptions/{{fiware-subscription}}</td>
+<td>DELETE</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-subscription</strong>: ID of the subscription will be deleted.</li>
+</ul>
+</td>
+<td>Method to delete a subscription of a service.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="create-context-entity-v1">
+<h3>Create context entity v1<a class="headerlink" href="#create-context-entity-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="4%" />
+<col width="34%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/registry/registerContext</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to create a context of entity, an entity without values.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “contextRegistrations”: [
+        {
+            “entities”: [
+                {
+                    “type”: “entity_type”,
+                    “isPattern”: “false”,
+                    “id”: “entity_id”
+                }
+            ],
+            “attributes”: [
+                {
+                    “name”: “nombre_atributo”,
+                    “type”: “attribute_type”,
+                    “isDomain”: “false”
+                }
+            ],
+            “providingApplication”: “http://homard.hopu.
+            eu:1026/v2/entities”
+        }
+    ],
+    “duration”: “P1M”
+}
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>isPattern:</strong> Nowadays, it is not being used. Threfore, value is always “false”.</li>
+<li><strong>isDomain:</strong> The attribute domains aren’t supported. Always ‘false’.</li>
+<li><strong>providingApplication:</strong> The URL that represents the context information of the registered entities and attributes.</li>
+<li><strong>duration:</strong> The duration of the element. In ISO 8601 standard format.</li>
+</ul>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Returns a confirmation that the item has been created correctly
+
+{
+    “duration”: “P1M”,
+    “registrationId”: “5a79812d777fc523840b8446”
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-context-entity-v1">
+<h3>Retrieve context entity v1<a class="headerlink" href="#retrieve-context-entity-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="3%" />
+<col width="24%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/registry/discoverContextAvailability</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to retrieve a context of entity, an entity without values, depends on ID and type.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “entities”: [
+        {
+            “type”: “entity_type”,
+            “isPattern”: “false”,
+            “id”: “entity_id”
+        }
+    ]
+}
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>isPattern:</strong> Nowadays, it is not being used. Threfore, value is always “false”.</li>
+</ul>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of finding this element, it returns the information.
+
+In case of not finding this element, it returns a 404 error “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-update-entity-v1">
+<h3>Create/update entity v1<a class="headerlink" href="#create-update-entity-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="4%" />
+<col width="31%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/updateContext</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to create or update an entity, depends on method’s body.</td>
+</tr>
+</tbody>
+</table>
+<p>Body (creation):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “contextElements”: [
+        {
+            “type”: “entity_type”,
+            “isPattern”: “false”,
+            “id”: “entity_id “,
+            “attributes”: [
+                {
+                    “name”:”attribute_id “,
+                    “type”: “attribute_type”,
+                    “value”: “attribute_value”
+                }
+            ]
+        }
+    ],
+    “updateAction”: “APPEND”
+}
+</pre></div>
+</div>
+<p>Body (updating):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “contextElements”: [
+        {
+            “type”: “entity_type”,
+            “isPattern”: “false”,
+            “id”: “entity_id “,
+            “attributes”: [
+                {
+                    “name”:”attribute_id”,
+                    “type”: “attribute_type”,
+                    “value”: “attribute_value”
+                }
+            ]
+        }
+    ],
+    “updateAction”: “UPDATE”
+}
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>isPattern:</strong> Nowadays, it is not being used. Threfore, value is always “false”.</li>
+<li><strong>updateAction:</strong> Action to be carried out (“APPEND” or “UPDATE”). In case of “APPEND” creates the entity, if else “UPDATE” updatdes the entity.</li>
+</ul>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it return 200 OK together with the information of the entity.
+
+In UPDATE, in case of not find that entity, it return a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-entity-v1">
+<h3>Create entity v1<a class="headerlink" href="#create-entity-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="4%" />
+<col width="41%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity that will be create of the service.</li>
+</ul>
+</td>
+<td>Method to create a new entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “type”: “entity_type”,
+    “attributes”: [
+        {
+            “name”: “attribute_id”,
+            “type”: “attribute_type”,
+            “value”: “attribute_value”
+        }
+    ]
+}
+</pre></div>
+</div>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it return 200 OK together with the information of the new entity.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entity-standard-v1">
+<h3>Retrieve entity standard v1<a class="headerlink" href="#retrieve-entity-standard-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="3%" />
+<col width="36%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity that will be create of the service.</li>
+</ul>
+</td>
+<td>Method that return a defined entity passed as parameter.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it return 200 OK together with the information of the entity.
+
+In case of not find that entity, it return a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entity-as-object-standard-v1">
+<h3>Retrieve entity as object standard v1<a class="headerlink" href="#retrieve-entity-as-object-standard-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="3%" />
+<col width="32%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}?attributeFormat=object</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity that will be create of the service.</li>
+</ul>
+</td>
+<td>Method that return a defined entity with object JSON format.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together with the information of the entity with object JSON format.
+
+In case of not find that entity, it return a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entity-convenience-v1">
+<h3>Retrieve entity convenience v1<a class="headerlink" href="#retrieve-entity-convenience-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="4%" />
+<col width="30%" />
+<col width="40%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/queryContext</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method that returns a defined entity passed in the body of the method.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “entities”: [
+        {
+            “type”: “entity_type”,
+            “isPattern”: “false”,
+            “id”: “entity_id”
+        }
+    ]
+}
+</pre></div>
+</div>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together with the information of the entity.
+
+In UPDATE, in case of not finding that entity, it returns a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entities-as-object-convenience-v1">
+<h3>Retrieve entities as object convenience v1<a class="headerlink" href="#retrieve-entities-as-object-convenience-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="3%" />
+<col width="23%" />
+<col width="46%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{portorion}}/v1/queryContext?attributeFormat=object</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method that return a defined entity with object JSON format. The entity ID is passed in the body of method.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “entities”: [
+        {
+            “type”: “entity_type”,
+            “isPattern”: “false”,
+            “id”: “entity_id”
+        }
+    ]
+}
+</pre></div>
+</div>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together with the information of the entity with object JSON format.
+
+In UPDATE, in case of not finding that entity, it returns a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entities-v1">
+<h3>Retrieve entities v1<a class="headerlink" href="#retrieve-entities-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="5%" />
+<col width="38%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextEntities</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method that return all entities.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Show all existing entities.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entities-as-object-v1">
+<h3>Retrieve entities as object v1<a class="headerlink" href="#retrieve-entities-as-object-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="4%" />
+<col width="28%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextEntities?attributeFormat=object</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method that return all entities with object JSON format.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Show all existing entities with object JSON format.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entities-for-type-v1">
+<h3>Retrieve entities for type v1<a class="headerlink" href="#retrieve-entities-for-type-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="4%" />
+<col width="31%" />
+<col width="27%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}}</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-type</strong>: Type of entities that we want to receive.</li>
+</ul>
+</td>
+<td>Method that returns all entities of a concrete type.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together with the information of the all entities of this type.
+
+In UPDATE, in case of not finding that entity, it returns a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entities-for-type-as-object-v1">
+<h3>Retrieve entities for type as object v1<a class="headerlink" href="#retrieve-entities-for-type-as-object-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="3%" />
+<col width="25%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}}?attributeFormat=object</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-type</strong>: Type of entities that we want to receive.</li>
+</ul>
+</td>
+<td>Method that return all entities of a concrete type with object JSON format.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together with the information of the all entities of this type with object JSON format.
+
+In UPDATE, in case of not finding that entity, it returns a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-entity-v1">
+<h3>Delete entity v1<a class="headerlink" href="#delete-entity-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="4%" />
+<col width="34%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}</td>
+<td>DELETE</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity we want to delete.</li>
+</ul>
+</td>
+<td>Method to delete a defined entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly and delete the entity defined, it returns 200 OK.
+
+In case of not finding that entity, it returns a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-update-entity-attribute-v1">
+<h3>Create/update entity attribute v1<a class="headerlink" href="#create-update-entity-attribute-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="2%" />
+<col width="24%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextEntities/{{fiwareentity}}/attributes</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity that will be created of the service.</li>
+</ul>
+</td>
+<td>Method to update the values of one or many attributes of an entity passed as parameter. In addition, this method can create new attributes for an entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Body (creation):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Create a new attribute. We transmit a new attribute in the body:
+
+{
+    “attributes”: [
+        {
+            “name”: “attribute_id”,
+            “type”: “attribute_type”,
+            “value”: “attribute_value”
+        }
+    ]
+}
+</pre></div>
+</div>
+<p>Body (updating):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Update an attribute. We transmit an existing/available attribute with a new value.
+
+{
+    “attributes”: [
+        {
+            “name”: “attribute_id_nuevo”,
+            “type”: “attribute_type_nuevo”,
+            “value”: “attribute_value_nuevo”
+        }
+    ]
+}
+</pre></div>
+</div>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together with the information of the entity updating.
+
+In case of not finding that entity, it returns a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entity-attribute-v1">
+<h3>Retrieve entity attribute v1<a class="headerlink" href="#retrieve-entity-attribute-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="3%" />
+<col width="29%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}/attributes/{{fiware-attr}}</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity that will be retrieved of the service.</li>
+<li><strong>fiware-attr</strong>: Attribute ID we want to receive.</li>
+</ul>
+</td>
+<td>Method that retrieves the defined attribute depending on the ID of a specific entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together the attribute value defining by its ID for a specific entity.
+
+In case of not finding that entity or attribute, it returns 404 ERROR “No context element found”.
+
+In UPDATE, in case of not finding that entity, it returns a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-entity-attribute-as-object-v1">
+<h3>Delete entity attribute as object v1<a class="headerlink" href="#delete-entity-attribute-as-object-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="2%" />
+<col width="25%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}/attributes/{{fiware-attr}}?attributeFormat=object</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity that will be retrieved of the service.</li>
+<li><strong>fiware-attr</strong>: Attribute ID we want to receive.</li>
+</ul>
+</td>
+<td>Method that retrieves the defined attribute depending on the ID of a specific entity with object JSON format.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together the attribute value defined by its ID for a specific entity with object JSON format.
+
+In case of not finding that entity or attribute, it returns 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entities-attribute-for-type-v1">
+<h3>Retrieve entities attribute for type v1<a class="headerlink" href="#retrieve-entities-attribute-for-type-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="40%" />
+<col width="3%" />
+<col width="28%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}}/attributes/{{fiware-attr}}</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-type</strong>: Type of entities that we want to receive.</li>
+<li><strong>fiware-attr</strong>: Attribute of type of entities that we want to receive.</li>
+</ul>
+</td>
+<td>Method that returns the defined attribute of all entities of a specific type.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together with the information of defined attributes of all entities of this type.
+
+In UPDATE, in case of not finding that entity, it returns a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-entities-attribute-for-type-as-object-v1">
+<h3>Retrieve entities attribute for type as object v1<a class="headerlink" href="#retrieve-entities-attribute-for-type-as-object-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="2%" />
+<col width="24%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}}/attributes/{{fiware-attr}}?attributeFormat=object</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-type</strong>: Type of entities that we want to receive.</li>
+<li><strong>fiware-attr</strong>: Attribute of type of entities that we want to receive.</li>
+</ul>
+</td>
+<td>Method that returns the defined attribute of all entities of a specific type with object JSON format.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together with the information of defined attributes of all entities of this type with object JSON format.
+
+In UPDATE, in case of not finding that entity, it returns a 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-entity-attribute-v1">
+<h3>Delete entity attribute v1<a class="headerlink" href="#delete-entity-attribute-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="3%" />
+<col width="29%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}/attributes/{{fiware-attr}}</td>
+<td>DELETE</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-entity</strong>: ID of the entity that will be retrieve of the service.</li>
+<li><strong>fiware-attr</strong>: Attribute ID we want to receive.</li>
+</ul>
+</td>
+<td>Method to delete the defined attribute depending on the ID of a concrete entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly and delete the entity defined, it returns 200 OK.
+
+In case of not finding that entity or attribute, it returns 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-type-v1">
+<h3>Retrieve type v1<a class="headerlink" href="#retrieve-type-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="4%" />
+<col width="35%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextTypes/{{fiware-type}}</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-type</strong>: Type of entities that we want to receive.</li>
+</ul>
+</td>
+<td>Method to receive an entity type concrete.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together the information of this entities type.
+
+In case of not finding that entities type, it returns 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="retrieve-types-v1">
+<h3>Retrieve types v1<a class="headerlink" href="#retrieve-types-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="5%" />
+<col width="35%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextTypes</td>
+<td>GET</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to receive the existing entities types.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly, it returns 200 OK together the information of all entities type.
+
+In case of not finding that entities type, it returns 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-context-subscription-standard-v1">
+<h3>Create context subscription standard v1<a class="headerlink" href="#create-context-subscription-standard-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="4%" />
+<col width="29%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/subscribeContextAvailability</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to create a subscription to one or many context entities.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “entities”: [
+        {
+            “type”: “id_entity_type”,
+            “isPattern”: “false”,
+            “id”: “.*”
+        }
+    ],
+    “attributes”: [
+        “id_attribute”
+    ],
+    “reference”: “http://cygnus:5050/notify”,
+    “duration”: “P1M”
+}
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>isPattern:</strong> Nowadays, it is not being used. Threfore, value is always “false”.</li>
+<li><strong>id:</strong> To which entity it wants to subscribe. In this case, to all entities of those type.</li>
+<li><strong>reference:</strong> URL of client that it want to subscribe.</li>
+<li><strong>duration:</strong> The duration of the subscription. In ISO 8601 standard format.</li>
+</ul>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “subscriptionId”: “subscription_id”,
+    “duration”: “P1M”
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-context-subscription-standard-v1">
+<h3>Update context subscription standard v1<a class="headerlink" href="#update-context-subscription-standard-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="4%" />
+<col width="29%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/updateContextAvailabilitySubscriptions</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to update a subscription of a context entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “entities”: [
+        {
+            “type”: “id_entity_type”,
+            “isPattern”: “false”,
+            “id”: “.*”
+        }
+    ],
+    “duration”: “P1M”
+    “subscriptionId”: “subscription_id”
+}
+</pre></div>
+</div>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “subscribeResponse”: {
+        “subscriptionId”: “id_subscription”,
+        “id_parameter”: “value_parameter”
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-context-subscription-convenience-v1">
+<h3>Update context subscription convenience v1<a class="headerlink" href="#update-context-subscription-convenience-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="3%" />
+<col width="30%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/registry/contextAvailabilitySubscriptions/{{fiware-subscription}}</td>
+<td>PUT</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-subscription</strong>: ID of the subscription will be updated.</li>
+</ul>
+</td>
+<td>Method to update a subscription of a context entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+     “entities”: [
+         {
+             “type”: “id_entity_type”,
+             “isPattern”: “false”,
+             “id”: “.*”
+         }
+     ],
+     “duration”: “P1M”
+     “subscriptionId”: “subscription_id”
+}
+</pre></div>
+</div>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “subscribeResponse”: {
+        “subscriptionId”: “id_subscription”,
+        “id_parameter”: “value_parameter”
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-context-subscription-standard-v1">
+<h3>Delete context subscription standard v1<a class="headerlink" href="#delete-context-subscription-standard-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="4%" />
+<col width="31%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/unsuscribeContextAvailability</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to delete a subscription of a context entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+     “subscriptionId”: “5a785788777fc523840b843e”
+}
+</pre></div>
+</div>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly and delete the entity defined, it returns 200 OK together with the removed subscription ID.
+
+In case of not finding that subscription, it returns 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-context-subscription-convenience-v1">
+<h3>Delete context subscription convenience v1<a class="headerlink" href="#delete-context-subscription-convenience-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="43%" />
+<col width="3%" />
+<col width="28%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{portorion}}/v1/contextAvailabilitySubscriptions/{{fiware-subscription}}</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-subscription</strong>: ID of subscription to remove.</li>
+</ul>
+</td>
+<td>Method to delete a subscription of a context entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>In case of performing the method correctly and delete the entity defined, it returns 200 OK together with the removed subscription ID.
+
+In case of not finding that subscription, it returns 404 ERROR “No context element found”.
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-subscription-standard-v1">
+<h3>Create subscription standard v1<a class="headerlink" href="#create-subscription-standard-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="4%" />
+<col width="32%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/suscribeContext</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to create a subscription to one or many entities.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “entities”: [
+        {
+            “type”: “entity_type”,
+            “isPattern”: “false”,
+            “id”: “.*”
+        }
+    ],
+    “attributes”: [
+        “attribute_id”
+    ],
+    “reference”: “http://cygnus:5050/notify”,
+    “duration”: “P1M”
+    “notifyConditions”: [
+        {
+            “type”: “ONCHANGE”,
+            “condValues”: [
+                “attribute_id”
+            ]
+        }
+    ],
+    “throttling”: “PT5S”
+}
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>isPattern:</strong> Currently is hasn’t use. Always ‘false’.</li>
+<li><strong>id:</strong> To which entity it wants to subscribe. In this case, to all entities of those type.</li>
+<li><strong>reference:</strong> URL of client that it want to subscribe.</li>
+<li><strong>duration:</strong> The duration of the subscription. In ISO 8601 standard format.</li>
+<li><strong>notifyConditions:</strong> Define the launcher to notify the subscriptions. In this case, when change a value ofattributes transmitted via the “condValues” of an entity ,then it will trigger a notification.</li>
+<li><strong>throttling:</strong> Specify a minimum inter-notification arrival time. In this case, 5 seconds.</li>
+</ul>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “subscribeResponse”: {
+        “subscriptionId”: “id_subscription”,
+        “duration”: “P1M”
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-subscription-convenience-v1">
+<h3>Create subscription convenience v1<a class="headerlink" href="#create-subscription-convenience-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="31%" />
+<col width="4%" />
+<col width="31%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextSubscriptions</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to create a subscription to one or many entities.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “entities”: [
+        {
+            “type”: “entity_type”,
+            “isPattern”: “false”,
+            “id”: “.*”
+        }
+    ],
+    “attributes”: [
+        “attribute_id”
+    ],
+    “reference”: “http://cygnus:5050/notify”,
+    “duration”: “P1M”
+    “notifyConditions”: [
+        {
+            “type”: “ONCHANGE”,
+            “condValues”: [
+                “attribute_id”
+            ]
+        }
+    ],
+    “throttling”: “PT5S”
+}
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>isPattern:</strong> Currently is hasn’t use. Always ‘false’.</li>
+<li><strong>id:</strong> To which entity it wants to subscribe. In this case, to all entities of those type.</li>
+<li><strong>reference:</strong> URL of client that it want to subscribe.</li>
+<li><strong>duration:</strong> The duration of the subscription. In ISO 8601 standard format.</li>
+<li><strong>notifyConditions:</strong> Define the launcher to notify the subscriptions. In this case, when change a value ofattributes transmitted via the “condValues” of an entity ,then it will trigger a notification.</li>
+<li><strong>throttling:</strong> Specify a minimum inter-notification arrival time. In this case, 5 seconds.</li>
+</ul>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “subscribeResponse”: {
+        “subscriptionId”: “id_subscription”,
+        “duration”: “P1M”
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-subscription-standard-v1">
+<h3>Update subscription standard v1<a class="headerlink" href="#update-subscription-standard-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="4%" />
+<col width="33%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/updateContextSubscription</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+</ul>
+</td>
+<td>Method to update a subscription of an entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “subscriptionId”: “id_subscription”,
+    “id_parameter”: “value_parameter”
+}
+</pre></div>
+</div>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “subscribeResponse”: {
+        “subscriptionId”: “id_subscription”,
+        “id_parameter”: “value_parameter”
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="update-subscription-convenience-v1">
+<h3>Update subscription convenience v1<a class="headerlink" href="#update-subscription-convenience-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="4%" />
+<col width="30%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextSubscriptions/{{fiware-subscription}}</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-subscription</strong>: ID of subscription to update.</li>
+</ul>
+</td>
+<td>Method to update a subscription of an entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Body:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “subscriptionId”: “id_subscription”,
+    “id_parameter”: “value_parameter”
+}
+</pre></div>
+</div>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “subscribeResponse”: {
+        “subscriptionId”: “id_subscription”,
+        “id_parameter”: “value_parameter”
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-subscription-v1">
+<h3>Delete subscription v1<a class="headerlink" href="#delete-subscription-v1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="41%" />
+<col width="4%" />
+<col width="30%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">URL</th>
+<th class="head">Method</th>
+<th class="head">URL Params</th>
+<th class="head">Definition</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http:/">http:/</a>/{{url}}:{{port-orion}}/v1/contextSubscriptions/{{fiware-subscription}}</td>
+<td>POST</td>
+<td><ul class="first last simple">
+<li><strong>url</strong>:Link to the service that will be consulted.</li>
+<li><strong>port-orion</strong>: Port to connect with the service.</li>
+<li><strong>fiware-subscription</strong>: ID of subscription to remove.</li>
+</ul>
+</td>
+<td>Method to delete the subscription to an entity.</td>
+</tr>
+</tbody>
+</table>
+<p>Return:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    “subscribeResponse”: {
+        “subscriptionId”: “id_subscription”,
+        “id_parameter”: “value_parameter”
+    }
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="annex-1-oma-lwm2m">
+<h2>ANNEX 1: OMA LwM2M<a class="headerlink" href="#annex-1-oma-lwm2m" title="Permalink to this headline">¶</a></h2>
+<p>OMA LightweightM2M is a device management protocol designed for sensor networks and the demands of a machine-to-machine (M2M) environment. With LwM2M,
+OMA has responded to demand in the market for a common standard for managing lightweight and low power devices on a variety of networks necessary to
+realize the potential of IoT. The LwM2M protocol, designed for remote management of M2M devices and related service enablement, features a modern architectural
+design based on REST, defines an extensible resource and data model and builds on an efficient secure data transfer standard called the Constrained Application Protocol
+(CoAP). LwM2M has been specified by a group of industry experts at the Open Mobile Alliance’s Device Management Working Group and is based on protocol and security
+standards from the IETF.</p>
+<p>More information about OMA LwM2M Protocol:
+<a class="reference external" href="http://www.openmobilealliance.org/release/LightweightM2M/V1_0_1-20170704-A/OMA-TS-LightweightM2M-V1_0_1-20170704-A.pdf">http://www.openmobilealliance.org/release/LightweightM2M/V1_0_1-20170704-A/OMA-TS-LightweightM2M-V1_0_1-20170704-A.pdf</a></p>
+<div class="section" id="resource-model">
+<h3>Resource model<a class="headerlink" href="#resource-model" title="Permalink to this headline">¶</a></h3>
+<p>The LwM2M Enabler defines a simple resource model where each piece of information made available by the LwM2M Client is a Resource. Resources are organized into Objects, and each Resource is given a unique identifier within that Object.</p>
+<p>Each Objec is assigned a unique OMA LwM2M Object identifier allocated and maintained by the OMA Naming Authority (OMNA). Further Objects may be added by OMA  or other organizations to enable additional M2M Services.</p>
+<p>As an Object only specifies a grouping of Resources, an Object must be firstly instantiated so that the LwM2M Client can use the Resources of such an Object and the associated functionalities.</p>
+<p>When an Object is instantiated an Object Instance is created with a subset of the Resources defined in the Object specification; a LwM2M Server can then access that Object Instance and its set of instantiated Resources.</p>
+<p>A Resource which is instantiated within an Object Instance is a Resource which can either:</p>
+<ul class="simple">
+<li>contain a value (if the Resource is Readable and/or Writeable)</li>
+<li>or can be addressed by a LwM2M Server to trigger an action in the LwM2M Client (if the Resource is Executable)</li>
+</ul>
+<p>The Object specification defines the operations (Read, Write, Execute) which are individually supported by the Resources belonging to that Object; this specification also defines the Mandatory or Optional characteristics of such Resources.</p>
+<p>Objects and Resources have the capability to have multiple instances. Multiple-Instances Resources can be instantiated by LwM2M Server operations in using JSON or TLV formats. The LwM2M Client also has the capability to instantiate Single or Multiple-Instances Resources.</p>
+<p>The LwM2M Enabler defines an access control mechanism per Object Instance. Object Instances should have an associated Access Control Object Instance. An Access Control Object Instances contains Access Control Lists (ACLs) that define which operations on a given Object Instance are allowed for which LwM2M Server(s).</p>
+</div>
+<div class="section" id="objects">
+<h3>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h3>
+<p>Each Object definition, which may be found in the LwM2M specification, features the following information:</p>
+<ul class="simple">
+<li><strong>Name:</strong> specifies the Object name.</li>
+<li><strong>Object ID:</strong> specifies the Object ID.</li>
+<li><strong>Instances:</strong> indicates whether this Object supports multiple Object Instances or not. If this field is “Multiple” then the number of Object Instance can be from 0 to many. If this field is “Single” then the number of Object Instance can be from 0 to 1.</li>
+<li><strong>Mandatory:</strong> if this field is “Mandatory”, then the LwM2M Client MUST support this Object. If this field is “Optional”, then the LwM2M Client SHOULD support this Object.</li>
+<li><strong>Object URN</strong></li>
+<li><strong>Resource definitions</strong></li>
+</ul>
+</div>
+<div class="section" id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<p>Attributes are metadata which can be attached to an Object, an Object Instance or a Resource. The value of an Attribute is LwM2M Server specific.</p>
+<p>Regardless to the LwM2M entity a given Attribute is attached to, the value of such an Attribute can be set at various levels: Object, Object Instance, Resource levels.</p>
+<ul>
+<li><dl class="first docutils">
+<dt><strong>&lt;PROPERTIES&gt;</strong> Class Attributes: The role of these Attributes is to provide metadata which may communicate helpful information to LwM2M Server for example easing data management. These include:</dt>
+<dd><ul class="first last simple">
+<li><strong>Dimension</strong> (dim): Number of Instantiations for a Multiple Resource.</li>
+<li><strong>Object Version</strong> (ver): Provide the version of the associated Object.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>&lt;NOTIFICATION&gt;</strong> Class Attributes: The role of these R-Attributes is to provide parameters to the “Notify” operation; any readable Resource can have such Rattributes. In the message sent by a LwM2M Client in response to an “Observe” operation, the current Resource value is reported; this event can be considered as the initial notification.</p>
+<blockquote>
+<div><p>Each time a Resource notification is sent, the “Minimum Period” and “Maximum Period” timers associated to this Resource are restarted.</p>
+<p>The notification of a Resource value will be sent when the combination of a change value condition (“Greater Than”, “Less Than”, or “Step”) and the “Minimum Period” timing conditions are both fulfilled for that Resource.</p>
+<p>This behaviour can be modified using the following available attributes:</p>
+<ul class="simple">
+<li><strong>Minimum Period</strong> (pmin): The Minimum Period Attribute indicates the minimum time in seconds the LwM2M Client must wait between two notifications.</li>
+<li><strong>Maximum Period</strong> (pmax): The Maximum Period Attribute indicates the maximum time in seconds the LwM2M Client MAY wait between two notifications.</li>
+<li><strong>Greater Than</strong> (gt) and Less Than (lt): This Attributes defines a threshold high value and low value. When these Attributes is present, the LwM2M Client must notify the Server each time the Observed Resource value crosses these thresholds with respect to pmin parameter and to pmax parameter.</li>
+<li><strong>Step</strong> (st): This Attribute defines a minimum change value between two notifications. When this Attribute is present, the change value condition will occur when the value variation since the last notification of the Observed Resource, is greater or equal to the “Step” Attribute value.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="clients-and-servers">
+<h3>Clients and servers<a class="headerlink" href="#clients-and-servers" title="Permalink to this headline">¶</a></h3>
+<p>This enabler defines the application layer communication protocol between a LwM2M Server and a LwM2M Client, which is located in a LwM2M Device. The OMA Lightweight M2M enabler includes device management and service enablement for LwM2M Devices. The target LwM2M Devices for this enabler are mainly resource constrained devices. Therefore, this enabler makes use of a light and compact protocol as well as an efficient resource data model.</p>
+<p>A Client-Server architecture is introduced for the LwM2M Enabler, where the LwM2M Device acts as a LwM2M Client and the M2M service, platform or application acts as the LwM2M Server. The LwM2M Enabler has two components, LwM2M Server and LwM2M Client. Four interfaces are designed between these two components:</p>
+<ul class="simple">
+<li>Bootstrap</li>
+<li>Client Registration</li>
+<li>Device management and service enablement</li>
+<li>Information Reporting</li>
+</ul>
+</div>
+<div class="section" id="bootstrap-interface">
+<h3>Bootstrap Interface<a class="headerlink" href="#bootstrap-interface" title="Permalink to this headline">¶</a></h3>
+<p>The Bootstrap Interface is used to provision essential information into the LwM2M Client to enable the LwM2M Client to perform the operation “Register” with one or more LwM2M Servers.</p>
+<p>During the Bootstrap Phase, the Client may ignore requests and flush all pending responses not related to the Bootstrap sequence. There are four bootstrap modes supported by the LwM2M Enabler:</p>
+<ul class="simple">
+<li>Factory Bootstrap</li>
+<li>Bootstrap from Smartcard</li>
+<li>Client Initiated Bootstrap</li>
+<li>Server Initiated Bootstrap</li>
+</ul>
+<p>The last two Bootstrap modes require the help of a LwM2M Bootstrap-Server to achieve the ultimate goal to connect a LwM2M Client to their LwM2M Server(s).</p>
+<p>The LwM2M Client must support at least one bootstrap mode specified in the Bootstrap Interface.</p>
+<p>The LwM2M Bootstrap-Server must support Client Initiated Bootstrap and Server Initiated Bootstrap modes specified in the Bootstrap Interface.</p>
+</div>
+<div class="section" id="client-registration-interface">
+<h3>Client Registration Interface<a class="headerlink" href="#client-registration-interface" title="Permalink to this headline">¶</a></h3>
+<p>The LwM2M Server must support all the operations in this interface and the LwM2M Client must support “Register” and “Update” and should support “De-register” operation.</p>
+<p>The Client Registration Interface is used by a LwM2M Client to register with one or more LwM2M Servers, maintain each registration and de-register from a LwM2M Server. The registration is
+based on the Resource Model and Identifiers defined in Section 6 Identifiers and Resources. When registering, the LwM2M Client performs the “Register” operation and provides the properties
+the LwM2M Server requires to contact the LwM2M Client (e.g., End Point Name); maintain the registration and session (e.g., Lifetime, Queue Mode) between the LwM2M Client and LwM2M Server as
+well as knowledge of the Objects the LwM2M Client supports and existing Object Instances in the LwM2M Client. The registration is soft state, with a lifetime indicated by the Lifetime
+Resource of that LwM2M Server Object Instance. The LwM2M Client periodically performs an update of its registration information to the registered LwM2M Server(s) by performing the “Update”
+operation– possibly without any parameters. If the lifetime of a registration expires without receiving an update from the LwM2M Client:</p>
+<ul class="simple">
+<li>The LwM2M Server must remove the registration of that Client.</li>
+<li>The LwM2M Client must re-register (“Update” is not sufficient) to the LwM2M Server in order to be connected again, before initiating any further communication.</li>
+</ul>
+<p>If the LwM2M Server or the LwM2M Client set a value to the Lifetime Resource of the Server Object Instance, this value becomes the new lifetime of the Registration session.</p>
+<p>During “Register” or “Update” Operations, the parameter Lifetime – if present – must match the current value of the Mandatory Lifetime Resource of the LwM2M Server Object Instance. Finally,
+when shutting down or discontinuing use of a LwM2M Server, the LwM2M Client performs a “De-register” operation.</p>
+<p>The Binding Resource of the LwM2M Server Object informs the LwM2M Client of the transport protocol preferences of the LwM2M Server for the communication session between the LwM2M Client
+and LwM2M Server.</p>
+<p>The LwM2M Client should perform the operations with the modes indicated by the Binding Resource of the LwM2M Server Object Instance.</p>
+</div>
+<div class="section" id="device-management-and-service-enablement-interface">
+<h3>Device Management and Service Enablement Interface<a class="headerlink" href="#device-management-and-service-enablement-interface" title="Permalink to this headline">¶</a></h3>
+<p>The LwM2M Server and the LwM2M Client must support all the operations in this interface.</p>
+<p>The Device Management and Service Enable Interface is used by the LwM2M Server to access Object Instances and Resources available from a registered LwM2M Client. The interface provides
+this access through the use of “Create”, “Read”, “Write”, “Delete”, “Execute”, “Write-Attributes”, or “Discover” operations.</p>
+<p>The Device Management and Service Enablement interface defines the following commands:</p>
+<ul class="simple">
+<li><strong>Read</strong> operation is used to access the value of a Resource, an array of Resource Instances, an Object Instance or all the Object Instances of an Object.</li>
+<li><strong>Discover</strong> operation is used to discover LwM2M Attributes attached to an Object, Object Instances, and Resources. This operation can be used to discover which Resources are instantiated in a given Object Instance.</li>
+<li><strong>Write</strong> operation is used to change the value of a Resource, the values of an array of Resources Instances or the values of multiple Resources from an Object Instance.</li>
+<li><strong>Write-Attributes:</strong> In LwM2M 1.0, only Attributes from the <strong>&lt;NOTIFICATION&gt;</strong> class may be changed in using the “Write-Attributes” operation. The operation permits multiple Attributes to be modified within the same operation.</li>
+<li><strong>Execute</strong> operation is used by the LwM2M Server to initiate some action, and can only be performed on individual Resources. A LwM2M Client must return an error when the “Execute” operation is received for an Object Instance(s) or Resource Instance(s).</li>
+<li><strong>Create</strong> operation is used by the LwM2M Server to create Object Instance(s) within the LwM2M Client. The “Create” operation must target an Object. If any error occurs, nothing must be created.</li>
+<li>Finally, the <strong>Delete</strong> operation is used for LwM2M Server to delete an Object Instance within the LwM2M Client.</li>
+</ul>
+<p>The Object Instance that is deleted in the LwM2M Client by the LwM2M Server must be an Object Instance that is announced by the LwM2M Client to the LwM2M Server using the “Register” and “Update” operations of the Client Registration Interface.</p>
+</div>
+<div class="section" id="information-reporting-interface">
+<h3>Information Reporting Interface<a class="headerlink" href="#information-reporting-interface" title="Permalink to this headline">¶</a></h3>
+<p>The LwM2M Server and the LwM2M Client must support all the operations in this interface.</p>
+<p>The Information Reporting Interface is used by a LwM2M Server to observe any changes in a Resource on a registered LwM2M Client, receiving notifications when new values are available. This observation relationship is initiated by sending an “Observe” operation to the LwM2M Client for an Object, an Object Instance or a Resource. An observation ends when a “Cancel Observation” operation is performed.</p>
+<ul class="simple">
+<li><strong>Observe:</strong> The LwM2M Server initiates an observation request for changes of a specific Resource, Resources within an Object Instance or for all the Object Instances of an Object within the LwM2M Client.</li>
+<li><strong>Notify:</strong> The “Notify” operation is sent from the LwM2M Client to the LwM2M Server during a valid observation on an Object Instance or Resource. This operation includes the new value of the Object Instance or Resource. The “Notify” operation should be sent when all the conditions (i.e., Minimum Period, Maximum Period, Greater Than, Less Than, Step) configured by “Write-Attributes” operation for “Observe” operation are met.</li>
+<li><strong>Cancel Observation:</strong> The “Cancel Observation” operation is sent from the LwM2M Server to the LwM2M Client to end an observation relationship for Object Instance or Resource.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="links.html" class="btn btn-neutral float-right" title="HOP Ubiquitous - Relevant Links" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="quick.html" class="btn btn-neutral" title="Smart Spot - Quick Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, HOP Ubiquitous.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
