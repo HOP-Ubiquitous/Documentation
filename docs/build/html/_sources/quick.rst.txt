@@ -6,6 +6,7 @@ Smart Spot - Quick Guide
         :align: center
         :height: 690px
         :alt: HOP Ubiquitous Smart Spot Diagram
+        :target: #
 
 What is a Smart Spot?
 #####################
@@ -63,42 +64,49 @@ First steps with your Smart Spot (Set up connectivity)
         :width: 270px
         :align: center
         :alt: HOP Ubiquitous Smart Spot Diagram
+        :target: #
 1. This is a Smart Spot.
 
 .. image:: nstatic/smart-spot-top-screws-diagram.png
         :width: 300px
         :align: center
         :alt: HOP Ubiquitous Smart Spot Diagram
+        :target: #
 2. On top of the Smart Spot there are four screws. Unscrew the cover and open the Smart Spot.
 
 .. image:: nstatic/smart-spot-top-open-diagram.png
         :width: 300px
         :align: center
         :alt: HOP Ubiquitous Smart Spot Diagram
+        :target: #
 3. When the Smart Spot is open, make sure the switch is on and insert the Micro SIM Card in its place.
 
 .. image:: nstatic/smart-spot-top-screws-close-diagram.png
         :width: 300px
         :align: center
         :alt: HOP Ubiquitous Smart Spot Diagram
+        :target: #
 4. Put the cover back and place the screws in its place.
 
 .. image:: nstatic/smart-spot-back-diagram.png
         :width: 400px
         :align: center
         :alt: HOP Ubiquitous Smart Spot Diagram
+        :target: #
 5. When everything is ready inside the Smart Spot can start putting the probes and antennas on the back of the device following the scheme of this figure.
 
 .. image:: nstatic/smart-spot-back-complet-diagram.png
         :width: 400px
         :align: center
         :alt: HOP Ubiquitous Smart Spot Diagram
+        :target: #
 6. Once all the probes and antennas are placed, the appearance of the Smart Spot would look like the diagram.
 
 .. image:: nstatic/smart-spot-top-complet-diagram.png
         :width: 300px
         :align: center
         :alt: HOP Ubiquitous Smart Spot Diagram
+        :target: #
 7. Finally, this is the aspect of a Smart Spot with all peripherals properly placed.
 
 How to install the device on a pole or on a wall
@@ -108,18 +116,21 @@ How to install the device on a pole or on a wall
         :width: 180px
         :align: center
         :alt: HOP Ubiquitous Smart Spot Installation Diagram
+        :target: #
 1. Put the clamps around the pole to hold the support. Screw the clamps until the support is fixed. On wall, hold the support on the wall directly.
 
 .. image:: nstatic/smart-spot-install-2.png
         :width: 161px
         :align: center
         :alt: HOP Ubiquitous Smart Spot Installation Diagram
+        :target: #
 2. Put the device on the support fitting the three pins in the three slots that the Smart Spot has in the back. Then drop it and fit it into the lower pin.
 
 .. image:: nstatic/smart-spot-install-3.png
         :width: 120px
         :align: center
         :alt: HOP Ubiquitous Smart Spot Installation Diagram
+        :target: #
 3. Once fitted on all the pins, insert the screw through the bottom and press it until the Smart Spot is fixed.
 
 What is Homard Dashboard?
@@ -129,6 +140,7 @@ What is Homard Dashboard?
         :width: 194px
         :align: center
         :alt: Homard Dashboard
+        :target: #
 HOMARD is a device management platform for the OMA LwM2M protocol. HOMARD is our own platform.
 
 The platform offers functionalities for device management, i.e., remote maintenance, fi rmware upgrade and open/standard APIs for information reporting.
@@ -164,6 +176,7 @@ Connecting and managing the device (default configuration)
         :width: 650px
         :align: center
         :alt: Homard Dashboard Login
+        :target: #
 The Smart Spots have a pre-configured WiFi Station where devices will connect, this Access Point (AP) can be easily deployed from GSM/GPRS Routers, MiFi Routers, WiFi Access Points, etc.
 
 The default configuration is:
@@ -189,6 +202,7 @@ WiFi Connectivity
         :width: 650px
         :align: center
         :alt: Homard Dashboard WiFi Connectivity
+        :target: #
 To connect to a network other than default network:
 
 1. Firstly create a access point with de default configuration of device.
@@ -219,6 +233,7 @@ APN Connectivity (Cellular / M2M)
         :width: 650px
         :align: center
         :alt: Homard Dashboard APN Connectivity
+        :target: #
 To connect the device a APN network other than the default network:
 
 1. Firstly create a access point with de default configuration of device.
@@ -245,6 +260,7 @@ How to verify that the sensor is properly working?
         :width: 650px
         :align: center
         :alt: Homard Dashboard Health Monitoring
+        :target: #
 To ensure that device and sensors are working, you can enter to **Health Monitoring** section of Homard. Here you will fi nd information about **Device Status**, **Performance** and **Latency**.
 
 In Device Status you can observe data about the Smart Spot CPU and Memory consumption and the configuration of the device.
@@ -262,6 +278,7 @@ How to see the sensor information?
         :width: 650px
         :align: center
         :alt: Homard Dashboard Device Management
+        :target: #
 To see the information for each of sensor, you need to ingress to **Device Management** section of Homard and, in the list of objects, look for the sensor that you want information. In this figure you can see the **Temperature Object** and all its resources.
 
 Here, you can see the information for each resource of Temperature Sensor.

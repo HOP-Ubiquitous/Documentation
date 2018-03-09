@@ -44,6 +44,7 @@ The following diagram shows the differences between synchronous and asynchronous
         :align: center
         :height: 174px
         :alt: Homard API RESTFul Diagram
+        :target: #
 
 This subsection will present the synchronous API and an example. The available synchronous API resources are as follows:
 
@@ -733,6 +734,7 @@ URL Manager: https://github.com/HOP-Ubiquitous/DeviceUrlManager
         :align: center
         :height: 281px
         :alt: URL Manager Diagram
+        :target: #
 
 URL Manager RESTFul API
 ***********************
@@ -962,6 +964,7 @@ Taking the previous two components into account the FIWARE IoT platform is compo
         :align: center
         :height: 303px
         :alt: FIWARE Architecture Diagram
+        :target: #
 
 **Deployment and integration with FIWARE**
 
