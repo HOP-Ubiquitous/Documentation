@@ -87,15 +87,17 @@ Asynchronous RESTFul API
 ************************
 This subsection present the asynchronous API and an execution example. The available asynchronous API resources are as follows:
 
-+-------------+--------------------------------------------+------------------------------------------------+-------------------------------------------------------------------+
-|HTTP METHOD  |Path                                        |Parameters                                      |Description                                                        |
-+=============+============================================+================================================+===================================================================+
-|GET          |/api/rest/{endpoint_id}/{resource}          |* **cburl:** Destination callback url           |Read the value and returns it to the destination callback url      |
-|             |                                            |* **proto:** Destination callback url protocol  |                                                                   |
-+-------------+--------------------------------------------+------------------------------------------------+-------------------------------------------------------------------+
-|PUT          |/api/rest/{endpoint_id}/{resource}          |* **cburl:** Destination callback url           |Write the value on resource and returns the status to callback url |
-|             |                                            |* **proto:** Destination callback url protocol  |                                                                   |
-+-------------+--------------------------------------------+------------------------------------------------+-------------------------------------------------------------------+
++-------------+--------------------------------------------+----------------------------------------------+-------------------------------------------------------------------+
+|HTTP METHOD  |Path                                        |Parameters                                    |Description                                                        |
++=============+============================================+==============================================+===================================================================+
+|GET          |/api/rest/{endpoint_id}/{resource}          |**cburl:** Destination callback url           |Read the value and returns it to the destination callback url      |
+|             |                                            +----------------------------------------------+                                                                   |
+|             |                                            |**proto:** Destination callback url protocol  |                                                                   |
++-------------+--------------------------------------------+----------------------------------------------+-------------------------------------------------------------------+
+|PUT          |/api/rest/{endpoint_id}/{resource}          |**cburl:** Destination callback url           |Write the value on resource and returns the status to callback url |
+|             |                                            +----------------------------------------------+                                                                   |
+|             |                                            |**proto:** Destination callback url protocol  |                                                                   |
++-------------+--------------------------------------------+----------------------------------------------+-------------------------------------------------------------------+
 
 Historical Data RESTFul API
 ***************************
@@ -133,60 +135,60 @@ Query:
 
 Result:
 
-.. code-block:: json
+.. code-block:: javascript
 
         [
-                {
-                        “endpoint”:”HOP-Sensor-Debug”,
-                        “registrationId”:”MTKt5ejSeu”,
-                        “registrationDate”:”2015-02-16T01:06:27+01:00”,
-                        “address”:”/127.0.0.1:54604”,
-                        “lwM2MmVersion”:”1.0”,
-                        “lifetime”:120,
-                        “bindingMode”:”UQ”,
-                        “rootPath”:”/”,
-                        “objectLinks”:[
-                                {
-                                        “url”:”/1/0”,
-                                        “attributes”:{
-                                        },
-                                       “objectId”:1,
-                                        “objectInstanceId”:0
-                                },
-                                {
-                                        “url”:”/3”,
-                                        “attributes”:{
-                                        },
-                                        “objectId”:3
-                                },
-                                {
-                                        “url”:”/4”,
-                                        “attributes”:{
-                                        },
-                                        “objectId”:4
-                                },
-                                {
-                                        “url”:”/5”,
-                                        “attributes”:{
-                                        },
-                                        “objectId”:5
-                                },
-                                {
-                                        “url”:”/3201/0”,
-                                        “attributes”:{
-                                        },
-                                        “objectId”:3201,
-                                        “objectInstanceId”:0
-                                },
-                                {
-                                        “url”:”/3201/1”,
-                                        “attributes”:{
-                                        },
-                                        “objectId”:3201,
-                                        “objectInstanceId”:1
-                                }
-                        ]
-                }
+            {
+                “endpoint”:”HOP-Sensor-Debug”,
+                “registrationId”:”MTKt5ejSeu”,
+                “registrationDate”:”2015-02-16T01:06:27+01:00”,
+                “address”:”/127.0.0.1:54604”,
+                “lwM2MmVersion”:”1.0”,
+                “lifetime”:120,
+                “bindingMode”:”UQ”,
+                “rootPath”:”/”,
+                “objectLinks”:[
+                    {
+                        “url”:”/1/0”,
+                        “attributes”:{
+                        },
+                        “objectId”:1,
+                        “objectInstanceId”:0
+                    },
+                    {
+                        “url”:”/3”,
+                        “attributes”:{
+                        },
+                        “objectId”:3
+                    },
+                    {
+                        “url”:”/4”,
+                        “attributes”:{
+                        },
+                        “objectId”:4
+                    },
+                    {
+                        “url”:”/5”,
+                        “attributes”:{
+                        },
+                        “objectId”:5
+                    },
+                    {
+                        “url”:”/3201/0”,
+                        “attributes”:{
+                        },
+                        “objectId”:3201,
+                        “objectInstanceId”:0
+                    },
+                    {
+                        “url”:”/3201/1”,
+                        “attributes”:{
+                        },
+                        “objectId”:3201,
+                        “objectInstanceId”:1
+                    }
+                ]
+            }
         ]
 
 **Get specific client: GET /api/rest/{endpoint_id}**
@@ -199,58 +201,58 @@ Query:
 
 Result:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “endpoint”:”HOP-Sensor-Debug”,
-                “registrationId”:”MTKt5ejSeu”,
-                “registrationDate”:”2015-02-16T01:06:27+01:00”,
-                “address”:”/127.0.0.1:54604”,
-                “lwM2MmVersion”:”1.0”,
-                “lifetime”:120,
-                “bindingMode”:”UQ”,
-                “rootPath”:”/”,
-                “objectLinks”:[
-                        {
-                                “url”:”/1/0”,
-                                “attributes”:{
-                                },
-                                “objectId”:1,
-                                “objectInstanceId”:0
-                        },
-                        {
-                                “url”:”/3”,
-                                “attributes”:{
-                                },
-                                “objectId”:3
-                        },
-                        {
-                                “url”:”/4”,
-                                “attributes”:{
-                                },
-                                “objectId”:4
-                        },
-                        {
-                                “url”:”/5”,
-                                “attributes”:{
-                                },
-                                “objectId”:5
-                        },
-                        {
-                                “url”:”/3201/0”,
-                                “attributes”:{
-                                },
-                                “objectId”:3201,
-                                “objectInstanceId”:0
-                        },
-                        {
-                                “url”:”/3201/1”,
-                                “attributes”:{
-                                },
-                                “objectId”:3201,
-                                “objectInstanceId”:1
-                        }
-                ]
+            “endpoint”:”HOP-Sensor-Debug”,
+            “registrationId”:”MTKt5ejSeu”,
+            “registrationDate”:”2015-02-16T01:06:27+01:00”,
+            “address”:”/127.0.0.1:54604”,
+            “lwM2MmVersion”:”1.0”,
+            “lifetime”:120,
+            “bindingMode”:”UQ”,
+            “rootPath”:”/”,
+            “objectLinks”:[
+                {
+                    “url”:”/1/0”,
+                    “attributes”:{
+                    },
+                    “objectId”:1,
+                    “objectInstanceId”:0
+                },
+                {
+                    “url”:”/3”,
+                    “attributes”:{
+                    },
+                    “objectId”:3
+                },
+                {
+                    “url”:”/4”,
+                    “attributes”:{
+                    },
+                    “objectId”:4
+                },
+                {
+                    “url”:”/5”,
+                    “attributes”:{
+                    },
+                    “objectId”:5
+                },
+                {
+                    “url”:”/3201/0”,
+                    “attributes”:{
+                    },
+                    “objectId”:3201,
+                    “objectInstanceId”:0
+                },
+                {
+                    “url”:”/3201/1”,
+                    “attributes”:{
+                    },
+                    “objectId”:3201,
+                    “objectInstanceId”:1
+                }
+            ]
         }
 
 **Get client observes: GET /api/rest/{endpoint_id}/co**
@@ -263,52 +265,53 @@ Query:
 
 Result:
 
-.. code-block:: json
+.. code-block:: javascript
 
         [
-                {
-                        “client”: “HOPf4b85eab962b”,
-                        “path”:
+            {
+                “client”: “HOPf4b85eab962b”,
+                “path”:
+                    {
+                        “objectId”: 3303,
+                        “objectInstanceId”: 0,
+                        “resourceId”: 5700
+                    },
+                “ocos”:
+                    [
                         {
-                                “objectId”: 3303,
-                                “objectInstanceId”: 0,
-                                “resourceId”: 5700
-                        },
-                        “ocos”:
-                        [
-                                {
-                                        “url”: “homard.hopu.eu:8090/co”,
-                                        “protocol”: “https://”,
-                                        “threshold”: 0,
-                                        “condition”: “>=”,
-                                        “method”: “POST”,
-                                        “oneShot”: false,
-                                        “outputFormat”:
-                                        [
-                                                {
-                                                        “field”: “sensor”,
-                                                        “value”: “$eID”
-                                                },
-                                                {
-                                                        “field”: “value”,
-                                                        “value”: “$value”
-                                                },
-                                                {
-                                                        “field”: “r”,
-                                                        “value”: “$resource”
-                                                },
-                                                {
-                                                        “field”: “threshold”,
-                                                        “value”: “$threshold”
-                                                }
-                                        ],
-                                        “id”: 1,
-                                        “type”: 0,
-                                        “endpoint”: “HOPf4b85eab962b”,
-                                        “path”: “/3303/0/5700”
-                                }
-                        ]
+                            “url”: “homard.hopu.eu:8090/co”,
+                            “protocol”: “https://”,
+                            “threshold”: 0,
+                            “condition”: “>=”,
+                            “method”: “POST”,
+                            “oneShot”: false,
+                            “outputFormat”:
+                                [
+                                    {
+                                        “field”: “sensor”,
+                                        “value”: “$eID”
+                                    },
+                                    {
+                                        “field”: “value”,
+                                        “value”: “$value”
+                                    },
+                                    {
+                                        “field”: “r”,
+                                        “value”: “$resource”
+                                    },
+                                    {
+                                        “field”: “threshold”,
+                                        “value”: “$threshold”
+                                    }
+                                ],
+                            “id”: 1,
+                            “type”: 0,
+                            “endpoint”: “HOPf4b85eab962b”,
+                            “path”: “/3303/0/5700”
+                        }
+                    ]
                 }
+            }
         ]
 
 **Remove client observe: DELETE /api/rest/{endpoint_id}/{resource_path}/observe**
@@ -345,27 +348,27 @@ Read Device Resource Query:
 
 Post Result on Callback Url:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “eid”:”HOPf4b85eab98de”,
-                ”url”:”/1/0/5”,
-                ”oID”:1,
-                ”iID”:0,
-                ”rID”:5,
-                ”type”:”INTEGER”,
-                ”value”:1
+            “eid”:”HOPf4b85eab98de”,
+            ”url”:”/1/0/5”,
+            ”oID”:1,
+            ”iID”:0,
+            ”rID”:5,
+            ”type”:”INTEGER”,
+            ”value”:1
         }
 
 Post Error on Callback Url:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “eid”:”HOPf4b85eab98de”,
-                “operation”:”read”,
-                “resource”:”/1/0/5”,
-                “status”:”ERROR”
+            “eid”:”HOPf4b85eab98de”,
+            “operation”:”read”,
+            “resource”:”/1/0/5”,
+            “status”:”ERROR”
         }
 
 **Write device resource: PUT /api/rest/{endpoint_id}/{resource}**
@@ -380,36 +383,36 @@ Write Device Resource Query:
 
 Required Payload (Data to write):
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “id”: 5,
-                “value”: 2
+            “id”: 5,
+            “value”: 2
         }
 
 Post Result on Callback Url:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “eid”:”HOPf4b85eab98de”,
-                ”url”:”/1/0/5”,
-                ”oID”:1,
-                ”iID”:0,
-                ”rID”:5,
-                ”type”:”INTEGER”,
-                ”value”:1
+            “eid”:”HOPf4b85eab98de”,
+            ”url”:”/1/0/5”,
+            ”oID”:1,
+            ”iID”:0,
+            ”rID”:5,
+            ”type”:”INTEGER”,
+            ”value”:1
         }
 
 Post Error on Callback Url:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “eid”:”HOPf4b85eab98de”,
-                “operation”:”write”,
-                “resource”:”/1/0/5”,
-                “status”:”ERROR”
+            “eid”:”HOPf4b85eab98de”,
+            “operation”:”write”,
+            “resource”:”/1/0/5”,
+            “status”:”ERROR”
         }
 
 Asynchronous API: Observes
@@ -430,54 +433,54 @@ Observation creation requires a specific POST payload. This is a JSON object tha
 
 Also the JSON schema for this object is:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “$schema”: “http://json-schema.org/draft-04/schema#”,
-                “id”: “http://jsonschema.net”,
-                “type”: “object”,
-                “properties”: {
-                        “threshold”: {
-                                “id”: “http://jsonschema.net/threshold”,
-                                “type”: “string”
-                        },
-                        “op”: {
-                                “id”: “http://jsonschema.net/op”,
-                                “type”: “string”
-                        },
-                        “typeShot”: {
-                                “id”: “http://jsonschema.net/typeShot”,
-                                “type”: “string”
-                        },
-                        “method”: {
-                                “id”: “http://jsonschema.net/method”,
-                                “type”: “string”
-                        },
-                        “durl”: {
-                                “id”: “http://jsonschema.net/durl”,
-                                “type”: “string”
-                        },
-                        “proto”: {
-                                “id”: “http://jsonschema.net/proto”,
-                                “type”: “string”
-                        },
-                        “authUsr”: {
-                                “id”: “http://jsonschema.net/authUsr”,
-                                “type”: “string”
-                        },
-                        “authPass”: {
-                                “id”: “http://jsonschema.net/authPass”,
-                                “type”: “string”
-                        }
+            “$schema”: “http://json-schema.org/draft-04/schema#”,
+            “id”: “http://jsonschema.net”,
+            “type”: “object”,
+            “properties”: {
+                “threshold”: {
+                    “id”: “http://jsonschema.net/threshold”,
+                    “type”: “string”
                 },
-                “required”: [
-                        “threshold”,
-                        “op”,
-                        “typeShot”,
-                        “method”,
-                        “durl”,
-                        “proto”
-                ]
+                “op”: {
+                    “id”: “http://jsonschema.net/op”,
+                    “type”: “string”
+                },
+                “typeShot”: {
+                    “id”: “http://jsonschema.net/typeShot”,
+                    “type”: “string”
+                },
+                “method”: {
+                    “id”: “http://jsonschema.net/method”,
+                    “type”: “string”
+                },
+                “durl”: {
+                    “id”: “http://jsonschema.net/durl”,
+                    “type”: “string”
+                },
+                “proto”: {
+                    “id”: “http://jsonschema.net/proto”,
+                    “type”: “string”
+                },
+                “authUsr”: {
+                    “id”: “http://jsonschema.net/authUsr”,
+                    “type”: “string”
+                },
+                “authPass”: {
+                    “id”: “http://jsonschema.net/authPass”,
+                    “type”: “string”
+                }
+            },
+            “required”: [
+                “threshold”,
+                “op”,
+                “typeShot”,
+                “method”,
+                “durl”,
+                “proto”
+            ]
         }
 
 **Example of request**
@@ -490,17 +493,17 @@ Create observation:
 
 Required Payload:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “threshold”: “0”,
-                “op”: “>=”,
-                “typeShot”:”repeat”,
-                “method”: “POST”,
-                “durl”:”homard.hopu.eu:8090/co”,
-                “proto”:”https://”,
-                “authUsr”: “”,
-                “authPass”: “”
+            “threshold”: “0”,
+            “op”: “>=”,
+            “typeShot”:”repeat”,
+            “method”: “POST”,
+            “durl”:”homard.hopu.eu:8090/co”,
+            “proto”:”https://”,
+            “authUsr”: “”,
+            “authPass”: “”
         }
 
 Response Received:
@@ -511,26 +514,26 @@ Response Received:
 
 Notification Received on Callback Url:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “eid”:”HOPf4b85eab9b3a”,
-                ”url”:”3303/0/5700”,
-                ”oID”:3303,
-                ”iID”:0,
-                ”rID”:5700,
-                ”value”:”17.028683”
+            “eid”:”HOPf4b85eab9b3a”,
+            ”url”:”3303/0/5700”,
+            ”oID”:3303,
+            ”iID”:0,
+            ”rID”:5700,
+            ”value”:”17.028683”
         }
 
 Error Notification Received on Callback Url:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “eid”:”HOPf4b85eab9b3a”,
-                “operation”:”observe”,
-                “resource”:”/1/0/5”,
-                “status”:”ERROR”
+            “eid”:”HOPf4b85eab9b3a”,
+            “operation”:”observe”,
+            “resource”:”/1/0/5”,
+            “status”:”ERROR”
         }
 
 Asynchronous API: Customizing observer notification message (integrating with third party platform that requires a specific format)
@@ -548,120 +551,120 @@ This array contains field/value JSON objects This array contains one or more obj
 
 For example if we want to receive the following notification:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “sensor”: “HOPf4b85eab9b3a”,
-                “value”:15.32,
-                “uuid”: “067e6162-3b6f-4ae2-a171-2470b63dff00”
+            “sensor”: “HOPf4b85eab9b3a”,
+            “value”:15.32,
+            “uuid”: “067e6162-3b6f-4ae2-a171-2470b63dff00”
         }
 
 We have to set the following “outputPacket”:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                ...,
-                “outputPacket”:[
-                        {
-                                “field”:”name”,
-                                “value”:”$eID”
-                        },
-                        {
-                                “field”: “value”,
-                                “value”:”$value”
-                        },
-                        {
-                                “field”: “uuid”,
-                                “value”:”067e6162-3b6f-4ae2-a171-2470b63dff00”
-                        }
-                ]
+            ...,
+            “outputPacket”:[
+                {
+                    “field”:”name”,
+                    “value”:”$eID”
+                },
+                {
+                    “field”: “value”,
+                    “value”:”$value”
+                },
+                {
+                    “field”: “uuid”,
+                    “value”:”067e6162-3b6f-4ae2-a171-2470b63dff00”
+                }
+            ]
         }
 
 The JSON schema of the complete object is:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
-                “$schema”: “http://json-schema.org/draft-04/schema#”,
-                “id”: “http://jsonschema.net”,
-                “type”: “object”,
-                “properties”: {
-                        “threshold”: {
-                                “id”: “http://jsonschema.net/threshold”,
-                                “type”: “string”
-                        },
-                        “op”: {
-                                “id”: “http://jsonschema.net/op”,
-                                “type”: “string”
-                        },
-                        “typeShot”: {
-                                “id”: “http://jsonschema.net/typeShot”,
-                                “type”: “string”
-                        },
-                        “method”: {
-                                “id”: “http://jsonschema.net/method”,
-                                “type”: “string”
-                        },
-                        “durl”: {
-                                “id”: “http://jsonschema.net/durl”,
-                                “type”: “string”
-                        },
-                        “proto”: {
-                                “id”: “http://jsonschema.net/proto”,
-                                “type”: “string”
-                        },
-                        “authUsr”: {
-                                “id”: “http://jsonschema.net/authUsr”,
-                                “type”: “string”
-                        },
-                        “authPass”: {
-                                “id”: “http://jsonschema.net/authPass”,
-                                “type”: “string”
-                        },
-                        “outputPacket”: {
-                                “id”: “http://jsonschema.net/outputPacket”,
-                                “type”: “array”,
-                                “items”: [
-                                        {
-                                                 “id”: “http://jsonschema.net/outputPacket/0”,
-                                                 “type”: “object”,
-                                                 “properties”: {
-                                                                “field”: {
-                                                                        “id”: “http://jsonschema.net/outputPacket/0/field”,
-                                                                        “type”: “string”
-                                                                },
-                                                                        “value”: {
-                                                                                “id”: “http://jsonschema.net/outputPacket/0/value”,
-                                                                                “type”: “string”
-                                                                }
-                                                        }
-                                        },
-                                        {
-                                                “id”: “http://jsonschema.net/outputPacket/1”,
-                                                “type”: “object”,
-                                                “properties”: {
-                                                        “field”: {
-                                                                “id”: “http://jsonschema.net/outputPacket/1/field”,
-                                                                “type”: “string”
-                                                        },
-                                                                “value”: {
-                                                                        “id”: “http://jsonschema.net/outputPacket/1/value”,
-                                                                        “type”: “string”
-                                                                }
-                                                        }
-                                        }
-                                ]
-                        }
+            “$schema”: “http://json-schema.org/draft-04/schema#”,
+            “id”: “http://jsonschema.net”,
+            “type”: “object”,
+            “properties”: {
+                “threshold”: {
+                    “id”: “http://jsonschema.net/threshold”,
+                    “type”: “string”
                 },
-                “required”: [
-                        “threshold”,
-                        “op”,
-                        “typeShot”,
-                        “method”,
-                        “durl”,
-                        “proto”
-                ]
+                “op”: {
+                    “id”: “http://jsonschema.net/op”,
+                    “type”: “string”
+                },
+                “typeShot”: {
+                    “id”: “http://jsonschema.net/typeShot”,
+                    “type”: “string”
+                },
+                “method”: {
+                    “id”: “http://jsonschema.net/method”,
+                    “type”: “string”
+                },
+                “durl”: {
+                    “id”: “http://jsonschema.net/durl”,
+                    “type”: “string”
+                },
+                “proto”: {
+                    “id”: “http://jsonschema.net/proto”,
+                    “type”: “string”
+                },
+                “authUsr”: {
+                    “id”: “http://jsonschema.net/authUsr”,
+                    “type”: “string”
+                },
+                “authPass”: {
+                    “id”: “http://jsonschema.net/authPass”,
+                    “type”: “string”
+                },
+                “outputPacket”: {
+                    “id”: “http://jsonschema.net/outputPacket”,
+                    “type”: “array”,
+                    “items”: [
+                        {
+                            “id”: “http://jsonschema.net/outputPacket/0”,
+                            “type”: “object”,
+                            “properties”: {
+                                “field”: {
+                                    “id”: “http://jsonschema.net/outputPacket/0/field”,
+                                    “type”: “string”
+                                },
+                                “value”: {
+                                    “id”: “http://jsonschema.net/outputPacket/0/value”,
+                                    “type”: “string”
+                                }
+                            }
+                        },
+                        {
+                            “id”: “http://jsonschema.net/outputPacket/1”,
+                            “type”: “object”,
+                            “properties”: {
+                                “field”: {
+                                    “id”: “http://jsonschema.net/outputPacket/1/field”,
+                                    “type”: “string”
+                                },
+                                “value”: {
+                                    “id”: “http://jsonschema.net/outputPacket/1/value”,
+                                    “type”: “string”
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            “required”: [
+                “threshold”,
+                “op”,
+                “typeShot”,
+                “method”,
+                “durl”,
+                “proto”
+            ]
         }
 
 **Example of request**
@@ -674,7 +677,7 @@ Create Observation:
 
 Required Payload:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “threshold”: “0”,
@@ -705,7 +708,7 @@ Response Received:
 
 Notification Received on Callback Url:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “name”:”HOPf4b85eab9b03”,
@@ -753,14 +756,9 @@ URL Manager RESTFul API Examples
 +------------------+------------+---------------+--------------------------------------------+-----------------------------------------------------+
 |URL               |Method      |URL Params     |Data Params                                 |Description                                          |
 +==================+============+===============+============================================+=====================================================+
-|/api/v1/devices   |POST        |None           |* **Type**: application/json                |Method to add a device with its MAC and a target URL |
-|                  |            |               |* **Body**:                                 |                                                     |
-|                  |            |               |   {                                        |                                                     |
-|                  |            |               |       “mac”: “001122334455”,               |                                                     |
-|                  |            |               |                                            |                                                     |
-|                  |            |               |       “external_url”: “https://google.es/” |                                                     |
-|                  |            |               |   }                                        |                                                     |
+|/api/v1/devices   |POST        |None           |**Type**: application/json                  |Method to add a device with its MAC and a target URL |
 +------------------+------------+---------------+--------------------------------------------+-----------------------------------------------------+
+
 
 Success Response:
 
@@ -768,7 +766,7 @@ Success Response:
 
         Code: 201 (Created)
 
-.. code-block:: json
+.. code-block:: javascript
 
         Content:
         {
@@ -782,7 +780,7 @@ Error Response:
 
         Code: 400 (Bad Request)
 
-.. code-block:: json
+.. code-block:: javascript
 
         Content:
         {
@@ -791,7 +789,7 @@ Error Response:
 
 Sample Call:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             url: “/api/v1/devices”,
@@ -820,7 +818,7 @@ Success Response:
 
         Code: 200 (Ok)
 
-.. code-block:: json
+.. code-block:: javascript
 
         Content:
         {
@@ -834,7 +832,7 @@ Error Response:
 
         Code: 404 (Not Found)
 
-.. code-block:: json
+.. code-block:: javascript
 
         Content:
         {
@@ -843,7 +841,7 @@ Error Response:
 
 Sample Call:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             url: “/api/v1/devices/001122334455”,
@@ -859,13 +857,7 @@ Sample Call:
 +-------------------------------+--------+-----------+--------------------------------------------+-----------------------------------------+
 |URL                            |Method  |URL Params |Data Params                                 |Description                              |
 +===============================+========+===========+============================================+=========================================+
-|/api/v1/devices/:shortened_mac |PUT     |None       |* **Type**: application/json                |Method to update the device information  |
-|                               |        |           |* **Body**:                                 |                                         |
-|                               |        |           |   {                                        |                                         |
-|                               |        |           |       “mac”: “001122334455”,               |                                         |
-|                               |        |           |                                            |                                         |
-|                               |        |           |       “external_url”: “https://google.es/” |                                         |
-|                               |        |           |   }                                        |                                         |
+|/api/v1/devices/:shortened_mac |PUT     |None       |**Type**: application/json                  |Method to update the device information  |
 +-------------------------------+--------+-----------+--------------------------------------------+-----------------------------------------+
 
 Success Response:
@@ -874,9 +866,10 @@ Success Response:
 
         Code: 200 (Ok)
 
-.. code-block:: json
+Content:
 
-        Content:
+.. code-block:: javascript
+
         {
             “mac”: “001122334455”,
             “external_url”: “https://google.es/”
@@ -888,16 +881,17 @@ Error Response:
 
         Code: 404 (Not Found)
 
-.. code-block:: json
+Content:
 
-        Content:
+.. code-block:: javascript
+
         {
             “detail”: “Device Not Found”,
         }
 
 Sample Call:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             url: “/api/v1/devices/001122334455”,
@@ -995,16 +989,17 @@ Orion Context Broker allows you to manage the entire lifecycle of context inform
 Create entity v2
 ****************
 
-+------------------------------------------+-------+------------------------------------------------------+--------------------------------------+
-|URL                                       |Method |URL Params                                            |Definition                            |
-+==========================================+=======+======================================================+======================================+
-|http://{{url}}:{{port-orion}}/v2/entities |POST   |* **url**:Link to the service that will be consulted. |Method to put an entity in a service. |
-|                                          |       |* **port-orion**: Port to connect with the service.   |                                      |
-+------------------------------------------+-------+------------------------------------------------------+--------------------------------------+
++------------------------------------------+-------+----------------------------------------------------+--------------------------------------+
+|URL                                       |Method |URL Params                                          |Definition                            |
++==========================================+=======+====================================================+======================================+
+|http://{{url}}:{{port-orion}}/v2/entities |POST   |**url**:Link to the service that will be consulted. |Method to put an entity in a service. |
+|                                          |       +----------------------------------------------------+                                      |
+|                                          |       |**port-orion**: Port to connect with the service.   |                                      |
++------------------------------------------+-------+----------------------------------------------------+--------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             id:”Entity ID”,
@@ -1021,7 +1016,7 @@ Body:
 
 Example of Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             id:”Room7”,
@@ -1038,90 +1033,98 @@ Example of Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         Return an error message, if already exists an entity in the service with the same id.
 
 Retrieve entity v2
 ******************
 
-+------------------------------------------------------------+-------+--------------------------------------------------------------------------------+-------------------------------------------+
-|URL                                                         |Method |URL Params                                                                      |Definition                                 |
-+============================================================+=======+================================================================================+===========================================+
-|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}} |GET    |* **url**:Link to the service that will be consulted.                           |Method to retrieve an entity of a service. |
-|                                                            |       |* **port-orion**: Port to connect with the service.                             |                                           |
-|                                                            |       |* **fiware-entity**: ID of the entity which will be retrieved from the service. |                                           |
-+------------------------------------------------------------+-------+--------------------------------------------------------------------------------+-------------------------------------------+
++------------------------------------------------------------+-------+------------------------------------------------------------------------------+-------------------------------------------+
+|URL                                                         |Method |URL Params                                                                    |Definition                                 |
++============================================================+=======+==============================================================================+===========================================+
+|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}} |GET    |**url**:Link to the service that will be consulted.                           |Method to retrieve an entity of a service. |
+|                                                            |       +------------------------------------------------------------------------------+                                           |
+|                                                            |       |**port-orion**: Port to connect with the service.                             |                                           |
+|                                                            |       +------------------------------------------------------------------------------+                                           |
+|                                                            |       |**fiware-entity**: ID of the entity which will be retrieved from the service. |                                           |
++------------------------------------------------------------+-------+------------------------------------------------------------------------------+-------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         If the search has been successful then it returns the information else it returns an message error.
 
 Retrieve entity as data model v2
 ********************************
 
-+------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------+-----------------------------------------+
-|URL                                                                           |Method |URL Params                                                                      |Definition                               |
-+==============================================================================+=======+================================================================================+=========================================+
-|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}?options=keyValues |GET    |* **url**:Link to the service that will be consulted.                           |Method to obtain an entity of a service. |
-|                                                                              |       |* **port-orion**: Port to connect with the service.                             |                                         |
-|                                                                              |       |* **fiware-entity**: ID of the entity which will be retrieved from the service. |                                         |
-+------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------+-----------------------------------------+
++------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------+-----------------------------------------+
+|URL                                                                           |Method |URL Params                                                                    |Definition                               |
++==============================================================================+=======+==============================================================================+=========================================+
+|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}?options=keyValues |GET    |**url**:Link to the service that will be consulted.                           |Method to obtain an entity of a service. |
+|                                                                              |       +------------------------------------------------------------------------------+                                         |
+|                                                                              |       |**port-orion**: Port to connect with the service.                             |                                         |
+|                                                                              |       +------------------------------------------------------------------------------+                                         |
+|                                                                              |       |**fiware-entity**: ID of the entity which will be retrieved from the service. |                                         |
++------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------+-----------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         If the search has been successful then it returns the information of compressed way else returns an error message.
 
 Retrieve entities v2
 ********************
 
-+---------------------------------------------------+-------+------------------------------------------------------+---------------------------------+
-|URL                                                |Method |URL Params                                            |Definition                       |
-+===================================================+=======+======================================================+=================================+
-|http://{{url}}:{{port-orion}}/v2/entities?limit=50 |GET    |* **url**:Link to the service that will be consulted. |Method to retrieve all entities. |
-|                                                   |       |* **port-orion**: Port to connect with the service.   |                                 |
-+---------------------------------------------------+-------+------------------------------------------------------+---------------------------------+
++---------------------------------------------------+-------+----------------------------------------------------+---------------------------------+
+|URL                                                |Method |URL Params                                          |Definition                       |
++===================================================+=======+====================================================+=================================+
+|http://{{url}}:{{port-orion}}/v2/entities?limit=50 |GET    |**url**:Link to the service that will be consulted. |Method to retrieve all entities. |
+|                                                   |       +----------------------------------------------------+                                 |
+|                                                   |       |**port-orion**: Port to connect with the service.   |                                 |
++---------------------------------------------------+-------+----------------------------------------------------+---------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         All entities of the service and for each entity shows their information
 
 Retrieve entities as data model v2
 **********************************
 
-+---------------------------------------------------------------------+-------+------------------------------------------------------+----------------------------------------------+
-|URL                                                                  |Method |URL Params                                            |Definition                                    |
-+=====================================================================+=======+======================================================+==============================================+
-|http://{{url}}:{{port-orion}}/v2/entities?options=keyValues&limit=50 |GET    |* **url**:Link to the service that will be consulted. |Method to retrieve all entities of a service. |
-|                                                                     |       |* **port-orion**: Port to connect with the service.   |                                              |
-+---------------------------------------------------------------------+-------+------------------------------------------------------+----------------------------------------------+
++---------------------------------------------------------------------+-------+----------------------------------------------------+----------------------------------------------+
+|URL                                                                  |Method |URL Params                                          |Definition                                    |
++=====================================================================+=======+====================================================+==============================================+
+|http://{{url}}:{{port-orion}}/v2/entities?options=keyValues&limit=50 |GET    |**url**:Link to the service that will be consulted. |Method to retrieve all entities of a service. |
+|                                                                     |       +----------------------------------------------------+                                              |
+|                                                                     |       |**port-orion**: Port to connect with the service.   |                                              |
++---------------------------------------------------------------------+-------+----------------------------------------------------+----------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         All entities of the service and for each entity shows their information of compressed way.
 
 Update entity v2
 ****************
 
-+------------------------------------------------------------------+-------+-------------------------------------------------------------------------------+------------------------------------------------+
-|URL                                                               |Method |URL Params                                                                     |Definition                                      |
-+==================================================================+=======+===============================================================================+================================================+
-|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs |PATCH  |* **url**:Link to the service that will be consulted.                          |Method to update some attributes of the entity. |
-|                                                                  |       |* **port-orion**: Port to connect with the service.                            |                                                |
-|                                                                  |       |* **fiware-entity**: ID of the entity where their attributes will be updated.  |                                                |
-+------------------------------------------------------------------+-------+-------------------------------------------------------------------------------+------------------------------------------------+
++------------------------------------------------------------------+-------+-----------------------------------------------------------------------------+------------------------------------------------+
+|URL                                                               |Method |URL Params                                                                   |Definition                                      |
++==================================================================+=======+=============================================================================+================================================+
+|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs |PATCH  |**url**:Link to the service that will be consulted.                          |Method to update some attributes of the entity. |
+|                                                                  |       +-----------------------------------------------------------------------------+                                                |
+|                                                                  |       |**port-orion**: Port to connect with the service.                            |                                                |
+|                                                                  |       +-----------------------------------------------------------------------------+                                                |
+|                                                                  |       |**fiware-entity**: ID of the entity where their attributes will be updated.  |                                                |
++------------------------------------------------------------------+-------+-----------------------------------------------------------------------------+------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “attributeID”:{
@@ -1132,7 +1135,7 @@ Body:
 
 Example of Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “temperature”: {
@@ -1148,28 +1151,32 @@ Example of Body:
 Delete entity v2
 ****************
 
-+------------------------------------------------------------+-------+--------------------------------------------------------------+-----------------------------------------+
-|URL                                                         |Method |URL Params                                                    |Definition                               |
-+============================================================+=======+==============================================================+=========================================+
-|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}} |DELETE |* **url**:Link to the service that will be consulted.         |Method to delete an entity of a service. |
-|                                                            |       |* **port-orion**: Port to connect with the service.           |                                         |
-|                                                            |       |* **fiware-entity**: ID of the entity which will be deleted.  |                                         |
-+------------------------------------------------------------+-------+--------------------------------------------------------------+-----------------------------------------+
++------------------------------------------------------------+-------+------------------------------------------------------------+-----------------------------------------+
+|URL                                                         |Method |URL Params                                                  |Definition                               |
++============================================================+=======+============================================================+=========================================+
+|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}} |DELETE |**url**:Link to the service that will be consulted.         |Method to delete an entity of a service. |
+|                                                            |       +------------------------------------------------------------+                                         |
+|                                                            |       |**port-orion**: Port to connect with the service.           |                                         |
+|                                                            |       +------------------------------------------------------------+                                         |
+|                                                            |       |**fiware-entity**: ID of the entity which will be deleted.  |                                         |
++------------------------------------------------------------+-------+------------------------------------------------------------+-----------------------------------------+
 
 Create attribute for entity v2
 ******************************
 
-+-------------------------------------------------------------------+-------+----------------------------------------------------------------------+---------------------------------------------+
-|URL                                                                |Method |URL Params                                                            |Definition                                   |
-+===================================================================+=======+======================================================================+=============================================+
-|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs/ |POST   |* **url**:Link to the service that will be consulted.                 |Method to add a new attribute to the entity. |
-|                                                                   |       |* **port-orion**: Port to connect with the service.                   |                                             |
-|                                                                   |       |* **fiware-entity**: ID of the entity which will have new attributes. |                                             |
-+-------------------------------------------------------------------+-------+----------------------------------------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------+-------+--------------------------------------------------------------------+---------------------------------------------+
+|URL                                                                |Method |URL Params                                                          |Definition                                   |
++===================================================================+=======+====================================================================+=============================================+
+|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs/ |POST   |**url**:Link to the service that will be consulted.                 |Method to add a new attribute to the entity. |
+|                                                                   |       +--------------------------------------------------------------------+                                             |
+|                                                                   |       |**port-orion**: Port to connect with the service.                   |                                             |
+|                                                                   |       +--------------------------------------------------------------------+                                             |
+|                                                                   |       |**fiware-entity**: ID of the entity which will have new attributes. |                                             |
++-------------------------------------------------------------------+-------+--------------------------------------------------------------------+---------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “attributeID”:{
@@ -1180,7 +1187,7 @@ Body:
 
 Example of Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “temperature”: {
@@ -1192,90 +1199,103 @@ Example of Body:
 Retrieve entity attribute v2
 ****************************
 
-+----------------------------------------------------------------------------------+-------+--------------------------------------------------------------+----------------------------------------------+
-|URL                                                                               |Method |URL Params                                                    |Definition                                    |
-+==================================================================================+=======+==============================================================+==============================================+
-|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs/{{fiware-attr}} |GET    |* **url**:Link to the service that will be consulted.         |Method to retrieve an attribute of an entity. |
-|                                                                                  |       |* **port-orion**: Port to connect with the service.           |                                              |
-|                                                                                  |       |* **fiware-entity**: ID of the entity where is the attribute. |                                              |
-|                                                                                  |       |* **fiware-attr**: ID of the attribute.                       |                                              |
-+----------------------------------------------------------------------------------+-------+--------------------------------------------------------------+----------------------------------------------+
++----------------------------------------------------------------------------------+-------+------------------------------------------------------------+----------------------------------------------+
+|URL                                                                               |Method |URL Params                                                  |Definition                                    |
++==================================================================================+=======+============================================================+==============================================+
+|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs/{{fiware-attr}} |GET    |**url**:Link to the service that will be consulted.         |Method to retrieve an attribute of an entity. |
+|                                                                                  |       +------------------------------------------------------------+                                              |
+|                                                                                  |       |**port-orion**: Port to connect with the service.           |                                              |
+|                                                                                  |       +------------------------------------------------------------+                                              |
+|                                                                                  |       |**fiware-entity**: ID of the entity where is the attribute. |                                              |
+|                                                                                  |       +------------------------------------------------------------+                                              |
+|                                                                                  |       |**fiware-attr**: ID of the attribute.                       |                                              |
++----------------------------------------------------------------------------------+-------+------------------------------------------------------------+----------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         If the search has been successful then the attribute is retrieved and shows their information else an error message is returned.
 
 Retrieve entity attribute as data model v2
 ******************************************
 
-+------------------------------------------------------------------------------+-------+--------------------------------------------------------------+----------------------------------------------+
-|URL                                                                           |Method |URL Params                                                    |Definition                                    |
-+==============================================================================+=======+==============================================================+==============================================+
-|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}?options=keyValues |GET    |* **url**:Link to the service that will be consulted.         |Method to retrieve an attribute of an entity. |
-|                                                                              |       |* **port-orion**: Port to connect with the service.           |                                              |
-|                                                                              |       |* **fiware-entity**: ID of the entity where is the attribute. |                                              |
-|                                                                              |       |* **fiware-attr**: ID of the attribute.                       |                                              |
-+------------------------------------------------------------------------------+-------+--------------------------------------------------------------+----------------------------------------------+
++------------------------------------------------------------------------------+-------+------------------------------------------------------------+----------------------------------------------+
+|URL                                                                           |Method |URL Params                                                  |Definition                                    |
++==============================================================================+=======+============================================================+==============================================+
+|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}?options=keyValues |GET    |**url**:Link to the service that will be consulted.         |Method to retrieve an attribute of an entity. |
+|                                                                              |       +------------------------------------------------------------+                                              |
+|                                                                              |       |**port-orion**: Port to connect with the service.           |                                              |
+|                                                                              |       +------------------------------------------------------------+                                              |
+|                                                                              |       |**fiware-entity**: ID of the entity where is the attribute. |                                              |
+|                                                                              |       +------------------------------------------------------------+                                              |
+|                                                                              |       |**fiware-attr**: ID of the attribute.                       |                                              |
++------------------------------------------------------------------------------+-------+------------------------------------------------------------+----------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         If the search has been successful then the attribute is retrieved and shows their information, else it returns a message error.
 
 Delete attribute for entity v2
 ******************************
 
-+----------------------------------------------------------------------------------+-------+-------------------------------------------------------------------+---------------------------------------------+
-|URL                                                                               |Method |URL Params                                                         |Definition                                   |
-+==================================================================================+=======+===================================================================+=============================================+
-|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs/{{fiware-attr}} |DELETE |* **url**:Link to the service that will be consulted.              |Method to delete an attribute of an entity.  |
-|                                                                                  |       |* **port-orion**: Port to connect with the service.                |                                             |
-|                                                                                  |       |* **fiware-entity**: ID of the entity which will delete attributes |                                             |
-|                                                                                  |       |* **fiware-attr**: ID of the attribute which will delete           |                                             |
-+----------------------------------------------------------------------------------+-------+-------------------------------------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------+-------+-----------------------------------------------------------------+---------------------------------------------+
+|URL                                                                               |Method |URL Params                                                       |Definition                                   |
++==================================================================================+=======+=================================================================+=============================================+
+|http://{{url}}:{{port-orion}}/v2/entities/{{fiware-entity}}/attrs/{{fiware-attr}} |DELETE |**url**:Link to the service that will be consulted.              |Method to delete an attribute of an entity.  |
+|                                                                                  |       +-----------------------------------------------------------------+                                             |
+|                                                                                  |       |**port-orion**: Port to connect with the service.                |                                             |
+|                                                                                  |       +-----------------------------------------------------------------+                                             |
+|                                                                                  |       |**fiware-entity**: ID of the entity which will delete attributes |                                             |
+|                                                                                  |       +-----------------------------------------------------------------+                                             |
+|                                                                                  |       |**fiware-attr**: ID of the attribute which will delete           |                                             |
++----------------------------------------------------------------------------------+-------+-----------------------------------------------------------------+---------------------------------------------+
 
 **Retrieve type v2**
 
-+----------------------------------------------------------+-------+--------------------------------------------------------------------------------------+--------------------------------------------------+
-|URL                                                       |Method |URL Params                                                                            |Definition                                        |
-+==========================================================+=======+======================================================================================+==================================================+
-|http://{{url}}:{{port-orion}}/v2/types/{{fiware-service}} |GET    |* **url**:Link to the service that will be consulted.                                 |Method to retrieve an entity type of the service. |
-|                                                          |       |* **port-orion**: Port to connect with the service.                                   |                                                  |
-|                                                          |       |* **fiware-service**: ID of type of the entity which will be searched in the service. |                                                  |
-+----------------------------------------------------------+-------+--------------------------------------------------------------------------------------+--------------------------------------------------+
++----------------------------------------------------------+-------+------------------------------------------------------------------------------------+--------------------------------------------------+
+|URL                                                       |Method |URL Params                                                                          |Definition                                        |
++==========================================================+=======+====================================================================================+==================================================+
+|http://{{url}}:{{port-orion}}/v2/types/{{fiware-service}} |GET    |**url**:Link to the service that will be consulted.                                 |Method to retrieve an entity type of the service. |
+|                                                          |       +------------------------------------------------------------------------------------+                                                  |
+|                                                          |       |**port-orion**: Port to connect with the service.                                   |                                                  |
+|                                                          |       +------------------------------------------------------------------------------------+                                                  |
+|                                                          |       |**fiware-service**: ID of type of the entity which will be searched in the service. |                                                  |
++----------------------------------------------------------+-------+------------------------------------------------------------------------------------+--------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         If the search has been successful then type is retrieved and shows all their information, else an error message is returned.
 
 Retrieve types v2
 *****************
 
-+---------------------------------------+-------+------------------------------------------------------+-----------------------------------------------------------------+
-|URL                                    |Method |URL Params                                            |Definition                                                       |
-+=======================================+=======+======================================================+=================================================================+
-|http://{{url}}:{{port-orion}}/v2/types |GET    |* **url**:Link to the service that will be consulted. |The different entity types in the service and their information. |
-|                                       |       |* **port-orion**: Port to connect with the service.   |                                                                 |
-+---------------------------------------+-------+------------------------------------------------------+-----------------------------------------------------------------+
++---------------------------------------+-------+----------------------------------------------------+-----------------------------------------------------------------+
+|URL                                    |Method |URL Params                                          |Definition                                                       |
++=======================================+=======+====================================================+=================================================================+
+|http://{{url}}:{{port-orion}}/v2/types |GET    |**url**:Link to the service that will be consulted. |The different entity types in the service and their information. |
+|                                       |       +----------------------------------------------------+                                                                 |
+|                                       |       |**port-orion**: Port to connect with the service.   |                                                                 |
++---------------------------------------+-------+----------------------------------------------------+-----------------------------------------------------------------+
 
 Create subscription v2
 **********************
 
-+-----------------------------------------------+-------+------------------------------------------------------+---------------------------------------------------------+
-|URL                                            |Method |URL Params                                            |Definition                                               |
-+===============================================+=======+======================================================+=========================================================+
-|http://{{url}}:{{port-orion}}/v2/subscriptions |POST   |* **url**:Link to the service that will be consulted. |Method to create a subscription to one or many entities. |
-|                                               |       |* **port-orion**: Port to connect with the service.   |                                                         |
-+-----------------------------------------------+-------+------------------------------------------------------+---------------------------------------------------------+
++-----------------------------------------------+-------+----------------------------------------------------+---------------------------------------------------------+
+|URL                                            |Method |URL Params                                          |Definition                                               |
++===============================================+=======+====================================================+=========================================================+
+|http://{{url}}:{{port-orion}}/v2/subscriptions |POST   |**url**:Link to the service that will be consulted. |Method to create a subscription to one or many entities. |
+|                                               |       +----------------------------------------------------+                                                         |
+|                                               |       |**port-orion**: Port to connect with the service.   |                                                         |
++-----------------------------------------------+-------+----------------------------------------------------+---------------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “description”: “Definition of the subscription”,
@@ -1312,43 +1332,47 @@ Body:
 Retrieve subscriptions v2
 *************************
 
-+-----------------------------------------------+-------+------------------------------------------------------+---------------------------------------------------+
-|URL                                            |Method |URL Params                                            |Definition                                         |
-+===============================================+=======+======================================================+===================================================+
-|http://{{url}}:{{port-orion}}/v2/subscriptions |GET    |* **url**:Link to the service that will be consulted. |Method to retrieve all subscriptions of a service. |
-|                                               |       |* **port-orion**: Port to connect with the service.   |                                                   |
-+-----------------------------------------------+-------+------------------------------------------------------+---------------------------------------------------+
++-----------------------------------------------+-------+----------------------------------------------------+---------------------------------------------------+
+|URL                                            |Method |URL Params                                          |Definition                                         |
++===============================================+=======+====================================================+===================================================+
+|http://{{url}}:{{port-orion}}/v2/subscriptions |GET    |**url**:Link to the service that will be consulted. |Method to retrieve all subscriptions of a service. |
+|                                               |       +----------------------------------------------------+                                                   |
+|                                               |       |**port-orion**: Port to connect with the service.   |                                                   |
++-----------------------------------------------+-------+----------------------------------------------------+---------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         All existing subscriptions of the service and for each subscription show their information.
 
 Remove subscriptions v2
 ***********************
 
-+-----------------------------------------------------------------------+-------+-------------------------------------------------------------------+----------------------------------------------+
-|URL                                                                    |Method |URL Params                                                         |Definition                                    |
-+=======================================================================+=======+===================================================================+==============================================+
-|http://{{url}}:{{port-orion}}/v2/subscriptions/{{fiware-subscription}} |DELETE |* **url**:Link to the service that will be consulted.              |Method to delete a subscription of a service. |
-|                                                                       |       |* **port-orion**: Port to connect with the service.                |                                              |
-|                                                                       |       |* **fiware-subscription**: ID of the subscription will be deleted. |                                              |
-+-----------------------------------------------------------------------+-------+-------------------------------------------------------------------+----------------------------------------------+
++-----------------------------------------------------------------------+-------+-----------------------------------------------------------------+----------------------------------------------+
+|URL                                                                    |Method |URL Params                                                       |Definition                                    |
++=======================================================================+=======+=================================================================+==============================================+
+|http://{{url}}:{{port-orion}}/v2/subscriptions/{{fiware-subscription}} |DELETE |**url**:Link to the service that will be consulted.              |Method to delete a subscription of a service. |
+|                                                                       |       +-----------------------------------------------------------------+                                              |
+|                                                                       |       |**port-orion**: Port to connect with the service.                |                                              |
+|                                                                       |       +-----------------------------------------------------------------+                                              |
+|                                                                       |       |**fiware-subscription**: ID of the subscription will be deleted. |                                              |
++-----------------------------------------------------------------------+-------+-----------------------------------------------------------------+----------------------------------------------+
 
 Create context entity v1
 ************************
 
-+----------------------------------------------------------+-------+-------------------------------------------------------------------+----------------------------------------------------------------+
-|URL                                                       |Method |URL Params                                                         |Definition                                                      |
-+==========================================================+=======+===================================================================+================================================================+
-|http://{{url}}:{{port-orion}}/v1/registry/registerContext |POST   |* **url**:Link to the service that will be consulted.              |Method to create a context of entity, an entity without values. |
-|                                                          |       |* **port-orion**: Port to connect with the service.                |                                                                |
-+----------------------------------------------------------+-------+-------------------------------------------------------------------+----------------------------------------------------------------+
++----------------------------------------------------------+-------+----------------------------------------------------+----------------------------------------------------------------+
+|URL                                                       |Method |URL Params                                          |Definition                                                      |
++==========================================================+=======+====================================================+================================================================+
+|http://{{url}}:{{port-orion}}/v1/registry/registerContext |POST   |**url**:Link to the service that will be consulted. |Method to create a context of entity, an entity without values. |
+|                                                          |       +----------------------------------------------------+                                                                |
+|                                                          |       |**port-orion**: Port to connect with the service.   |                                                                |
++----------------------------------------------------------+-------+----------------------------------------------------+----------------------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “contextRegistrations”: [
@@ -1381,7 +1405,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         Returns a confirmation that the item has been created correctly
 
@@ -1393,16 +1417,17 @@ Return:
 Retrieve context entity v1
 **************************
 
-+----------------------------------------------------------------------+-------+------------------------------------------------------+------------------------------------------------------------------------------------------+
-|URL                                                                   |Method |URL Params                                            |Definition                                                                                |
-+======================================================================+=======+======================================================+==========================================================================================+
-|http://{{url}}:{{port-orion}}/v1/registry/discoverContextAvailability |POST   |* **url**:Link to the service that will be consulted. |Method to retrieve a context of entity, an entity without values, depends on ID and type. |
-|                                                                      |       |* **port-orion**: Port to connect with the service.   |                                                                                          |
-+----------------------------------------------------------------------+-------+------------------------------------------------------+------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------+-------+----------------------------------------------------+------------------------------------------------------------------------------------------+
+|URL                                                                   |Method |URL Params                                          |Definition                                                                                |
++======================================================================+=======+====================================================+==========================================================================================+
+|http://{{url}}:{{port-orion}}/v1/registry/discoverContextAvailability |POST   |**url**:Link to the service that will be consulted. |Method to retrieve a context of entity, an entity without values, depends on ID and type. |
+|                                                                      |       +----------------------------------------------------+                                                                                          |
+|                                                                      |       |**port-orion**: Port to connect with the service.   |                                                                                          |
++----------------------------------------------------------------------+-------+----------------------------------------------------+------------------------------------------------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “entities”: [
@@ -1418,7 +1443,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of finding this element, it returns the information.
 
@@ -1427,16 +1452,17 @@ Return:
 Create/update entity v1
 ***********************
 
-+-----------------------------------------------+-------+------------------------------------------------------+----------------------------------------------------------------+
-|URL                                            |Method |URL Params                                            |Definition                                                      |
-+===============================================+=======+======================================================+================================================================+
-|http://{{url}}:{{port-orion}}/v1/updateContext |POST   |* **url**:Link to the service that will be consulted. |Method to create or update an entity, depends on method’s body. |
-|                                               |       |* **port-orion**: Port to connect with the service.   |                                                                |
-+-----------------------------------------------+-------+------------------------------------------------------+----------------------------------------------------------------+
++-----------------------------------------------+-------+----------------------------------------------------+----------------------------------------------------------------+
+|URL                                            |Method |URL Params                                          |Definition                                                      |
++===============================================+=======+====================================================+================================================================+
+|http://{{url}}:{{port-orion}}/v1/updateContext |POST   |**url**:Link to the service that will be consulted. |Method to create or update an entity, depends on method’s body. |
+|                                               |       +----------------------------------------------------+                                                                |
+|                                               |       |**port-orion**: Port to connect with the service.   |                                                                |
++-----------------------------------------------+-------+----------------------------------------------------+----------------------------------------------------------------+
 
 Body (creation):
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “contextElements”: [
@@ -1458,7 +1484,7 @@ Body (creation):
 
 Body (updating):
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “contextElements”: [
@@ -1483,7 +1509,7 @@ Body (updating):
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it return 200 OK together with the information of the entity.
 
@@ -1492,17 +1518,19 @@ Return:
 Create entity v1
 ****************
 
-+-------------------------------------------------------------------+-------+--------------------------------------------------------------------------+-------------------------------+
-|URL                                                                |Method |URL Params                                                                |Definition                     |
-+===================================================================+=======+==========================================================================+===============================+
-|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}} |POST   |* **url**:Link to the service that will be consulted.                     |Method to create a new entity. |
-|                                                                   |       |* **port-orion**: Port to connect with the service.                       |                               |
-|                                                                   |       |* **fiware-entity**: ID of the entity that will be create of the service. |                               |
-+-------------------------------------------------------------------+-------+--------------------------------------------------------------------------+-------------------------------+
++-------------------------------------------------------------------+-------+------------------------------------------------------------------------+-------------------------------+
+|URL                                                                |Method |URL Params                                                              |Definition                     |
++===================================================================+=======+========================================================================+===============================+
+|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}} |POST   |**url**:Link to the service that will be consulted.                     |Method to create a new entity. |
+|                                                                   |       +------------------------------------------------------------------------+                               |
+|                                                                   |       |**port-orion**: Port to connect with the service.                       |                               |
+|                                                                   |       +------------------------------------------------------------------------+                               |
+|                                                                   |       |**fiware-entity**: ID of the entity that will be create of the service. |                               |
++-------------------------------------------------------------------+-------+------------------------------------------------------------------------+-------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “type”: “entity_type”,
@@ -1517,24 +1545,26 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it return 200 OK together with the information of the new entity.
 
 Retrieve entity standard v1
 ***************************
 
-+-------------------------------------------------------------------+-------+--------------------------------------------------------------------------+---------------------------------------------------------+
-|URL                                                                |Method |URL Params                                                                |Definition                                               |
-+===================================================================+=======+==========================================================================+=========================================================+
-|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}} |GET    |* **url**:Link to the service that will be consulted.                     |Method that return a defined entity passed as parameter. |
-|                                                                   |       |* **port-orion**: Port to connect with the service.                       |                                                         |
-|                                                                   |       |* **fiware-entity**: ID of the entity that will be create of the service. |                                                         |
-+-------------------------------------------------------------------+-------+--------------------------------------------------------------------------+---------------------------------------------------------+
++-------------------------------------------------------------------+-------+------------------------------------------------------------------------+---------------------------------------------------------+
+|URL                                                                |Method |URL Params                                                              |Definition                                               |
++===================================================================+=======+========================================================================+=========================================================+
+|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}} |GET    |**url**:Link to the service that will be consulted.                     |Method that return a defined entity passed as parameter. |
+|                                                                   |       +------------------------------------------------------------------------+                                                         |
+|                                                                   |       |**port-orion**: Port to connect with the service.                       |                                                         |
+|                                                                   |       +------------------------------------------------------------------------+                                                         |
+|                                                                   |       |**fiware-entity**: ID of the entity that will be create of the service. |                                                         |
++-------------------------------------------------------------------+-------+------------------------------------------------------------------------+---------------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it return 200 OK together with the information of the entity.
 
@@ -1543,17 +1573,19 @@ Return:
 Retrieve entity as object standard v1
 *************************************
 
-+------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------+-------------------------------------------------------------+
-|URL                                                                                       |Method |URL Params                                                                |Definition                                                   |
-+==========================================================================================+=======+==========================================================================+=============================================================+
-|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}?attributeFormat=object |GET    |* **url**:Link to the service that will be consulted.                     |Method that return a defined entity with object JSON format. |
-|                                                                                          |       |* **port-orion**: Port to connect with the service.                       |                                                             |
-|                                                                                          |       |* **fiware-entity**: ID of the entity that will be create of the service. |                                                             |
-+------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------+-------------------------------------------------------------+
++------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------+-------------------------------------------------------------+
+|URL                                                                                       |Method |URL Params                                                              |Definition                                                   |
++==========================================================================================+=======+========================================================================+=============================================================+
+|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}?attributeFormat=object |GET    |**url**:Link to the service that will be consulted.                     |Method that return a defined entity with object JSON format. |
+|                                                                                          |       +------------------------------------------------------------------------+                                                             |
+|                                                                                          |       |**port-orion**: Port to connect with the service.                       |                                                             |
+|                                                                                          |       +------------------------------------------------------------------------+                                                             |
+|                                                                                          |       |**fiware-entity**: ID of the entity that will be create of the service. |                                                             |
++------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------+-------------------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together with the information of the entity with object JSON format.
 
@@ -1562,16 +1594,17 @@ Return:
 Retrieve entity convenience v1
 ******************************
 
-+----------------------------------------------+-------+------------------------------------------------------+-----------------------------------------------------------------------+
-|URL                                           |Method |URL Params                                            |Definition                                                             |
-+==============================================+=======+======================================================+=======================================================================+
-|http://{{url}}:{{port-orion}}/v1/queryContext |POST   |* **url**:Link to the service that will be consulted. |Method that returns a defined entity passed in the body of the method. |
-|                                              |       |* **port-orion**: Port to connect with the service.   |                                                                       |
-+----------------------------------------------+-------+------------------------------------------------------+-----------------------------------------------------------------------+
++----------------------------------------------+-------+----------------------------------------------------+-----------------------------------------------------------------------+
+|URL                                           |Method |URL Params                                          |Definition                                                             |
++==============================================+=======+====================================================+=======================================================================+
+|http://{{url}}:{{port-orion}}/v1/queryContext |POST   |**url**:Link to the service that will be consulted. |Method that returns a defined entity passed in the body of the method. |
+|                                              |       +----------------------------------------------------+                                                                       |
+|                                              |       |**port-orion**: Port to connect with the service.   |                                                                       |
++----------------------------------------------+-------+----------------------------------------------------+-----------------------------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “entities”: [
@@ -1585,7 +1618,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together with the information of the entity.
 
@@ -1594,16 +1627,17 @@ Return:
 Retrieve entities as object convenience v1
 ******************************************
 
-+--------------------------------------------------------------------+-------+------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-|URL                                                                 |Method |URL Params                                            |Definition                                                                                                  |
-+====================================================================+=======+======================================================+============================================================================================================+
-|http://{{url}}:{{portorion}}/v1/queryContext?attributeFormat=object |POST   |* **url**:Link to the service that will be consulted. |Method that return a defined entity with object JSON format. The entity ID is passed in the body of method. |
-|                                                                    |       |* **port-orion**: Port to connect with the service.   |                                                                                                            |
-+--------------------------------------------------------------------+-------+------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+-------+----------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+|URL                                                                 |Method |URL Params                                          |Definition                                                                                                  |
++====================================================================+=======+====================================================+============================================================================================================+
+|http://{{url}}:{{portorion}}/v1/queryContext?attributeFormat=object |POST   |**url**:Link to the service that will be consulted. |Method that return a defined entity with object JSON format. The entity ID is passed in the body of method. |
+|                                                                    |       +----------------------------------------------------+                                                                                                            |
+|                                                                    |       |**port-orion**: Port to connect with the service.   |                                                                                                            |
++--------------------------------------------------------------------+-------+----------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “entities”: [
@@ -1617,7 +1651,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together with the information of the entity with object JSON format.
 
@@ -1626,49 +1660,53 @@ Return:
 Retrieve entities v1
 ********************
 
-+-------------------------------------------------+-------+------------------------------------------------------+---------------------------------+
-|URL                                              |Method |URL Params                                            |Definition                       |
-+=================================================+=======+======================================================+=================================+
-|http://{{url}}:{{port-orion}}/v1/contextEntities |GET    |* **url**:Link to the service that will be consulted. |Method that return all entities. |
-|                                                 |       |* **port-orion**: Port to connect with the service.   |                                 |
-+-------------------------------------------------+-------+------------------------------------------------------+---------------------------------+
++-------------------------------------------------+-------+----------------------------------------------------+---------------------------------+
+|URL                                              |Method |URL Params                                          |Definition                       |
++=================================================+=======+====================================================+=================================+
+|http://{{url}}:{{port-orion}}/v1/contextEntities |GET    |**url**:Link to the service that will be consulted. |Method that return all entities. |
+|                                                 |       +----------------------------------------------------+                                 |
+|                                                 |       |**port-orion**: Port to connect with the service.   |                                 |
++-------------------------------------------------+-------+----------------------------------------------------+---------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         Show all existing entities.
 
 Retrieve entities as object v1
 ******************************
 
-+------------------------------------------------------------------------+-------+------------------------------------------------------+---------------------------------------------------------+
-|URL                                                                     |Method |URL Params                                            |Definition                                               |
-+========================================================================+=======+======================================================+=========================================================+
-|http://{{url}}:{{port-orion}}/v1/contextEntities?attributeFormat=object |GET    |* **url**:Link to the service that will be consulted. |Method that return all entities with object JSON format. |
-|                                                                        |       |* **port-orion**: Port to connect with the service.   |                                                         |
-+------------------------------------------------------------------------+-------+------------------------------------------------------+---------------------------------------------------------+
++------------------------------------------------------------------------+-------+----------------------------------------------------+---------------------------------------------------------+
+|URL                                                                     |Method |URL Params                                          |Definition                                               |
++========================================================================+=======+====================================================+=========================================================+
+|http://{{url}}:{{port-orion}}/v1/contextEntities?attributeFormat=object |GET    |**url**:Link to the service that will be consulted. |Method that return all entities with object JSON format. |
+|                                                                        |       +----------------------------------------------------+                                                         |
+|                                                                        |       |**port-orion**: Port to connect with the service.   |                                                         |
++------------------------------------------------------------------------+-------+----------------------------------------------------+---------------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         Show all existing entities with object JSON format.
 
 Retrieve entities for type v1
 *****************************
 
-+-----------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------+
-|URL                                                                          |Method |URL Params                                                   |Definition                                           |
-+=============================================================================+=======+=============================================================+=====================================================+
-|http://{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}} |GET    |* **url**:Link to the service that will be consulted.        |Method that returns all entities of a concrete type. |
-|                                                                             |       |* **port-orion**: Port to connect with the service.          |                                                     |
-|                                                                             |       |* **fiware-type**: Type of entities that we want to receive. |                                                     |
-+-----------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------+
++-----------------------------------------------------------------------------+-------+-----------------------------------------------------------+-----------------------------------------------------+
+|URL                                                                          |Method |URL Params                                                 |Definition                                           |
++=============================================================================+=======+===========================================================+=====================================================+
+|http://{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}} |GET    |**url**:Link to the service that will be consulted.        |Method that returns all entities of a concrete type. |
+|                                                                             |       +-----------------------------------------------------------+                                                     |
+|                                                                             |       |**port-orion**: Port to connect with the service.          |                                                     |
+|                                                                             |       +-----------------------------------------------------------+                                                     |
+|                                                                             |       |**fiware-type**: Type of entities that we want to receive. |                                                     |
++-----------------------------------------------------------------------------+-------+-----------------------------------------------------------+-----------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together with the information of the all entities of this type.
 
@@ -1677,17 +1715,19 @@ Return:
 Retrieve entities for type as object v1
 ***************************************
 
-+----------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+----------------------------------------------------------------------------+
-|URL                                                                                                 |Method |URL Params                                                   |Definition                                                                  |
-+====================================================================================================+=======+=============================================================+============================================================================+
-|http://{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}}?attributeFormat=object |GET    |* **url**:Link to the service that will be consulted.        |Method that return all entities of a concrete type with object JSON format. |
-|                                                                                                    |       |* **port-orion**: Port to connect with the service.          |                                                                            |
-|                                                                                                    |       |* **fiware-type**: Type of entities that we want to receive. |                                                                            |
-+----------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+----------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------+----------------------------------------------------------------------------+
+|URL                                                                                                 |Method |URL Params                                                 |Definition                                                                  |
++====================================================================================================+=======+===========================================================+============================================================================+
+|http://{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}}?attributeFormat=object |GET    |**url**:Link to the service that will be consulted.        |Method that return all entities of a concrete type with object JSON format. |
+|                                                                                                    |       +-----------------------------------------------------------+                                                                            |
+|                                                                                                    |       |**port-orion**: Port to connect with the service.          |                                                                            |
+|                                                                                                    |       +-----------------------------------------------------------+                                                                            |
+|                                                                                                    |       |**fiware-type**: Type of entities that we want to receive. |                                                                            |
++----------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------+----------------------------------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together with the information of the all entities of this type with object JSON format.
 
@@ -1696,17 +1736,19 @@ Return:
 Delete entity v1
 ****************
 
-+-------------------------------------------------------------------+-------+---------------------------------------------------------+-----------------------------------+
-|URL                                                                |Method |URL Params                                               |Definition                         |
-+===================================================================+=======+=========================================================+===================================+
-|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}} |DELETE |* **url**:Link to the service that will be consulted.    |Method to delete a defined entity. |
-|                                                                   |       |* **port-orion**: Port to connect with the service.      |                                   |
-|                                                                   |       |* **fiware-entity**: ID of the entity we want to delete. |                                   |
-+-------------------------------------------------------------------+-------+---------------------------------------------------------+-----------------------------------+
++-------------------------------------------------------------------+-------+-------------------------------------------------------+-----------------------------------+
+|URL                                                                |Method |URL Params                                             |Definition                         |
++===================================================================+=======+=======================================================+===================================+
+|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}} |DELETE |**url**:Link to the service that will be consulted.    |Method to delete a defined entity. |
+|                                                                   |       +-------------------------------------------------------+                                   |
+|                                                                   |       |**port-orion**: Port to connect with the service.      |                                   |
+|                                                                   |       +-------------------------------------------------------+                                   |
+|                                                                   |       |**fiware-entity**: ID of the entity we want to delete. |                                   |
++-------------------------------------------------------------------+-------+-------------------------------------------------------+-----------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly and delete the entity defined, it returns 200 OK.
 
@@ -1715,17 +1757,19 @@ Return:
 Create/update entity attribute v1
 *********************************
 
-+-----------------------------------------------------------------------------+-------+---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-|URL                                                                          |Method |URL Params                                                                 |Definition                                                                                                                                                |
-+=============================================================================+=======+===========================================================================+==========================================================================================================================================================+
-|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiwareentity}}/attributes |POST   |* **url**:Link to the service that will be consulted.                      |Method to update the values of one or many attributes of an entity passed as parameter. In addition, this method can create new attributes for an entity. |
-|                                                                             |       |* **port-orion**: Port to connect with the service.                        |                                                                                                                                                          |
-|                                                                             |       |* **fiware-entity**: ID of the entity that will be created of the service. |                                                                                                                                                          |
-+-----------------------------------------------------------------------------+-------+---------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------+-------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+|URL                                                                           |Method |URL Params                                                               |Definition                                                                                                                                                |
++==============================================================================+=======+=========================================================================+==========================================================================================================================================================+
+|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}/attributes |POST   |**url**:Link to the service that will be consulted.                      |Method to update the values of one or many attributes of an entity passed as parameter. In addition, this method can create new attributes for an entity. |
+|                                                                              |       +-------------------------------------------------------------------------+                                                                                                                                                          |
+|                                                                              |       |**port-orion**: Port to connect with the service.                        |                                                                                                                                                          |
+|                                                                              |       +-------------------------------------------------------------------------+                                                                                                                                                          |
+|                                                                              |       |**fiware-entity**: ID of the entity that will be created of the service. |                                                                                                                                                          |
++------------------------------------------------------------------------------+-------+-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Body (creation):
 
-.. code-block:: json
+.. code-block:: javascript
 
         Create a new attribute. We transmit a new attribute in the body:
 
@@ -1741,23 +1785,23 @@ Body (creation):
 
 Body (updating):
 
-.. code-block:: json
+.. code-block:: javascript
 
         Update an attribute. We transmit an existing/available attribute with a new value.
 
         {
             “attributes”: [
                 {
-                    “name”: “attribute_id_nuevo”,
-                    “type”: “attribute_type_nuevo”,
-                    “value”: “attribute_value_nuevo”
+                    “name”: “attribute_id_new”,
+                    “type”: “attribute_type_new”,
+                    “value”: “attribute_value_new”
                 }
             ]
         }
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together with the information of the entity updating.
 
@@ -1766,18 +1810,21 @@ Return:
 Retrieve entity attribute v1
 ****************************
 
-+----------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
-|URL                                                                                           |Method |URL Params                                                                   |Definition                                                                            |
-+==============================================================================================+=======+=============================================================================+======================================================================================+
-|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}/attributes/{{fiware-attr}} |GET    |* **url**:Link to the service that will be consulted.                        |Method that retrieves the defined attribute depending on the ID of a specific entity. |
-|                                                                                              |       |* **port-orion**: Port to connect with the service.                          |                                                                                      |
-|                                                                                              |       |* **fiware-entity**: ID of the entity that will be retrieved of the service. |                                                                                      |
-|                                                                                              |       |* **fiware-attr**: Attribute ID we want to receive.                          |                                                                                      |
-+----------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
+|URL                                                                                           |Method |URL Params                                                                 |Definition                                                                            |
++==============================================================================================+=======+===========================================================================+======================================================================================+
+|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}/attributes/{{fiware-attr}} |GET    |**url**:Link to the service that will be consulted.                        |Method that retrieves the defined attribute depending on the ID of a specific entity. |
+|                                                                                              |       +---------------------------------------------------------------------------+                                                                                      |
+|                                                                                              |       |**port-orion**: Port to connect with the service.                          |                                                                                      |
+|                                                                                              |       +---------------------------------------------------------------------------+                                                                                      |
+|                                                                                              |       |**fiware-entity**: ID of the entity that will be retrieved of the service. |                                                                                      |
+|                                                                                              |       +---------------------------------------------------------------------------+                                                                                      |
+|                                                                                              |       |**fiware-attr**: Attribute ID we want to receive.                          |                                                                                      |
++----------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together the attribute value defining by its ID for a specific entity.
 
@@ -1788,18 +1835,21 @@ Return:
 Delete entity attribute as object v1
 ************************************
 
-+---------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
-|URL                                                                                                                  |Method |URL Params                                                                   |Definition                                                                                                    |
-+=====================================================================================================================+=======+=============================================================================+==============================================================================================================+
-|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}/attributes/{{fiware-attr}}?attributeFormat=object |GET    |* **url**:Link to the service that will be consulted.                        |Method that retrieves the defined attribute depending on the ID of a specific entity with object JSON format. |
-|                                                                                                                     |       |* **port-orion**: Port to connect with the service.                          |                                                                                                              |
-|                                                                                                                     |       |* **fiware-entity**: ID of the entity that will be retrieved of the service. |                                                                                                              |
-|                                                                                                                     |       |* **fiware-attr**: Attribute ID we want to receive.                          |                                                                                                              |
-+---------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
+|URL                                                                                                                  |Method |URL Params                                                                 |Definition                                                                                                    |
++=====================================================================================================================+=======+===========================================================================+==============================================================================================================+
+|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}/attributes/{{fiware-attr}}?attributeFormat=object |GET    |**url**:Link to the service that will be consulted.                        |Method that retrieves the defined attribute depending on the ID of a specific entity with object JSON format. |
+|                                                                                                                     |       +---------------------------------------------------------------------------+                                                                                                              |
+|                                                                                                                     |       |**port-orion**: Port to connect with the service.                          |                                                                                                              |
+|                                                                                                                     |       +---------------------------------------------------------------------------+                                                                                                              |
+|                                                                                                                     |       |**fiware-entity**: ID of the entity that will be retrieved of the service. |                                                                                                              |
+|                                                                                                                     |       +---------------------------------------------------------------------------+                                                                                                              |
+|                                                                                                                     |       |**fiware-attr**: Attribute ID we want to receive.                          |                                                                                                              |
++---------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together the attribute value defined by its ID for a specific entity with object JSON format.
 
@@ -1808,18 +1858,21 @@ Return:
 Retrieve entities attribute for type v1
 ***************************************
 
-+--------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------+------------------------------------------------------------------------------+
-|URL                                                                                                     |Method |URL Params                                                                |Definition                                                                    |
-+========================================================================================================+=======+==========================================================================+==============================================================================+
-|http://{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}}/attributes/{{fiware-attr}} |GET    |* **url**:Link to the service that will be consulted.                     |Method that returns the defined attribute of all entities of a specific type. |
-|                                                                                                        |       |* **port-orion**: Port to connect with the service.                       |                                                                              |
-|                                                                                                        |       |* **fiware-type**: Type of entities that we want to receive.              |                                                                              |
-|                                                                                                        |       |* **fiware-attr**: Attribute of type of entities that we want to receive. |                                                                              |
-+--------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------+------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------+------------------------------------------------------------------------------+
+|URL                                                                                                     |Method |URL Params                                                              |Definition                                                                    |
++========================================================================================================+=======+========================================================================+==============================================================================+
+|http://{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}}/attributes/{{fiware-attr}} |GET    |**url**:Link to the service that will be consulted.                     |Method that returns the defined attribute of all entities of a specific type. |
+|                                                                                                        |       +------------------------------------------------------------------------+                                                                              |
+|                                                                                                        |       |**port-orion**: Port to connect with the service.                       |                                                                              |
+|                                                                                                        |       +------------------------------------------------------------------------+                                                                              |
+|                                                                                                        |       |**fiware-type**: Type of entities that we want to receive.              |                                                                              |
+|                                                                                                        |       +------------------------------------------------------------------------+                                                                              |
+|                                                                                                        |       |**fiware-attr**: Attribute of type of entities that we want to receive. |                                                                              |
++--------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together with the information of defined attributes of all entities of this type.
 
@@ -1828,18 +1881,21 @@ Return:
 Retrieve entities attribute for type as object v1
 *************************************************
 
-+-------------------------------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-|URL                                                                                                                            |Method |URL Params                                                                |Definition                                                                                            |
-+===============================================================================================================================+=======+==========================================================================+======================================================================================================+
-|http://{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}}/attributes/{{fiware-attr}}?attributeFormat=object |GET    |* **url**:Link to the service that will be consulted.                     |Method that returns the defined attribute of all entities of a specific type with object JSON format. |
-|                                                                                                                               |       |* **port-orion**: Port to connect with the service.                       |                                                                                                      |
-|                                                                                                                               |       |* **fiware-type**: Type of entities that we want to receive.              |                                                                                                      |
-|                                                                                                                               |       |* **fiware-attr**: Attribute of type of entities that we want to receive. |                                                                                                      |
-+-------------------------------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
+|URL                                                                                                                            |Method |URL Params                                                              |Definition                                                                                            |
++===============================================================================================================================+=======+========================================================================+======================================================================================================+
+|http://{{url}}:{{port-orion}}/v1/registry/contextEntityTypes/{{fiware-type}}/attributes/{{fiware-attr}}?attributeFormat=object |GET    |**url**:Link to the service that will be consulted.                     |Method that returns the defined attribute of all entities of a specific type with object JSON format. |
+|                                                                                                                               |       +------------------------------------------------------------------------+                                                                                                      |
+|                                                                                                                               |       |**port-orion**: Port to connect with the service.                       |                                                                                                      |
+|                                                                                                                               |       +------------------------------------------------------------------------+                                                                                                      |
+|                                                                                                                               |       |**fiware-type**: Type of entities that we want to receive.              |                                                                                                      |
+|                                                                                                                               |       +------------------------------------------------------------------------+                                                                                                      |
+|                                                                                                                               |       |**fiware-attr**: Attribute of type of entities that we want to receive. |                                                                                                      |
++-------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together with the information of defined attributes of all entities of this type with object JSON format.
 
@@ -1848,18 +1904,21 @@ Return:
 Delete entity attribute v1
 **************************
 
-+----------------------------------------------------------------------------------------------+-------+----------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-|URL                                                                                           |Method |URL Params                                                                  |Definition                                                                       |
-+==============================================================================================+=======+============================================================================+=================================================================================+
-|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}/attributes/{{fiware-attr}} |DELETE |* **url**:Link to the service that will be consulted.                       |Method to delete the defined attribute depending on the ID of a concrete entity. |
-|                                                                                              |       |* **port-orion**: Port to connect with the service.                         |                                                                                 |
-|                                                                                              |       |* **fiware-entity**: ID of the entity that will be retrieve of the service. |                                                                                 |
-|                                                                                              |       |* **fiware-attr**: Attribute ID we want to receive.                         |                                                                                 |
-+----------------------------------------------------------------------------------------------+-------+----------------------------------------------------------------------------+---------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+|URL                                                                                           |Method |URL Params                                                                |Definition                                                                       |
++==============================================================================================+=======+==========================================================================+=================================================================================+
+|http://{{url}}:{{port-orion}}/v1/contextEntities/{{fiware-entity}}/attributes/{{fiware-attr}} |DELETE |**url**:Link to the service that will be consulted.                       |Method to delete the defined attribute depending on the ID of a concrete entity. |
+|                                                                                              |       +--------------------------------------------------------------------------+                                                                                 |
+|                                                                                              |       |**port-orion**: Port to connect with the service.                         |                                                                                 |
+|                                                                                              |       +--------------------------------------------------------------------------+                                                                                 |
+|                                                                                              |       |**fiware-entity**: ID of the entity that will be retrieve of the service. |                                                                                 |
+|                                                                                              |       +--------------------------------------------------------------------------+                                                                                 |
+|                                                                                              |       |**fiware-attr**: Attribute ID we want to receive.                         |                                                                                 |
++----------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly and delete the entity defined, it returns 200 OK.
 
@@ -1868,17 +1927,19 @@ Return:
 Retrieve type v1
 ****************
 
-+--------------------------------------------------------------+-------+-------------------------------------------------------------+-------------------------------------------+
-|URL                                                           |Method |URL Params                                                   |Definition                                 |
-+==============================================================+=======+=============================================================+===========================================+
-|http://{{url}}:{{port-orion}}/v1/contextTypes/{{fiware-type}} |GET    |* **url**:Link to the service that will be consulted.        |Method to receive an entity type concrete. |
-|                                                              |       |* **port-orion**: Port to connect with the service.          |                                           |
-|                                                              |       |* **fiware-type**: Type of entities that we want to receive. |                                           |
-+--------------------------------------------------------------+-------+-------------------------------------------------------------+-------------------------------------------+
++--------------------------------------------------------------+-------+-----------------------------------------------------------+-------------------------------------------+
+|URL                                                           |Method |URL Params                                                 |Definition                                 |
++==============================================================+=======+===========================================================+===========================================+
+|http://{{url}}:{{port-orion}}/v1/contextTypes/{{fiware-type}} |GET    |**url**:Link to the service that will be consulted.        |Method to receive an entity type concrete. |
+|                                                              |       +-----------------------------------------------------------+                                           |
+|                                                              |       |**port-orion**: Port to connect with the service.          |                                           |
+|                                                              |       +-----------------------------------------------------------+                                           |
+|                                                              |       |**fiware-type**: Type of entities that we want to receive. |                                           |
++--------------------------------------------------------------+-------+-----------------------------------------------------------+-------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together the information of this entities type.
 
@@ -1887,16 +1948,17 @@ Return:
 Retrieve types v1
 *****************
 
-+----------------------------------------------+-------+------------------------------------------------------+-----------------------------------------------+
-|URL                                           |Method |URL Params                                            |Definition                                     |
-+==============================================+=======+======================================================+===============================================+
-|http://{{url}}:{{port-orion}}/v1/contextTypes |GET    |* **url**:Link to the service that will be consulted. |Method to receive the existing entities types. |
-|                                              |       |* **port-orion**: Port to connect with the service.   |                                               |
-+----------------------------------------------+-------+------------------------------------------------------+-----------------------------------------------+
++----------------------------------------------+-------+----------------------------------------------------+-----------------------------------------------+
+|URL                                           |Method |URL Params                                          |Definition                                     |
++==============================================+=======+====================================================+===============================================+
+|http://{{url}}:{{port-orion}}/v1/contextTypes |GET    |**url**:Link to the service that will be consulted. |Method to receive the existing entities types. |
+|                                              |       +----------------------------------------------------+                                               |
+|                                              |       |**port-orion**: Port to connect with the service.   |                                               |
++----------------------------------------------+-------+----------------------------------------------------+-----------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly, it returns 200 OK together the information of all entities type.
 
@@ -1905,16 +1967,17 @@ Return:
 Create context subscription standard v1
 ***************************************
 
-+--------------------------------------------------------------+-------+------------------------------------------------------+-----------------------------------------------------------------+
-|URL                                                           |Method |URL Params                                            |Definition                                                       |
-+==============================================================+=======+======================================================+=================================================================+
-|http://{{url}}:{{port-orion}}/v1/subscribeContextAvailability |POST   |* **url**:Link to the service that will be consulted. |Method to create a subscription to one or many context entities. |
-|                                                              |       |* **port-orion**: Port to connect with the service.   |                                                                 |
-+--------------------------------------------------------------+-------+------------------------------------------------------+-----------------------------------------------------------------+
++--------------------------------------------------------------+-------+----------------------------------------------------+-----------------------------------------------------------------+
+|URL                                                           |Method |URL Params                                          |Definition                                                       |
++==============================================================+=======+====================================================+=================================================================+
+|http://{{url}}:{{port-orion}}/v1/subscribeContextAvailability |POST   |**url**:Link to the service that will be consulted. |Method to create a subscription to one or many context entities. |
+|                                                              |       +----------------------------------------------------+                                                                 |
+|                                                              |       |**port-orion**: Port to connect with the service.   |                                                                 |
++--------------------------------------------------------------+-------+----------------------------------------------------+-----------------------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “entities”: [
@@ -1938,7 +2001,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “subscriptionId”: “subscription_id”,
@@ -1948,16 +2011,17 @@ Return:
 Update context subscription standard v1
 ***************************************
 
-+------------------------------------------------------------------------+-------+------------------------------------------------------+-----------------------------------------------------+
-|URL                                                                     |Method |URL Params                                            |Definition                                           |
-+========================================================================+=======+======================================================+=====================================================+
-|http://{{url}}:{{port-orion}}/v1/updateContextAvailabilitySubscriptions |POST   |* **url**:Link to the service that will be consulted. |Method to update a subscription of a context entity. |
-|                                                                        |       |* **port-orion**: Port to connect with the service.   |                                                     |
-+------------------------------------------------------------------------+-------+------------------------------------------------------+-----------------------------------------------------+
++------------------------------------------------------------------------+-------+----------------------------------------------------+-----------------------------------------------------+
+|URL                                                                     |Method |URL Params                                          |Definition                                           |
++========================================================================+=======+====================================================+=====================================================+
+|http://{{url}}:{{port-orion}}/v1/updateContextAvailabilitySubscriptions |POST   |**url**:Link to the service that will be consulted. |Method to update a subscription of a context entity. |
+|                                                                        |       +----------------------------------------------------+                                                     |
+|                                                                        |       |**port-orion**: Port to connect with the service.   |                                                     |
++------------------------------------------------------------------------+-------+----------------------------------------------------+-----------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “entities”: [
@@ -1973,7 +2037,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “subscribeResponse”: {
@@ -1985,17 +2049,19 @@ Return:
 Update context subscription convenience v1
 ******************************************
 
-+---------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------+-----------------------------------------------------+
-|URL                                                                                                |Method |URL Params                                                           |Definition                                           |
-+===================================================================================================+=======+=====================================================================+=====================================================+
-|http://{{url}}:{{port-orion}}/v1/registry/contextAvailabilitySubscriptions/{{fiware-subscription}} |PUT    |* **url**:Link to the service that will be consulted.                |Method to update a subscription of a context entity. |
-|                                                                                                   |       |* **port-orion**: Port to connect with the service.                  |                                                     |
-|                                                                                                   |       |* **fiware-subscription**: ID of the subscription will be updated.   |                                                     |
-+---------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------+-----------------------------------------------------+
++---------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------------+-----------------------------------------------------+
+|URL                                                                                                |Method |URL Params                                                         |Definition                                           |
++===================================================================================================+=======+===================================================================+=====================================================+
+|http://{{url}}:{{port-orion}}/v1/registry/contextAvailabilitySubscriptions/{{fiware-subscription}} |PUT    |**url**:Link to the service that will be consulted.                |Method to update a subscription of a context entity. |
+|                                                                                                   |       +-------------------------------------------------------------------+                                                     |
+|                                                                                                   |       |**port-orion**: Port to connect with the service.                  |                                                     |
+|                                                                                                   |       +-------------------------------------------------------------------+                                                     |
+|                                                                                                   |       |**fiware-subscription**: ID of the subscription will be updated.   |                                                     |
++---------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------------+-----------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
        {
             “entities”: [
@@ -2011,7 +2077,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “subscribeResponse”: {
@@ -2023,16 +2089,17 @@ Return:
 Delete context subscription standard v1
 ***************************************
 
-+---------------------------------------------------------------+-------+------------------------------------------------------+-----------------------------------------------------+
-|URL                                                            |Method |URL Params                                            |Definition                                           |
-+===============================================================+=======+======================================================+=====================================================+
-|http://{{url}}:{{port-orion}}/v1/unsuscribeContextAvailability |POST   |* **url**:Link to the service that will be consulted. |Method to delete a subscription of a context entity. |
-|                                                               |       |* **port-orion**: Port to connect with the service.   |                                                     |
-+---------------------------------------------------------------+-------+------------------------------------------------------+-----------------------------------------------------+
++---------------------------------------------------------------+-------+----------------------------------------------------+-----------------------------------------------------+
+|URL                                                            |Method |URL Params                                          |Definition                                           |
++===============================================================+=======+====================================================+=====================================================+
+|http://{{url}}:{{port-orion}}/v1/unsuscribeContextAvailability |POST   |**url**:Link to the service that will be consulted. |Method to delete a subscription of a context entity. |
+|                                                               |       +----------------------------------------------------+                                                     |
+|                                                               |       |**port-orion**: Port to connect with the service.   |                                                     |
++---------------------------------------------------------------+-------+----------------------------------------------------+-----------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
        {
             “subscriptionId”: “5a785788777fc523840b843e”
@@ -2040,7 +2107,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly and delete the entity defined, it returns 200 OK together with the removed subscription ID.
 
@@ -2049,17 +2116,19 @@ Return:
 Delete context subscription convenience v1
 ******************************************
 
-+-----------------------------------------------------------------------------------------+-------+---------------------------------------------------------+-----------------------------------------------------+
-|URL                                                                                      |Method |URL Params                                               |Definition                                           |
-+=========================================================================================+=======+=========================================================+=====================================================+
-|http://{{url}}:{{portorion}}/v1/contextAvailabilitySubscriptions/{{fiware-subscription}} |POST   |* **url**:Link to the service that will be consulted.    |Method to delete a subscription of a context entity. |
-|                                                                                         |       |* **port-orion**: Port to connect with the service.      |                                                     |
-|                                                                                         |       |* **fiware-subscription**: ID of subscription to remove. |                                                     |
-+-----------------------------------------------------------------------------------------+-------+---------------------------------------------------------+-----------------------------------------------------+
++-----------------------------------------------------------------------------------------+-------+-------------------------------------------------------+-----------------------------------------------------+
+|URL                                                                                      |Method |URL Params                                             |Definition                                           |
++=========================================================================================+=======+=======================================================+=====================================================+
+|http://{{url}}:{{portorion}}/v1/contextAvailabilitySubscriptions/{{fiware-subscription}} |POST   |**url**:Link to the service that will be consulted.    |Method to delete a subscription of a context entity. |
+|                                                                                         |       +-------------------------------------------------------+                                                     |
+|                                                                                         |       |**port-orion**: Port to connect with the service.      |                                                     |
+|                                                                                         |       +-------------------------------------------------------+                                                     |
+|                                                                                         |       |**fiware-subscription**: ID of subscription to remove. |                                                     |
++-----------------------------------------------------------------------------------------+-------+-------------------------------------------------------+-----------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         In case of performing the method correctly and delete the entity defined, it returns 200 OK together with the removed subscription ID.
 
@@ -2068,16 +2137,17 @@ Return:
 Create subscription standard v1
 *******************************
 
-+-------------------------------------------------+-------+------------------------------------------------------+---------------------------------------------------------+
-|URL                                              |Method |URL Params                                            |Definition                                               |
-+=================================================+=======+======================================================+=========================================================+
-|http://{{url}}:{{port-orion}}/v1/suscribeContext |POST   |* **url**:Link to the service that will be consulted. |Method to create a subscription to one or many entities. |
-|                                                 |       |* **port-orion**: Port to connect with the service.   |                                                         |
-+-------------------------------------------------+-------+------------------------------------------------------+---------------------------------------------------------+
++-------------------------------------------------+-------+----------------------------------------------------+---------------------------------------------------------+
+|URL                                              |Method |URL Params                                          |Definition                                               |
++=================================================+=======+====================================================+=========================================================+
+|http://{{url}}:{{port-orion}}/v1/suscribeContext |POST   |**url**:Link to the service that will be consulted. |Method to create a subscription to one or many entities. |
+|                                                 |       +----------------------------------------------------+                                                         |
+|                                                 |       |**port-orion**: Port to connect with the service.   |                                                         |
++-------------------------------------------------+-------+----------------------------------------------------+---------------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “entities”: [
@@ -2112,7 +2182,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “subscribeResponse”: {
@@ -2124,16 +2194,17 @@ Return:
 Create subscription convenience v1
 **********************************
 
-+------------------------------------------------------+-------+------------------------------------------------------+---------------------------------------------------------+
-|URL                                                   |Method |URL Params                                            |Definition                                               |
-+======================================================+=======+======================================================+=========================================================+
-|http://{{url}}:{{port-orion}}/v1/contextSubscriptions |POST   |* **url**:Link to the service that will be consulted. |Method to create a subscription to one or many entities. |
-|                                                      |       |* **port-orion**: Port to connect with the service.   |                                                         |
-+------------------------------------------------------+-------+------------------------------------------------------+---------------------------------------------------------+
++------------------------------------------------------+-------+----------------------------------------------------+---------------------------------------------------------+
+|URL                                                   |Method |URL Params                                          |Definition                                               |
++======================================================+=======+====================================================+=========================================================+
+|http://{{url}}:{{port-orion}}/v1/contextSubscriptions |POST   |**url**:Link to the service that will be consulted. |Method to create a subscription to one or many entities. |
+|                                                      |       +----------------------------------------------------+                                                         |
+|                                                      |       |**port-orion**: Port to connect with the service.   |                                                         |
++------------------------------------------------------+-------+----------------------------------------------------+---------------------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “entities”: [
@@ -2168,7 +2239,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “subscribeResponse”: {
@@ -2180,16 +2251,17 @@ Return:
 Update subscription standard v1
 *******************************
 
-+-----------------------------------------------------------+-------+------------------------------------------------------+----------------------------------------------+
-|URL                                                        |Method |URL Params                                            |Definition                                    |
-+===========================================================+=======+======================================================+==============================================+
-|http://{{url}}:{{port-orion}}/v1/updateContextSubscription |POST   |* **url**:Link to the service that will be consulted. |Method to update a subscription of an entity. |
-|                                                           |       |* **port-orion**: Port to connect with the service.   |                                              |
-+-----------------------------------------------------------+-------+------------------------------------------------------+----------------------------------------------+
++-----------------------------------------------------------+-------+----------------------------------------------------+----------------------------------------------+
+|URL                                                        |Method |URL Params                                          |Definition                                    |
++===========================================================+=======+====================================================+==============================================+
+|http://{{url}}:{{port-orion}}/v1/updateContextSubscription |POST   |**url**:Link to the service that will be consulted. |Method to update a subscription of an entity. |
+|                                                           |       +----------------------------------------------------+                                              |
+|                                                           |       |**port-orion**: Port to connect with the service.   |                                              |
++-----------------------------------------------------------+-------+----------------------------------------------------+----------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “subscriptionId”: “id_subscription”,
@@ -2198,7 +2270,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “subscribeResponse”: {
@@ -2210,17 +2282,19 @@ Return:
 Update subscription convenience v1
 **********************************
 
-+------------------------------------------------------------------------------+-------+---------------------------------------------------------+----------------------------------------------+
-|URL                                                                           |Method |URL Params                                               |Definition                                    |
-+==============================================================================+=======+=========================================================+==============================================+
-|http://{{url}}:{{port-orion}}/v1/contextSubscriptions/{{fiware-subscription}} |POST   |* **url**:Link to the service that will be consulted.    |Method to update a subscription of an entity. |
-|                                                                              |       |* **port-orion**: Port to connect with the service.      |                                              |
-|                                                                              |       |* **fiware-subscription**: ID of subscription to update. |                                              |
-+------------------------------------------------------------------------------+-------+---------------------------------------------------------+----------------------------------------------+
++------------------------------------------------------------------------------+-------+-------------------------------------------------------+----------------------------------------------+
+|URL                                                                           |Method |URL Params                                             |Definition                                    |
++==============================================================================+=======+=======================================================+==============================================+
+|http://{{url}}:{{port-orion}}/v1/contextSubscriptions/{{fiware-subscription}} |POST   |**url**:Link to the service that will be consulted.    |Method to update a subscription of an entity. |
+|                                                                              |       +-------------------------------------------------------+                                              |
+|                                                                              |       |**port-orion**: Port to connect with the service.      |                                              |
+|                                                                              |       +-------------------------------------------------------+                                              |
+|                                                                              |       |**fiware-subscription**: ID of subscription to update. |                                              |
++------------------------------------------------------------------------------+-------+-------------------------------------------------------+----------------------------------------------+
 
 Body:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “subscriptionId”: “id_subscription”,
@@ -2229,7 +2303,7 @@ Body:
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “subscribeResponse”: {
@@ -2241,17 +2315,19 @@ Return:
 Delete subscription v1
 **********************
 
-+------------------------------------------------------------------------------+-------+---------------------------------------------------------+------------------------------------------------+
-|URL                                                                           |Method |URL Params                                               |Definition                                      |
-+==============================================================================+=======+=========================================================+================================================+
-|http://{{url}}:{{port-orion}}/v1/contextSubscriptions/{{fiware-subscription}} |POST   |* **url**:Link to the service that will be consulted.    |Method to delete the subscription to an entity. |
-|                                                                              |       |* **port-orion**: Port to connect with the service.      |                                                |
-|                                                                              |       |* **fiware-subscription**: ID of subscription to remove. |                                                |
-+------------------------------------------------------------------------------+-------+---------------------------------------------------------+------------------------------------------------+
++------------------------------------------------------------------------------+-------+-------------------------------------------------------+------------------------------------------------+
+|URL                                                                           |Method |URL Params                                             |Definition                                      |
++==============================================================================+=======+=======================================================+================================================+
+|http://{{url}}:{{port-orion}}/v1/contextSubscriptions/{{fiware-subscription}} |POST   |**url**:Link to the service that will be consulted.    |Method to delete the subscription to an entity. |
+|                                                                              |       +-------------------------------------------------------+                                                |
+|                                                                              |       |**port-orion**: Port to connect with the service.      |                                                |
+|                                                                              |       +-------------------------------------------------------+                                                |
+|                                                                              |       |**fiware-subscription**: ID of subscription to remove. |                                                |
++------------------------------------------------------------------------------+-------+-------------------------------------------------------+------------------------------------------------+
 
 Return:
 
-.. code-block:: json
+.. code-block:: javascript
 
         {
             “subscribeResponse”: {
@@ -2406,3 +2482,3371 @@ The Information Reporting Interface is used by a LwM2M Server to observe any cha
 * **Observe:** The LwM2M Server initiates an observation request for changes of a specific Resource, Resources within an Object Instance or for all the Object Instances of an Object within the LwM2M Client.
 * **Notify:** The “Notify” operation is sent from the LwM2M Client to the LwM2M Server during a valid observation on an Object Instance or Resource. This operation includes the new value of the Object Instance or Resource. The “Notify” operation should be sent when all the conditions (i.e., Minimum Period, Maximum Period, Greater Than, Less Than, Step) configured by “Write-Attributes” operation for “Observe” operation are met.
 * **Cancel Observation:** The “Cancel Observation” operation is sent from the LwM2M Server to the LwM2M Client to end an observation relationship for Object Instance or Resource.
+
+ANNEX 2: FIWARE-DOCKER Architecture
+###################################
+FIWARE IoT Stack allows you to connect devices and receive data. Though to FIWARE IoT Stack we can understand, interpret and process the data relative to physical devices. In this document,
+we have exposed and defined the components of FIWARE IoT Stack we have used in a summarized fashion.
+
+MongoDB
+*******
+MongoDB is a free and open-source database. It is classified as a NoSQL database. Instead of save the data on tables like is done in relational databases, MongoDB save data structure on
+documents similar to JSON with a dynamic diagram, making that the data integration on certain application be more easy and quickly.
+
+This database is connected with:
+
+* STH Comet save aggregated data.
+* Cygnus save raw data.
+* Orion Context Broker save subscriptions.
+* IoT Agent save device mapping.
+
+More information about the component can be found in the MongoDB documentation: https://docs.mongodb.com
+
+STH-Comet
+*********
+The Short Time Historic (STH) is a component of the FIWARE in charge of manage historical time series information about the evolution of context data registered in an Orion Context Broker
+instance over time. STH can be considered as a Time Series Database. This component has a main functionality:
+
+* Retrieves, store, update or delete raw and aggregated time series context information.
+
+Also, STH is connected to:
+
+* MongoDB is in charge of store the desired raw and aggregated time series context information managed by the STH component.
+* Cygnus is needs to store the raw and aggregated time series context information into the STH component following the formal option, because Cygnus is in charge of store the context
+information managed by an Orion Context Broker instance over time. In other words, Cygnus notify to STH-Comet with data received.
+
+More information about the component can be found in the Fiware-STH-Comet documentation: https://fiware-sthcomet.readthedocs.io/en/latest/index.html
+
+Cygnus
+******
+Cygnus is based on Apache Flume, a distributed service for collecting, aggregating and moving data. Cygnus is a connector in charge of persisting Orion context data. Store the Orion
+Context Broker entities data, allows create a historical view of this data. Cygnus subscribes to Orion and receive entities data when this entities are modified. Cygnus defined what
+data it is interested in an Orion entity. Cygnus allows:
+
+* Store the last value of an entity’s attribute. If and older value is required, Cygnus receives it and sends to the applicant.
+
+Cygnus is connected to:
+
+* STH-Comet. Cygnus notify to STH-Comet when a data received. A STH database built on top of MongoDB.
+* Orion. Cygnus is subscribed to Orion Context Broker for receive data about entities it interesting.
+* MongoDB. Cygnus store the context data in a MongoDB database.
+
+More information about the component can be found in the Cygnus documentation: http://fiware-cygnus.readthedocs.io/en/1.7.1/index.html
+
+Orion Context Broker
+********************
+Orion is a C++ implementation developed as a part of FIWARE platform. Orion Context Broker is in charge of manage all the lifecycle of context information including update, queries,
+registrations and delete. Orion allows subscribe to a context information for notify when any modify occur and create and modify entities through queries. Currently coexist the NGSIv1
+version and the NGSIv2.
+
+Orion Context Broker allows:
+
+* Manage of entities. OCB is in charge of create, update, retrieve and delete an entity or list of entities. Also, allows manage entities by their type.
+* Manage of context information. OCB allows create, update and delete a context information.
+* Manage of subscription. OCB is in charge of create, update, retrieve and delete a subscription.
+
+Also, Orion Context Broker depends on:
+
+* MongoDB. This database store the subscriptions they want to be notified when modify occur.
+* IoT Agent. IoT Agent is subscribed to Orion Context Broker for receive data about entities it interesting.
+* Cygnus. Cygnus is subscribed to Orion Context Broker for receive data about entities it interesting.
+* QuantumLeap. QuantumLeap is subscribed to Orion Context Broker for receive data about entities it interesting.
+* Perseo-fe. Perseo-fe is subscribed to Orion Context Broker for receive data about entities it interesting.
+
+More information about the component can be found in the Orion Context Broker documentation: https://fiware-orion.readthedocs.io/en/master/index.html
+
+IoT Agent
+*********
+IoT Agent it’s a component in charge on stores devices data. IoT Agent receive data in M2M language and then it translate to standard platform language to can be processed for Orion
+Context Broker. In other words, IoT Agent converts the physical devices to an Orion Context Broker entity. Also, IoT Agent allows to send commands to devices. IoT Agents supports OMA
+lightweight M2M protocol and JSON protocol.
+
+IoT Agent has various functionalities:
+
+* Transforms the physical devices to an entities it can be manage in Orion Context Broker.
+* IoT Agent take part between OMA LWM2M and JSON Objects.
+* Store the translation of a physical device in a persistent storage.
+
+Also, IoT Agent is connected to:
+
+* Orion. IoT Agent send the JSON objects representing physical devices to Orion.
+* MongoDB. Store the mapping of the physical device in a MongoDB database.
+
+More information about the component can be found in the IoT Agent for OMA LWM2M documentation: http://fiwareiotagent-lwm2m.readthedocs.io/en/latest/index.html
+
+Grafana
+*******
+Grafana is an open source application allows generate dashboards from data contained in CrateDB database. The CrateDB data is displayed in a dashboards, and the user can display the data
+the way his want it. However, Orion Context Broker store the information in MongoDB database. To store the relevant Orion Context Information data in a CrateDB database we need QuantumLeap
+to convert the OCB data to CrateDB data.
+
+Grafana has a main functionality:
+
+* Show the values of the Orion Context Broker entities as a graph order by data time.
+
+Grafana is connected to:
+
+* CrateDB. Grafana shows data belonging to CrateDB database.
+* QuantumLeap. Convert the storage of NGSI FIWARE NGSIv2 data into a time series database for CrateDB.
+
+More information about the component can be found in the Grafana experiments: https://github.com/smartsdk/ngsitimeseries-api/tree/master/experiments/grafana
+
+QuantumLeap
+***********
+QuantumLeap is an API that supports the storage of NGSI FIWARE NGSIv2 data into a time series database. The client create an Orion subscription to notify QuantumLeap of the update in the
+entities it interesting. QuantumLeap translate the NGSI information receive to Orion subscription to CrateDB database, and persisting it.
+
+QuantumLeap allows:
+
+* Convert the Orion Context Broker information to CrateDB data.
+* Supported integration with dashboard application like Grafana.
+
+QuantumLeap is connected to:
+
+* CrateDB. QuantumLeap allows to CrateDB store the Orion Context Broker entities data.
+* Orion Context Broker. QuantumLeap is subscribed to Orion Context Broker for receive data about entities it interesting.
+
+More information about the component can be found in the QuantumLeap documentation: https://smartsdk.github.io/ngsi-timeseries-api/
+
+CrateDB
+*******
+CrateDB is a distributed SQL database in charge to store and analyze machine data in real-time. Crate is the database where NGSI data will be persisted after its converts to a data time
+series. Once the Orion subscription of QuantumLeap is created, when QuantumLeap receives NGSI information, coverts it and stores this information in a CrateDB database.
+
+CrateDB has various functionalities:
+
+* Stores the data as a data time series.
+* Allows show the data it contained with dashboards application.
+
+CrateDB is connected to:
+
+* QuantumLeap. CrateDB is the QuantumLeap’s backend where NGSI data converted will be stored.
+* Grafana. Grafana generate dashboards from data of CrateDB database, it obtains thanks to QuantumLeap.
+
+More information about the component can be found in the CrateDB documentation: https://crate.io/docs/clients/admin-ui/en/latest/index.html
+
+Perseo-core
+***********
+Perseo-core is the rules engine of Perseo CEP, the “back-end”. It receives the events through a POST a JSON object and apply the functions generate by this JSON object. In case of must to
+execute an action, it informs to Perseo-fe through a POST request. EPL is the language of rules of Esper. Esper is a Java library in charge of event processing logic and the rules engine.
+The defined rules aren’t stored persistently, but kept in memory, and it can update from Perseo-fe.
+
+Perseo-core has the following functionality:
+
+* Perseo-core trigger events through a POST request to Perseo-fe if any rule is complied it.
+* Acts as the rules engine and event process logic of Perseo CEP.
+
+Perseo-core is connected to:
+
+* Perseo-fe. Perseo-fe send to perseo-core a rule and event, Perseo-core process the information and, if any rule is complied it, send an action to Perseo-fe.
+
+More information about the component can be found in the Perseo-core documentation: https://github.com/telefonicaid/perseo-core/tree/master/documentation
+
+Perseo-fe
+*********
+Perseo-fe is a component that together with Perseo-core form the Perseo CEP, the “front-end”. It processing incoming events a rules, storing rules and executing actions. When Perseo-core
+send an action to Perseo-fe, it is responsible of send an action via SMS, e-mail o HTTP. We must have configured the following servers if we can send a notification: SMPP, SMTP and HTTP.
+
+Perseo-fe allows:
+
+* Send a SMS, e-mail, HTT Post or a tweet if it receive from Perseo-fe any action.
+* Receives events of creation or update of Orion Context Broker entities.
+* Store the rules to check when it receive an events.
+
+Perseo-fe is connected to:
+
+* Orion. Perseo-fe is subscribed to Orion Context Broker for receive data about entities it interesting.
+* Perseo-core. Perseo-core is the event processing logic and the rules engine of Perseo-fe, his brain.
+
+More information about the component can be found in the Perseo-fe documentation: https://github.com/telefonicaid/perseo-fe/tree/master/documentation
+
+ANNEX 3: STH-Comet RESTFul API
+##############################
+Retrieve raw values with pagination
+***********************************
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------------------------------------+------------------------------------------------+
+|URL                                                                                                                                                                       |Method |URL Params                                                                                 |Definition                                      |
++==========================================================================================================================================================================+=======+===========================================================================================+================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?hLimit={{fiware-limit}}&hOffset={{fiware-offset}} |GET    |**url**: Link to the service will be consulted.                                            |Method to retrieve all changes of an attribute. |
+|                                                                                                                                                                          |       +-------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                          |       |**port-sth**: Port to connect with the service.                                            |                                                |
+|                                                                                                                                                                          |       +-------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                          |       |**fiware-type**: Type of the entity.                                                       |                                                |
+|                                                                                                                                                                          |       +-------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                          |       |**fiware-entity**: ID of the entity which will be consulted in the service.                |                                                |
+|                                                                                                                                                                          |       +-------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                          |       |**fiware-attr**: ID of the attribute which will be consulted.                              |                                                |
+|                                                                                                                                                                          |       +-------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                          |       |**fiware-limit**: Entries number for each page.                                            |                                                |
+|                                                                                                                                                                          |       +-------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                          |       |**fiware-offset**: The offset to apply to the requested search of raw context information. |                                                |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------------------------------------+------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        From all registered changes of the attribute will choose the number of changes specified in “fiware-limit” and depending on the value of “fiware-offset” will return certain changes.
+
+Retrieve raw values with pagination and filetype
+************************************************
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+|URL                                                                                                                                                                                                    |Method |URL Params                                                                                                                 |Definition                                      |
++=======================================================================================================================================================================================================+=======+===========================================================================================================================+================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?hLimit={{fiware-limit}}&hOffset={{fiware-offset}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                            |Method to retrieve all changes of an attribute. |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                                                       |       |**port-sth**: Port to connect with the service.                                                                            |                                                |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                                                       |       |**fiware-type**: Type of the entity.                                                                                       |                                                |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                                                       |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                |                                                |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                                                       |       |**fiware-attr**: ID of the attribute which will be consulted.                                                              |                                                |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                                                       |       |**fiware-limit**: Entries number for each page.                                                                            |                                                |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                                                       |       |**fiware-offset**: Entries offset number.                                                                                  |                                                |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------------------------------+                                                |
+|                                                                                                                                                                                                       |       |**fiware-filetype**: File format will be saved the changes of the attribute. Currently, the only supported value is “csv”. |                                                |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------------------------------+------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the number of changes of the attribute specified in “fiware-limit” and from all changes registered, certain changes are chosen depending on the value of “fiware-offset”.
+
+Retrieve n raw values
+*********************
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+-------+----------------------------------------------------------------------------+---------------------------------------------------------+
+|URL                                                                                                                                            |Method |URL Params                                                                  |Definition                                               |
++===============================================================================================================================================+=======+============================================================================+=========================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?lastN={{fiware-lastN}} |GET    |**url**: Link to the service will be consulted.                             |Method to retrieve the last “n” changes of an attribute. |
+|                                                                                                                                               |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                               |       |**port-sth**: Port to connect with the service.                             |                                                         |
+|                                                                                                                                               |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                               |       |**fiware-type**: Type of the entity.                                        |                                                         |
+|                                                                                                                                               |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                               |       |**fiware-entity**: ID of the entity which will be consulted in the service. |                                                         |
+|                                                                                                                                               |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                               |       |**fiware-attr**: ID of the attribute which will be consulted.               |                                                         |
+|                                                                                                                                               |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                               |       |**fiware-lastN**: Entries number will be returned.                          |                                                         |
++-----------------------------------------------------------------------------------------------------------------------------------------------+-------+----------------------------------------------------------------------------+---------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        The last “n” changes of the attribute.
+
+Retrieve n raw values with pagination
+*************************************
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+----------------------------------------------------------------------------+---------------------------------------------------------+
+|URL                                                                                                                                                                       |Method |URL Params                                                                  |Definition                                               |
++==========================================================================================================================================================================+=======+============================================================================+=========================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?hLimit={{fiware-limit}}&hOffset={{fiware-offset}} |GET    |**url**: Link to the service will be consulted.                             |Method to retrieve the last “n” changes of an attribute. |
+|                                                                                                                                                                          |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                          |       |**port-sth**: Port to connect with the service.                             |                                                         |
+|                                                                                                                                                                          |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                          |       |**fiware-type**: Type of the entity.                                        |                                                         |
+|                                                                                                                                                                          |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                          |       |**fiware-entity**: ID of the entity which will be consulted in the service. |                                                         |
+|                                                                                                                                                                          |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                          |       |**fiware-attr**: ID of the attribute which will be consulted.               |                                                         |
+|                                                                                                                                                                          |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                          |       |**fiware-limit**: Entries number for each page.                             |                                                         |
+|                                                                                                                                                                          |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                          |       |**fiware-offset**: Entries offset number.                                   |                                                         |
+|                                                                                                                                                                          |       +----------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                          |       |**fiware-lastN**: Entries number will be returned.                          |                                                         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+----------------------------------------------------------------------------+---------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        From last “n” registered changes of the attribute will choose the number of changes specified in “fiware-limit” and depending on the value of “fiware-offset” will return certain changes.
+
+Retrieve n raw with filetype
+****************************
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+|URL                                                                                                                                                                         |Method |URL Params                                                                                                                 |Definition                                               |
++============================================================================================================================================================================+=======+===========================================================================================================================+=========================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?lastN={{fiware-lastN}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                            |Method to retrieve the last “n” changes of an attribute. |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                            |       |**port-sth**: Port to connect with the service.                                                                            |                                                         |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                            |       |**fiware-type**: Type of the entity.                                                                                       |                                                         |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                            |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                |                                                         |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                            |       |**fiware-attr**: ID of the attribute which will be consulted.                                                              |                                                         |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                            |       |**fiware-lastN**: Entries number will be returned.                                                                         |                                                         |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                            |       |**fiware-filetype**: File format will be saved all changes of the attribute. Currently, the only supported value is “csv”. |                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the last “n” registered changes of the attribute.
+
+Retrieve n raw values with pagination and filetype
+**************************************************
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+|URL                                                                                                                                                                                                                           |Method |URL Params                                                                                                                 |Definition                                               |
++==============================================================================================================================================================================================================================+=======+===========================================================================================================================+=========================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?hLimit={{fiware-limit}}&hOffset={{fiware-offset}}&lastN={{fiware-lastN}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                            |Method to retrieve the last “n” changes of an attribute. |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                                              |       |**port-sth**: Port to connect with the service.                                                                            |                                                         |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                                              |       |**fiware-type**: Type of the entity.                                                                                       |                                                         |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                                              |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                |                                                         |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                                              |       |**fiware-attr**: ID of the attribute which will be consulted.                                                              |                                                         |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                                              |       |**fiware-limit**: Entries number for each page.                                                                            |                                                         |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                                              |       |**fiware-offset**: Entries offset number.                                                                                  |                                                         |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                                              |       |**fiware-lastN**: Entries number will be returned.                                                                         |                                                         |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                                              |       |**fiware-filetype**: File format will be saved all changes of the attribute. Currently, the only supported value is “csv”. |                                                         |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the number of changes of the attribute specified in “fiware-limit” and from the last “n” changes registered certain changes are chosen depending on the value of
+        “fiware-offset”.
+
+Retrieve raw values between two dates with pagination
+*****************************************************
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+|URL                                                                                                                                                                                                                             |Method |URL Params                                                                                         |Definition                                                        |
++================================================================================================================================================================================================================================+=======+===================================================================================================+==================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&dateTo={{fiware-dateTo}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}} |GET    |**url**: Link to the service will be consulted.                                                    |Method to retrieve all changes of an attribute between two dates. |
+|                                                                                                                                                                                                                                |       +---------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                |       |**port-sth**: Port to connect with the service.                                                    |                                                                  |
+|                                                                                                                                                                                                                                |       +---------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                |       |**fiware-type**: Type of the entity.                                                               |                                                                  |
+|                                                                                                                                                                                                                                |       +---------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                |       |**fiware-entity**: ID of the entity which will be consulted in the service.                        |                                                                  |
+|                                                                                                                                                                                                                                |       +---------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                |       |**fiware-attr**: ID of the attribute which will be consulted.                                      |                                                                  |
+|                                                                                                                                                                                                                                |       +---------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired. |                                                                  |
+|                                                                                                                                                                                                                                |       +---------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.     |                                                                  |
+|                                                                                                                                                                                                                                |       +---------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                |       |**fiware-limit**: Entries number for each page.                                                    |                                                                  |
+|                                                                                                                                                                                                                                |       +---------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                |       |**fiware-offset**: Entries offset number.                                                          |                                                                  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        From all registered changes of the attribute between the two specified dates will choose the number of changes specified in “fiware-limit” and depending on the value of
+        “fiware-offset” will return certain changes.
+
+Retrieve n raw values between two dates
+***************************************
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+|URL                                                                                                                                                                                                  |Method |URL Params                                                                                         |Definition                                                                 |
++=====================================================================================================================================================================================================+=======+===================================================================================================+===========================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&dateTo={{fiware-dateTo}}&lastN={{fiware-lastN}} |GET    |**url**: Link to the service will be consulted.                                                    |Method to retrieve the last “n” changes of an attribute between two dates. |
+|                                                                                                                                                                                                     |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                     |       |**port-sth**: Port to connect with the service.                                                    |                                                                           |
+|                                                                                                                                                                                                     |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                     |       |**fiware-type**: Type of the entity.                                                               |                                                                           |
+|                                                                                                                                                                                                     |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                     |       |**fiware-entity**: ID of the entity which will be consulted in the service.                        |                                                                           |
+|                                                                                                                                                                                                     |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                     |       |**fiware-attr**: ID of the attribute which will be consulted.                                      |                                                                           |
+|                                                                                                                                                                                                     |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                     |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired. |                                                                           |
+|                                                                                                                                                                                                     |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                     |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.     |                                                                           |
+|                                                                                                                                                                                                     |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                     |       |**fiware-lastN**: Entries number will be returned.                                                 |                                                                           |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        The last “n” registered changes of the attribute between the two specified dates.
+
+Retrieve raw value between two dates with pagination and filetype
+*****************************************************************
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+|URL                                                                                                                                                                                                                                                          |Method |URL Params                                                                                                                               |Definition                                                        |
++=============================================================================================================================================================================================================================================================+=======+=========================================================================================================================================+==================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&dateTo={{fiware-dateTo}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                                          |Method to retrieve all changes of an attribute between two dates. |
+|                                                                                                                                                                                                                                                             |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                             |       |**port-sth**: Port to connect with the service.                                                                                          |                                                                  |
+|                                                                                                                                                                                                                                                             |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                             |       |**fiware-type**: Type of the entity.                                                                                                     |                                                                  |
+|                                                                                                                                                                                                                                                             |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                             |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                              |                                                                  |
+|                                                                                                                                                                                                                                                             |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                             |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                            |                                                                  |
+|                                                                                                                                                                                                                                                             |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                             |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired.                                       |                                                                  |
+|                                                                                                                                                                                                                                                             |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                             |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.                                           |                                                                  |
+|                                                                                                                                                                                                                                                             |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                             |       |**fiware-limit**: Entries number for each page.                                                                                          |                                                                  |
+|                                                                                                                                                                                                                                                             |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                             |       |**fiware-offset**: Entries offset number.                                                                                                |                                                                  |
+|                                                                                                                                                                                                                                                             |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                             |       |**fiware-filetype**: File format will be saved all changes of the attribute. Currently, the only supported value and file type is “csv”. |                                                                  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the number of changes of the attribute specified in “fiware-limit” and from all changes registered between the two specified dates, certain changes are chosen
+        depending on the value of “fiware-offset”.
+
+Retrieve n raw values between two dates with pagination
+*******************************************************
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+|URL                                                                                                                                                                                                                                                    |Method |URL Params                                                                                         |Definition                                                                 |
++=======================================================================================================================================================================================================================================================+=======+===================================================================================================+===========================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&dateTo={{fiware-dateTo}}&lastN={{fiware-lastN}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}} |GET    |**url**: Link to the service will be consulted.                                                    |Method to retrieve the last “n” changes of an attribute between two dates. |
+|                                                                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                       |       |**port-sth**: Port to connect with the service.                                                    |                                                                           |
+|                                                                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                       |       |**fiware-type**: Type of the entity.                                                               |                                                                           |
+|                                                                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                       |       |**fiware-entity**: ID of the entity which will be consulted in the service.                        |                                                                           |
+|                                                                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                       |       |**fiware-attr**: ID of the attribute which will be consulted.                                      |                                                                           |
+|                                                                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                       |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired. |                                                                           |
+|                                                                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                       |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.     |                                                                           |
+|                                                                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                       |       |**fiware-lastN**: Entries number will be returned.                                                 |                                                                           |
+|                                                                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                       |       |**fiware-limit**: Entries number for each page.                                                    |                                                                           |
+|                                                                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                       |       |**fiware-offset**: Entries offset number.                                                          |                                                                           |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        From the last “n” registered changes of the attribute between the two specified dates will choose the number of changes specified in “fiware-limit” and depending on the value of
+        “fiware-offset” will return certain changes.
+
+Retrieve n raw values between two dates with filetype
+*****************************************************
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+|URL                                                                                                                                                                                                                               |Method |URL Params                                                                                                                               |Definition                                                                 |
++==================================================================================================================================================================================================================================+=======+=========================================================================================================================================+===========================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&dateTo={{fiware-dateTo}}&lastN={{fiware-lastN}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                                          |Method to retrieve the last “n” changes of an attribute between two dates. |
+|                                                                                                                                                                                                                                  |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                  |       |**port-sth**: Port to connect with the service.                                                                                          |                                                                           |
+|                                                                                                                                                                                                                                  |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                  |       |**fiware-type**: Type of the entity.                                                                                                     |                                                                           |
+|                                                                                                                                                                                                                                  |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                  |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                              |                                                                           |
+|                                                                                                                                                                                                                                  |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                  |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                            |                                                                           |
+|                                                                                                                                                                                                                                  |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                  |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired.                                       |                                                                           |
+|                                                                                                                                                                                                                                  |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                  |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.                                           |                                                                           |
+|                                                                                                                                                                                                                                  |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                  |       |**fiware-lastN**: Entries number will be returned.                                                                                       |                                                                           |
+|                                                                                                                                                                                                                                  |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                  |       |**fiware-filetype**: File format will be saved all changes of the attribute. Currently, the only supported value and file type is “csv”. |                                                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the last “n” registered changes of the attribute between the two specified dates.
+
+Retrieve n raw values between two dates with pagination and filetype
+********************************************************************
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+|URL                                                                                                                                                                                                                                                                                 |Method |URL Params                                                                                                                               |Definition                                                                 |
++====================================================================================================================================================================================================================================================================================+=======+=========================================================================================================================================+===========================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&dateTo={{fiware-dateTo}}&lastN={{fiware-lastN}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                                          |Method to retrieve the last “n” changes of an attribute between two dates. |
+|                                                                                                                                                                                                                                                                                    |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                                                    |       |**port-sth**: Port to connect with the service.                                                                                          |                                                                           |
+|                                                                                                                                                                                                                                                                                    |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                                                    |       |**fiware-type**: Type of the entity.                                                                                                     |                                                                           |
+|                                                                                                                                                                                                                                                                                    |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                                                    |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                              |                                                                           |
+|                                                                                                                                                                                                                                                                                    |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                                                    |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                            |                                                                           |
+|                                                                                                                                                                                                                                                                                    |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                                                    |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired.                                       |                                                                           |
+|                                                                                                                                                                                                                                                                                    |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                                                    |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.                                           |                                                                           |
+|                                                                                                                                                                                                                                                                                    |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                                                    |       |**fiware-limit**: Entries number for each page.                                                                                          |                                                                           |
+|                                                                                                                                                                                                                                                                                    |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                                                    |       |**fiware-offset**: Entries offset number.                                                                                                |                                                                           |
+|                                                                                                                                                                                                                                                                                    |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                           |
+|                                                                                                                                                                                                                                                                                    |       |**fiware-filetype**: File format will be saved all changes of the attribute. Currently, the only supported value and file type is “csv”. |                                                                           |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the number of changes of the attribute specified in “fiware-limit” and from the last “n” changes registered between the two specified dates, certain changes
+        are chosen depending on the value of “fiware-offset”.
+
+Retrieve raw values after a date with pagination
+************************************************
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+|URL                                                                                                                                                                                                    |Method |URL Params                                                                                         |Definition                                                   |
++=======================================================================================================================================================================================================+=======+===================================================================================================+=============================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}} |GET    |**url**: Link to the service will be consulted.                                                    |Method to retrieve all changes of an attribute after a date. |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                       |       |**port-sth**: Port to connect with the service.                                                    |                                                             |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                       |       |**fiware-type**: Type of the entity.                                                               |                                                             |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                       |       |**fiware-entity**: ID of the entity which will be consulted in the service.                        |                                                             |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                       |       |**fiware-attr**: ID of the attribute which will be consulted.                                      |                                                             |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                       |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired. |                                                             |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                       |       |**fiware-limit**: Entries number for each page.                                                    |                                                             |
+|                                                                                                                                                                                                       |       +---------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                       |       |**fiware-offset**: Entries offset number.                                                          |                                                             |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        From all registered changes of the attribute after the specified date will choose the number of changes specified in “fiware-limit” and depending on the value of
+        “fiware-offset” will return certain changes.
+
+Retrieve n raw values after date with pagination
+************************************************
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+|URL                                                                                                                                                                                                                           |Method |URL Params                                                                                         |Definition                                                    |
++==============================================================================================================================================================================================================================+=======+===================================================================================================+==============================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}}&lastN={{fiware-lastN}} |GET    |**url**: Link to the service will be consulted.                                                    |Method to retrieve the last “n” of an attribute after a date. |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                              |       |**port-sth**: Port to connect with the service.                                                    |                                                              |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                              |       |**fiware-type**: Type of the entity.                                                               |                                                              |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                              |       |**fiware-entity**: ID of the entity which will be consulted in the service.                        |                                                              |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                              |       |**fiware-attr**: ID of the attribute which will be consulted.                                      |                                                              |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                              |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired. |                                                              |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                              |       |**fiware-limit**: Entries number for each page.                                                    |                                                              |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                              |       |**fiware-offset**: Entries offset number.                                                          |                                                              |
+|                                                                                                                                                                                                                              |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                              |       |**fiware-lastN**: Entries number will be returned.                                                 |                                                              |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        From the last “n” registered changes of the attribute after the specified date will choose the number of changes pecified in “fiware-limit” and depending on the value of
+        “fiware-offset” will return certain changes.
+
+Retrieve raw values after date with pagination and filetype
+***********************************************************
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+|URL                                                                                                                                                                                                                                 |Method |URL Params                                                                                                                            |Definition                                                   |
++====================================================================================================================================================================================================================================+=======+======================================================================================================================================+=============================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                                       |Method to retrieve all changes of an attribute after a date. |
+|                                                                                                                                                                                                                                    |       +--------------------------------------------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                                                    |       |**port-sth**: Port to connect with the service.                                                                                       |                                                             |
+|                                                                                                                                                                                                                                    |       +--------------------------------------------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                                                    |       |**fiware-type**: Type of the entity.                                                                                                  |                                                             |
+|                                                                                                                                                                                                                                    |       +--------------------------------------------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                                                    |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                           |                                                             |
+|                                                                                                                                                                                                                                    |       +--------------------------------------------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                                                    |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                         |                                                             |
+|                                                                                                                                                                                                                                    |       +--------------------------------------------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                                                    |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired.                                    |                                                             |
+|                                                                                                                                                                                                                                    |       +--------------------------------------------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                                                    |       |**fiware-limit**: Entries number for each page.                                                                                       |                                                             |
+|                                                                                                                                                                                                                                    |       +--------------------------------------------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                                                    |       |**fiware-offset**: Entries offset number.                                                                                             |                                                             |
+|                                                                                                                                                                                                                                    |       +--------------------------------------------------------------------------------------------------------------------------------------+                                                             |
+|                                                                                                                                                                                                                                    |       |**fiware-lastN**: File format will be saved all changes of the attribute. Currently, the only supported value and file type is “csv”. |                                                             |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the number of changes of the attribute specified in “fiware-limit” and from all changes registered after the specified date, certain changes are chosen
+        depending on the value of “fiware-offset”.
+
+Retrieve n raw values after date
+********************************
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+|URL                                                                                                                                                                         |Method |URL Params                                                                                         |Definition                                                    |
++============================================================================================================================================================================+=======+===================================================================================================+==============================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&lastN={{fiware-lastN}} |GET    |**url**: Link to the service will be consulted.                                                    |Method to retrieve the last “n” of an attribute after a date. |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                            |       |**port-sth**: Port to connect with the service.                                                    |                                                              |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                            |       |**fiware-type**: Type of the entity.                                                               |                                                              |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                            |       |**fiware-entity**: ID of the entity which will be consulted in the service.                        |                                                              |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                            |       |**fiware-attr**: ID of the attribute which will be consulted.                                      |                                                              |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                            |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired. |                                                              |
+|                                                                                                                                                                            |       +---------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                            |       |**fiware-lastN**: Entries number will be returned.                                                 |                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        The last “n” registered changes of the attribute and after the specified date.
+
+Retrieve n raw values after date with filetype
+**********************************************
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+|URL                                                                                                                                                                                                      |Method |URL Params                                                                                                                               |Definition                                                    |
++=========================================================================================================================================================================================================+=======+=========================================================================================================================================+==============================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&lastN={{fiware-lastN}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                                          |Method to retrieve the last “n” of an attribute after a date. |
+|                                                                                                                                                                                                         |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                         |       |**port-sth**: Port to connect with the service.                                                                                          |                                                              |
+|                                                                                                                                                                                                         |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                         |       |**fiware-type**: Type of the entity.                                                                                                     |                                                              |
+|                                                                                                                                                                                                         |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                         |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                              |                                                              |
+|                                                                                                                                                                                                         |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                         |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                            |                                                              |
+|                                                                                                                                                                                                         |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                         |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired.                                       |                                                              |
+|                                                                                                                                                                                                         |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                         |       |**fiware-lastN**: Entries number will be returned.                                                                                       |                                                              |
+|                                                                                                                                                                                                         |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                         |       |**fiware-filetype**: File format will be saved all changes of the attribute. Currently, the only supported value and file type is “csv”. |                                                              |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the last “n” registered changes of the attribute after the specified date.
+
+Retrieve n raw values after date with pagination and filetype
+*************************************************************
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+|URL                                                                                                                                                                                                                                                        |Method |URL Params                                                                                                                               |Definition                                                    |
++===========================================================================================================================================================================================================================================================+=======+=========================================================================================================================================+==============================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateFrom={{fiware-dateFrom}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}}&lastN={{fiware-lastN}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                                          |Method to retrieve the last “n” of an attribute after a date. |
+|                                                                                                                                                                                                                                                           |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                                                           |       |**port-sth**: Port to connect with the service.                                                                                          |                                                              |
+|                                                                                                                                                                                                                                                           |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                                                           |       |**fiware-type**: Type of the entity.                                                                                                     |                                                              |
+|                                                                                                                                                                                                                                                           |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                                                           |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                              |                                                              |
+|                                                                                                                                                                                                                                                           |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                                                           |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                            |                                                              |
+|                                                                                                                                                                                                                                                           |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                                                           |       |**fiware-dateFrom**: The starting date and time from which the raw context information is desired.                                       |                                                              |
+|                                                                                                                                                                                                                                                           |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                              |
+|                                                                                                                                                                                                                                                           |       |**fiware-lastN**: Entries number will be returned.                                                                                       |                                                              |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the number of changes of the attribute specified in “fiware-limit” and from the last “n” changes registered after the specified date, certain
+        changes are chosen depending on the value of “fiware-offset”.
+
+Retrieve n raw values before date with pagination and filetype
+**************************************************************
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+|URL                                                                                                                                                                                                                                                    |Method |URL Params                                                                                                                               |Definition                                                        |
++=======================================================================================================================================================================================================================================================+=======+=========================================================================================================================================+==================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateTo={{fiware-dateTo}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}}&lastN={{fiware-lastN}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                                          |Method to retrieve the last “n” registered changes before a date. |
+|                                                                                                                                                                                                                                                       |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                       |       |**port-sth**: Port to connect with the service.                                                                                          |                                                                  |
+|                                                                                                                                                                                                                                                       |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                       |       |**fiware-type**: Type of the entity.                                                                                                     |                                                                  |
+|                                                                                                                                                                                                                                                       |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                       |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                              |                                                                  |
+|                                                                                                                                                                                                                                                       |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                       |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                            |                                                                  |
+|                                                                                                                                                                                                                                                       |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                       |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.                                           |                                                                  |
+|                                                                                                                                                                                                                                                       |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                       |       |**fiware-lastN**: Entries number will be returned.                                                                                       |                                                                  |
+|                                                                                                                                                                                                                                                       |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                       |       |**fiware-limit**: Entries number for each page.                                                                                          |                                                                  |
+|                                                                                                                                                                                                                                                       |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                       |       |**fiware-offset**: Entries offset number.                                                                                                |                                                                  |
+|                                                                                                                                                                                                                                                       |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                                                       |       |**fiware-filetype**: File format will be saved all changes of the attribute. Currently, the only supported value and file type is “csv”. |                                                                  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the number of changes of the attribute specified in “fiware-limit” and from the last “n” changes registered before the specified date, certain changes are
+        chosen depending on the value of “fiware-offset”.
+
+Retrieve n raw values before date with pagination
+*************************************************
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+|URL                                                                                                                                                                                                                       |Method |URL Params                                                                                                                               |Definition                                                        |
++==========================================================================================================================================================================================================================+=======+=========================================================================================================================================+==================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateTo={{fiware-dateTo}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}}&lastN={{fiware-lastN}} |GET    |**url**: Link to the service will be consulted.                                                                                          |Method to retrieve the last “n” registered changes before a date. |
+|                                                                                                                                                                                                                          |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                          |       |**port-sth**: Port to connect with the service.                                                                                          |                                                                  |
+|                                                                                                                                                                                                                          |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                          |       |**fiware-type**: Type of the entity.                                                                                                     |                                                                  |
+|                                                                                                                                                                                                                          |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                          |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                              |                                                                  |
+|                                                                                                                                                                                                                          |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                          |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                            |                                                                  |
+|                                                                                                                                                                                                                          |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                          |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.                                           |                                                                  |
+|                                                                                                                                                                                                                          |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                          |       |**fiware-lastN**: Entries number will be returned.                                                                                       |                                                                  |
+|                                                                                                                                                                                                                          |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                          |       |**fiware-limit**: Entries number for each page.                                                                                          |                                                                  |
+|                                                                                                                                                                                                                          |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                                          |       |**fiware-offset**: Entries offset number.                                                                                                |                                                                  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        From the last “n” registered changes of the attribute before the specified date will choose the number of changes specified in “fiware-limit” and depending on the value of
+        “fiware-offset” will return certain changes.
+
+Retrieve n raw values before date with filetype
+***********************************************
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+|URL                                                                                                                                                                                                  |Method |URL Params                                                                                                                               |Definition                                                        |
++=====================================================================================================================================================================================================+=======+=========================================================================================================================================+==================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateTo={{fiware-dateTo}}&lastN={{fiware-lastN}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                                          |Method to retrieve the last “n” registered changes before a date. |
+|                                                                                                                                                                                                     |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                     |       |**port-sth**: Port to connect with the service.                                                                                          |                                                                  |
+|                                                                                                                                                                                                     |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                     |       |**fiware-type**: Type of the entity.                                                                                                     |                                                                  |
+|                                                                                                                                                                                                     |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                     |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                              |                                                                  |
+|                                                                                                                                                                                                     |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                     |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                            |                                                                  |
+|                                                                                                                                                                                                     |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                     |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.                                           |                                                                  |
+|                                                                                                                                                                                                     |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                     |       |**fiware-lastN**: Entries number will be returned.                                                                                       |                                                                  |
+|                                                                                                                                                                                                     |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                                                     |       |**fiware-filetype**: File format will be saved all changes of the attribute. Currently, the only supported value and file type is “csv”. |                                                                  |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the last “n” registered changes of the attribute before the specified date.
+
+Retrieve n raw values before date
+*********************************
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+|URL                                                                                                                                                                     |Method |URL Params                                                                                                                               |Definition                                                        |
++========================================================================================================================================================================+=======+=========================================================================================================================================+==================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateTo={{fiware-dateTo}}&lastN={{fiware-lastN}} |GET    |**url**: Link to the service will be consulted.                                                                                          |Method to retrieve the last “n” registered changes before a date. |
+|                                                                                                                                                                        |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                        |       |**port-sth**: Port to connect with the service.                                                                                          |                                                                  |
+|                                                                                                                                                                        |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                        |       |**fiware-type**: Type of the entity.                                                                                                     |                                                                  |
+|                                                                                                                                                                        |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                        |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                              |                                                                  |
+|                                                                                                                                                                        |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                        |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                            |                                                                  |
+|                                                                                                                                                                        |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                        |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.                                           |                                                                  |
+|                                                                                                                                                                        |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                  |
+|                                                                                                                                                                        |       |**fiware-lastN**: Entries number will be returned.                                                                                       |                                                                  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        The last “n” changes of the attribute before the specified date.
+
+Retrieve raw values before date with pagination
+***********************************************
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------+---------------------------------------------------------+
+|URL                                                                                                                                                                                                |Method |URL Params                                                                                     |Definition                                               |
++===================================================================================================================================================================================================+=======+===============================================================================================+=========================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateTo={{fiware-dateTo}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}} |GET    |**url**: Link to the service will be consulted.                                                |Method to retrieve all registered changes before a date. |
+|                                                                                                                                                                                                   |       +-----------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                   |       |**port-sth**: Port to connect with the service.                                                |                                                         |
+|                                                                                                                                                                                                   |       +-----------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                   |       |**fiware-type**: Type of the entity.                                                           |                                                         |
+|                                                                                                                                                                                                   |       +-----------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                   |       |**fiware-entity**: ID of the entity which will be consulted in the service.                    |                                                         |
+|                                                                                                                                                                                                   |       +-----------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                   |       |**fiware-attr**: ID of the attribute which will be consulted.                                  |                                                         |
+|                                                                                                                                                                                                   |       +-----------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                   |       |**fiware-dateTo**: The final date and time until which the raw context information is desired. |                                                         |
+|                                                                                                                                                                                                   |       +-----------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                   |       |**fiware-limit**: Entries number for each page.                                                |                                                         |
+|                                                                                                                                                                                                   |       +-----------------------------------------------------------------------------------------------+                                                         |
+|                                                                                                                                                                                                   |       |**fiware-offset**: Entries offset number.                                                      |                                                         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------+---------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        From all registered changes of the attribute before the specified date will choose the number of changes specified in “fiware-limit” and depending on the value of
+        “fiware-offset” will return certain changes.
+
+Retrieve raw values before date with pagination and filetype
+************************************************************
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+|URL                                                                                                                                                                                                                             |Method |URL Params                                                                                                                               |Definition                                                               |
++================================================================================================================================================================================================================================+=======+=========================================================================================================================================+=========================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?dateTo={{fiware-dateTo}}&hLimit={{fiware-limit}}&hOffset={{fiware-offset}}&filetype={{fiware-filetype}} |GET    |**url**: Link to the service will be consulted.                                                                                          |Method to retrieve all registered changes before a date of an attribute. |
+|                                                                                                                                                                                                                                |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                         |
+|                                                                                                                                                                                                                                |       |**port-sth**: Port to connect with the service.                                                                                          |                                                                         |
+|                                                                                                                                                                                                                                |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                         |
+|                                                                                                                                                                                                                                |       |**fiware-type**: Type of the entity.                                                                                                     |                                                                         |
+|                                                                                                                                                                                                                                |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                         |
+|                                                                                                                                                                                                                                |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                              |                                                                         |
+|                                                                                                                                                                                                                                |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                         |
+|                                                                                                                                                                                                                                |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                            |                                                                         |
+|                                                                                                                                                                                                                                |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                         |
+|                                                                                                                                                                                                                                |       |**fiware-dateTo**: The final date and time until which the raw context information is desired.                                           |                                                                         |
+|                                                                                                                                                                                                                                |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                         |
+|                                                                                                                                                                                                                                |       |**fiware-limit**: Entries number for each page.                                                                                          |                                                                         |
+|                                                                                                                                                                                                                                |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                         |
+|                                                                                                                                                                                                                                |       |**fiware-offset**: Entries offset number.                                                                                                |                                                                         |
+|                                                                                                                                                                                                                                |       +-----------------------------------------------------------------------------------------------------------------------------------------+                                                                         |
+|                                                                                                                                                                                                                                |       |**fiware-filetype**: File format will be saved all changes of the attribute. Currently, the only supported value and file type is “csv”. |                                                                         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        Setting file with the number of changes of the attribute specified in “fiware-limit” and from all changes registered before the specified date, certain changes are chosen
+        depending on the value of “fiware-offset”.
+
+Retrieve aggregated values
+**************************
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+|URL                                                                                                                                                                               |Method |URL Params                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |Definition                                                                                                                |
++==================================================================================================================================================================================+=======+==========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+==========================================================================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?aggrMethod={{fiware-method}}&aggrPeriod={{fiware-period}} |GET    |**url**: Link to the service will be consulted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |Method to retrieve aggregated value of an attribute based on “fiwaremethod” with a resolution defined in “fiware-period”. |
+|                                                                                                                                                                                  |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                          |
+|                                                                                                                                                                                  |       |**port-sth**: Port to connect with the service.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                          |
+|                                                                                                                                                                                  |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                          |
+|                                                                                                                                                                                  |       |**fiware-type**: Type of the entity.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                                          |
+|                                                                                                                                                                                  |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                          |
+|                                                                                                                                                                                  |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                                          |
+|                                                                                                                                                                                  |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                          |
+|                                                                                                                                                                                  |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                          |
+|                                                                                                                                                                                  |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                          |
+|                                                                                                                                                                                  |       |**fiware-method**: The aggregation method. The STH component supports the following aggregation methods: max (maximum value), min (minimum value), sum (sum of all the samples) and sum2 (sum of the square value of all the samples) for numeric attribute values and occur for attributes values of type string. Combining the information provided by these aggregated methods with the number of samples, it is possible to calculate probabilistic values such as the average value, the variance as well as the standard deviation. |                                                                                                                          |
+|                                                                                                                                                                                  |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                          |
+|                                                                                                                                                                                  |       |**fiware-period**: Aggregation period or resolution. A fixed resolution determines the origin time format and the possible offsets. The STH component supports the following aggregation periods: month, day, hour, minute and second.                                                                                                                                                                                                                                                                                                    |                                                                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        If the type is String then returns the number of samples and for each value that has been registered the number of times it appears in the samples.
+
+        If the type is numerical then returns the number of samples of the attribute and depending on the value of “fiwaremethod” will calculated a value from all samples.
+
+Retrieve aggregate values between two dates
+*******************************************
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+|URL                                                                                                                                                                                                                                     |Method |URL Params                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |Definition                                                                                                                                  |
++========================================================================================================================================================================================================================================+=======+==========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+============================================================================================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?aggrMethod={{fiware-method}}&aggrPeriod={{fiware-period}}&dateFrom={{fiware-dateFrom}}&dateTo={{fiware-dateTo}} |GET    |**url**: Link to the service will be consulted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |Method to retrieve aggregated value of an attribute between two dates based on “fiwaremethod” with a resolution defined in “fiware-period”. |
+|                                                                                                                                                                                                                                        |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       |**port-sth**: Port to connect with the service.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       |**fiware-type**: Type of the entity.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       |**fiware-method**: The aggregation method. The STH component supports the following aggregation methods: max (maximum value), min (minimum value), sum (sum of all the samples) and sum2 (sum of the square value of all the samples) for numeric attribute values and occur for attributes values of type string. Combining the information provided by these aggregated methods with the number of samples, it is possible to calculate probabilistic values such as the average value, the variance as well as the standard deviation. |                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                                                        |       |**fiware-period**: Aggregation period or resolution. A fixed resolution determines the origin time format and the possible offsets. The STH component supports the following aggregation periods: month, day, hour, minute and second.                                                                                                                                                                                                                                                                                                    |                                                                                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        If the type is String then returns the number of samples and for each value that has been registered the number of times it appears in the samples.
+
+        If the type is numerical then returns the number of samples of the attribute and depending on the value of “fiwaremethod” will calculated a value from all samples.
+
+Retrieve aggregate values after date
+************************************
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+|URL                                                                                                                                                                                                            |Method |URL Params                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |Definition                                                                                                                                  |
++===============================================================================================================================================================================================================+=======+==========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+============================================================================================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?aggrMethod={{fiware-method}}&aggrPeriod={{fiware-period}}&dateFrom={{fiware-dateFrom}} |GET    |**url**: Link to the service will be consulted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |Method to retrieve aggregated value of an attribute between two dates based on “fiwaremethod” with a resolution defined in “fiware-period”. |
+|                                                                                                                                                                                                               |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                               |       |**port-sth**: Port to connect with the service.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                            |
+|                                                                                                                                                                                                               |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                               |       |**fiware-type**: Type of the entity.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                                                            |
+|                                                                                                                                                                                                               |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                               |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                                                            |
+|                                                                                                                                                                                                               |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                               |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                            |
+|                                                                                                                                                                                                               |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                               |       |**fiware-method**: The aggregation method. The STH component supports the following aggregation methods: max (maximum value), min (minimum value), sum (sum of all the samples) and sum2 (sum of the square value of all the samples) for numeric attribute values and occur for attributes values of type string. Combining the information provided by these aggregated methods with the number of samples, it is possible to calculate probabilistic values such as the average value, the variance as well as the standard deviation. |                                                                                                                                            |
+|                                                                                                                                                                                                               |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                               |       |**fiware-period**: Aggregation period or resolution. A fixed resolution determines the origin time format and the possible offsets. The STH component supports the following aggregation periods: month, day, hour, minute and second.                                                                                                                                                                                                                                                                                                    |                                                                                                                                            |
+|                                                                                                                                                                                                               |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                            |
+|                                                                                                                                                                                                               |       |**fiware-dateFrom**: The starting date and time from which the aggregated time series information is desired.                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                            |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        If the type is String then returns the number of samples and for each value that has been registered the number of times it appears in the samples.
+
+        If the type is numerical then returns the number of samples of the attribute and depending on the value of “fiwaremethod” will calculated a value from all samples.
+
+Retrieve aggregate values before date
+*************************************
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+|URL                                                                                                                                                                                                        |Method |URL Params                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |Definition                                                                                                                             |
++===========================================================================================================================================================================================================+=======+==========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+=======================================================================================================================================+
+|http://{{url}}:{{port-sth}}/STH/v1/contextEntities/type/{{fiware-type}}/id/{{fiware-entity}}/attributes/{{fiware-attr}}?aggrMethod={{fiware-method}}&aggrPeriod={{fiware-period}}&dateTo={{fiware-dateTo}} |GET    |**url**: Link to the service will be consulted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |Method to retrieve aggregated value of an attribute after a date based on “fiwaremethod” with a resolution defined in “fiware-period”. |
+|                                                                                                                                                                                                           |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                       |
+|                                                                                                                                                                                                           |       |**port-sth**: Port to connect with the service.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |                                                                                                                                       |
+|                                                                                                                                                                                                           |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                       |
+|                                                                                                                                                                                                           |       |**fiware-type**: Type of the entity.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                                                       |
+|                                                                                                                                                                                                           |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                       |
+|                                                                                                                                                                                                           |       |**fiware-entity**: ID of the entity which will be consulted in the service.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                                                                                                                       |
+|                                                                                                                                                                                                           |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                       |
+|                                                                                                                                                                                                           |       |**fiware-attr**: ID of the attribute which will be consulted.                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |                                                                                                                                       |
+|                                                                                                                                                                                                           |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                       |
+|                                                                                                                                                                                                           |       |**fiware-method**: The aggregation method. The STH component supports the following aggregation methods: max (maximum value), min (minimum value), sum (sum of all the samples) and sum2 (sum of the square value of all the samples) for numeric attribute values and occur for attributes values of type string. Combining the information provided by these aggregated methods with the number of samples, it is possible to calculate probabilistic values such as the average value, the variance as well as the standard deviation. |                                                                                                                                       |
+|                                                                                                                                                                                                           |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                       |
+|                                                                                                                                                                                                           |       |**fiware-period**: Aggregation period or resolution. A fixed resolution determines the origin time format and the possible offsets. The STH component supports the following aggregation periods: month, day, hour, minute and second.                                                                                                                                                                                                                                                                                                    |                                                                                                                                       |
+|                                                                                                                                                                                                           |       +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                                                                                                       |
+|                                                                                                                                                                                                           |       |**fiware-dateTo**:The final date and time until which the aggregated time series information is desired.                                                                                                                                                                                                                                                                                                                                                                                                                                  |                                                                                                                                       |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        If the type is String then returns the number of samples and for each value that has been registered the number of times it appears in the samples.
+
+        If the type is numerical then returns the number of samples of the attribute and depending on the value of “fiwaremethod” will calculated a value from all samples.
+
+ANNEX 4: Cygnus RESTFul API
+###########################
+
+Retrieve admin login v0
+***********************
+
++-------------------------------------------+-------+-----------------------------------------------------+------------------------------------------------+
+|URL                                        |Method |URL Params                                           |Definition                                      |
++===========================================+=======+=====================================================+================================================+
+|http://{{url}}:{{port-cygnus}}/admin/login |GET    |**url**: Link to the service that will be consulted. |Method to retrieve the logging level of Cygnus. |
+|                                           |       +-----------------------------------------------------+                                                |
+|                                           |       |**port-cygnus**: Port to connect with the service.   |                                                |
++-------------------------------------------+-------+-----------------------------------------------------+------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns the logging level of cygnus and “200 OK”.
+
+        In case of wrong execution, return “500 Internal Server Error”.
+
+Update admin login v0
+*********************
+
++-------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+|URL                                                                |Method |URL Params                                                                                                                            |Definition                                                 |
++===================================================================+=======+======================================================================================================================================+===========================================================+
+|http://{{url}}:{{port-cygnus}}/admin/log?level={{fiware-logLevel}} |PUT    |**url**: Link to the service that will be consulted.                                                                                  |Method to update the logging level of Cygnus for an admin. |
+|                                                                   |       +--------------------------------------------------------------------------------------------------------------------------------------+                                                           |
+|                                                                   |       |**port-cygnus**: Port to connect with the service.                                                                                    |                                                           |
+|                                                                   |       +--------------------------------------------------------------------------------------------------------------------------------------+                                                           |
+|                                                                   |       |**fiware-logLevel**: New level of log we want assigned. The valid loggins level are: *debug*, *info*, *warning*, *error* and *fatal*. |                                                           |
++-------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “200 OK”.
+
+        In case of wrong execution or invalid level, return “400 Bad Request”.
+
+Create agent parameter v0
+*************************
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------+
+|URL                                                                                                                                                             |Method |URL Params                                                   |Definition                                                       |
++================================================================================================================================================================+=======+=============================================================+=================================================================+
+|http://{{url}}:{{port-cygnus}}/admin/configuration/agent/cygnus/apache-flume-1.4.0-bin/conf/{{fiware-agent}}?param={{fiware-param}}&value={{fiware-paramValue}} |POST   |**url**: Link to the service that will be consulted.         |Method to create a new parameter in an agent configuration file. |
+|                                                                                                                                                                |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                |       |**port-cygnus**: Port to connect with the service.           |                                                                 |
+|                                                                                                                                                                |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                |       |**fiware-agent**: Name of agent configuration file.          |                                                                 |
+|                                                                                                                                                                |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                |       |**fiware-param**: Name of parameter we want to create.       |                                                                 |
+|                                                                                                                                                                |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                |       |**fiware-paramValue**: Value of parameter we want to create. |                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid configuration file, existing value or invalid path to the agent configuration file, return “success: false”.
+
+Retrieve agent parameter v0
+***************************
+
++------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------------+
+|URL                                                                                                                                 |Method |URL Params                                                   |Definition                                                             |
++====================================================================================================================================+=======+=============================================================+=======================================================================+
+|http://{{url}}:{{port-cygnus}}/admin/configuration/agent/cygnus/apache-flume-1.4.0-bin/conf/{{fiware-agent}}&param={{fiware-param}} |GET    |**url**: Link to the service that will be consulted.         |Method to retrieve a defined parameter in an agent configuration file. |
+|                                                                                                                                    |       +-------------------------------------------------------------+                                                                       |
+|                                                                                                                                    |       |**port-cygnus**: Port to connect with the service.           |                                                                       |
+|                                                                                                                                    |       +-------------------------------------------------------------+                                                                       |
+|                                                                                                                                    |       |**fiware-agent**: Name of agent configuration file.          |                                                                       |
+|                                                                                                                                    |       +-------------------------------------------------------------+                                                                       |
+|                                                                                                                                    |       |**fiware-param**: Name of parameter we want to retrieve.     |                                                                       |
++------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” with the attribute and it value.
+
+        In case of wrong execution by invalid configuration file, not found the parameter or invalid path to the agent configuration file, return “success: false”.
+
+Retrieve agent parameters v0
+****************************
+
++------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+------------------------------------------------------------------+
+|URL                                                                                                         |Method |URL Params                                                   |Definition                                                        |
++============================================================================================================+=======+=============================================================+==================================================================+
+|http://{{url}}:{{port-cygnus}}/admin/configuration/agent/cygnus/apacheflume-1.4.0-bin/conf/{{fiware-agent}} |GET    |**url**: Link to the service that will be consulted.         |Method to retrieve all parameters in an agent configuration file. |
+|                                                                                                            |       +-------------------------------------------------------------+                                                                  |
+|                                                                                                            |       |**port-cygnus**: Port to connect with the service.           |                                                                  |
+|                                                                                                            |       +-------------------------------------------------------------+                                                                  |
+|                                                                                                            |       |**fiware-agent**: Name of agent configuration file.          |                                                                  |
++------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” with the attributes and its values.
+
+        In case of wrong execution by invalid configuration file or invalid path to the agent configuration file, return “success: false”.
+
+Update agent parameter v0
+*************************
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------+
+|URL                                                                                                                                                             |Method |URL Params                                                   |Definition                                                       |
++================================================================================================================================================================+=======+=============================================================+=================================================================+
+|http://{{url}}:{{port-cygnus}}/admin/configuration/agent/cygnus/apache-flume-1.4.0-bin/conf/{{fiware-agent}}?param={{fiware-param}}&value={{fiware-paramValue}} |PUT    |**url**: Link to the service that will be consulted.         |Method to create a new parameter in an agent configuration file. |
+|                                                                                                                                                                |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                |       |**port-cygnus**: Port to connect with the service.           |                                                                 |
+|                                                                                                                                                                |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                |       |**fiware-agent**: Name of agent configuration file.          |                                                                 |
+|                                                                                                                                                                |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                |       |**fiware-param**: Name of parameter we want to update.       |                                                                 |
+|                                                                                                                                                                |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                |       |**fiware-paramValue**: Value of parameter wue wat to update. |                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid configuration file, not found the parameter or invalid path to the agent configuration file, return “success: false”.
+
+Delete agent parameter v0
+*************************
+
++------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-------------------------------------------------------------+
+|URL                                                                                                                                 |Method |URL Params                                                   |Definition                                                   |
++====================================================================================================================================+=======+=============================================================+=============================================================+
+|http://{{url}}:{{port-cygnus}}/admin/configuration/agent/cygnus/apache-flume-1.4.0-bin/conf/{{fiware-agent}}?param={{fiware-param}} |DELETE |**url**: Link to the service that will be consulted.         |Method to delete a parameter in an agent configuration file. |
+|                                                                                                                                    |       +-------------------------------------------------------------+                                                             |
+|                                                                                                                                    |       |**port-cygnus**: Port to connect with the service.           |                                                             |
+|                                                                                                                                    |       +-------------------------------------------------------------+                                                             |
+|                                                                                                                                    |       |**fiware-agent**: Name of agent configuration file.          |                                                             |
+|                                                                                                                                    |       +-------------------------------------------------------------+                                                             |
+|                                                                                                                                    |       |**fiware-param**: Name of parameter we want to delete.       |                                                             |
++------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid configuration file, not found the attribute or invalid path to the agent configuration file, return “success: false”.
+
+Create instance parameter v0
+****************************
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+--------------------------------------------------------------------+
+|URL                                                                                                                                              |Method |URL Params                                                   |Definition                                                          |
++=================================================================================================================================================+=======+=============================================================+====================================================================+
+|http://{{url}}:{{port-cygnus}}/admin/configuration/instance/usr/cygnus/conf/{{fiwareinstance}}?param={{fiwareparam}}&value={{fiware-paramValue}} |POST   |**url**: Link to the service that will be consulted.         |Method to create a new parameter in an instance configuration file. |
+|                                                                                                                                                 |       +-------------------------------------------------------------+                                                                    |
+|                                                                                                                                                 |       |**port-cygnus**: Port to connect with the service.           |                                                                    |
+|                                                                                                                                                 |       +-------------------------------------------------------------+                                                                    |
+|                                                                                                                                                 |       |**fiware-instance**: Name of instance configuration file.    |                                                                    |
+|                                                                                                                                                 |       +-------------------------------------------------------------+                                                                    |
+|                                                                                                                                                 |       |**fiware-param**: Name of parameter we want to delete.       |                                                                    |
+|                                                                                                                                                 |       +-------------------------------------------------------------+                                                                    |
+|                                                                                                                                                 |       |**fiware-paramValue**: Value of parameter we want to create. |                                                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+--------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid configuration file, existing value or invalid path to the instance configuration file, return “success: false”.
+
+Retrieve instance parameter v0
+******************************
+
++-----------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+--------------------------------------------------------------------------+
+|URL                                                                                                                    |Method |URL Params                                                   |Definition                                                                |
++=======================================================================================================================+=======+=============================================================+==========================================================================+
+|http://{{url}}:{{port-cygnus}}/admin/configuration/instance/usr/cygnus/conf/{{fiware-instance}}?param={{fiware-param}} |GET    |**url**: Link to the service that will be consulted.         |Method to retrieve a defined parameter in an instance configuration file. |
+|                                                                                                                       |       +-------------------------------------------------------------+                                                                          |
+|                                                                                                                       |       |**port-cygnus**: Port to connect with the service.           |                                                                          |
+|                                                                                                                       |       +-------------------------------------------------------------+                                                                          |
+|                                                                                                                       |       |**fiware-instance**: Name of instance configuration file.    |                                                                          |
+|                                                                                                                       |       +-------------------------------------------------------------+                                                                          |
+|                                                                                                                       |       |**fiware-param**: Name of parameter we want to retrieve.     |                                                                          |
++-----------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+--------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” with the attribute and it value.
+
+        In case of wrong execution by invalid configuration file, not found the parameter or invalid path to the instance configuration file, return “success: false”.
+
+Retrieve instance parameter v0
+******************************
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+----------------------------------------------------------------+
+|URL                                                                                                                                                |Method |URL Params                                                   |Definition                                                      |
++===================================================================================================================================================+=======+=============================================================+================================================================+
+|http://{{url}}:{{port-cygnus}}/admin/configuration/instance/usr/cygnus/conf/{{fiware-instance}}?param={{fiware-param}}&value={{fiware-paramValue}} |PUT    |**url**: Link to the service that will be consulted.         |Method to update a parameter in an instance configuration file. |
+|                                                                                                                                                   |       +-------------------------------------------------------------+                                                                |
+|                                                                                                                                                   |       |**port-cygnus**: Port to connect with the service.           |                                                                |
+|                                                                                                                                                   |       +-------------------------------------------------------------+                                                                |
+|                                                                                                                                                   |       |**fiware-instance**: Name of instance configuration file.    |                                                                |
+|                                                                                                                                                   |       +-------------------------------------------------------------+                                                                |
+|                                                                                                                                                   |       |**fiware-param**: Name of parameter we want to update.       |                                                                |
+|                                                                                                                                                   |       +-------------------------------------------------------------+                                                                |
+|                                                                                                                                                   |       |**fiware-paramValue**: Value of parameter we want to update. |                                                                |
++---------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+----------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid configuration file, not found the parameter or invalid path to the instance configuration file, return “success: false”.
+
+Delete parameter instance v0
+****************************
+
++-----------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+----------------------------------------------------------------+
+|URL                                                                                                                    |Method |URL Params                                                   |Definition                                                      |
++=======================================================================================================================+=======+=============================================================+================================================================+
+|http://{{url}}:{{port-cygnus}}/admin/configuration/instance/usr/cygnus/conf/{{fiware-instance}}?param={{fiware-param}} |DELETE |**url**: Link to the service that will be consulted.         |Method to delete a parameter in an instance configuration file. |
+|                                                                                                                       |       +-------------------------------------------------------------+                                                                |
+|                                                                                                                       |       |**port-cygnus**: Port to connect with the service.           |                                                                |
+|                                                                                                                       |       +-------------------------------------------------------------+                                                                |
+|                                                                                                                       |       |**fiware-instance**: Name of instance configuration file.    |                                                                |
+|                                                                                                                       |       +-------------------------------------------------------------+                                                                |
+|                                                                                                                       |       |**fiware-param**: Name of parameter we want to delete.       |                                                                |
++-----------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+----------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid configuration file, not found the attribute or invalid path to the instance configuration file, return “success: false”.
+
+Create agent parameter v1 (beta)
+********************************
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------+
+|URL                                                                                                                                                                |Method |URL Params                                                   |Definition                                                       |
++===================================================================================================================================================================+=======+=============================================================+=================================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/configuration/agent/cygnus/apache-flume-1.4.0-bin/conf/{{fiware-agent}}?param={{fiware-param}}&value={{fiware-paramValue}} |POST   |**url**: Link to the service that will be consulted.         |Method to create a new parameter in an agent configuration file. |
+|                                                                                                                                                                   |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                   |       |**port-cygnus**: Port to connect with the service.           |                                                                 |
+|                                                                                                                                                                   |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                   |       |**fiware-agent**: Name of agent configuration file.          |                                                                 |
+|                                                                                                                                                                   |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                   |       |**fiware-param**: Name of parameter we want to create.       |                                                                 |
+|                                                                                                                                                                   |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                   |       |**fiware-paramValue**: Value of parameter we want to create. |                                                                 |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid configuration file, existing value or invalid path to the agent configuration file, return “success: false”.
+
+Retrieve agent parameter v1 (beta)
+**********************************
+
++---------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------------+
+|URL                                                                                                                                    |Method |URL Params                                                   |Definition                                                             |
++=======================================================================================================================================+=======+=============================================================+=======================================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/configuration/agent/cygnus/apache-flume-1.4.0-bin/conf/{{fiware-agent}}&param={{fiware-param}} |GET    |**url**: Link to the service that will be consulted.         |Method to retrieve a defined parameter in an agent configuration file. |
+|                                                                                                                                       |       +-------------------------------------------------------------+                                                                       |
+|                                                                                                                                       |       |**port-cygnus**: Port to connect with the service.           |                                                                       |
+|                                                                                                                                       |       +-------------------------------------------------------------+                                                                       |
+|                                                                                                                                       |       |**fiware-agent**: Name of agent configuration file.          |                                                                       |
+|                                                                                                                                       |       +-------------------------------------------------------------+                                                                       |
+|                                                                                                                                       |       |**fiware-param**: Name of parameter we want to retrieve.     |                                                                       |
++---------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” with the attribute and it value.
+
+        In case of wrong execution by invalid configuration file, not found the parameter or invalid path to the agent configuration file, return “success: false”.
+
+Retrieve agent parameters v1 (beta)
+***********************************
+
++----------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+------------------------------------------------------------------+
+|URL                                                                                                             |Method |URL Params                                                   |Definition                                                        |
++================================================================================================================+=======+=============================================================+==================================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/configuration/agent/cygnus/apache-flume-1.4.0-bin/conf/{{fiware-agent}} |GET    |**url**: Link to the service that will be consulted.         |Method to retrieve all parameters in an agent configuration file. |
+|                                                                                                                |       +-------------------------------------------------------------+                                                                  |
+|                                                                                                                |       |**port-cygnus**: Port to connect with the service.           |                                                                  |
+|                                                                                                                |       +-------------------------------------------------------------+                                                                  |
+|                                                                                                                |       |**fiware-agent**: Name of agent configuration file.          |                                                                  |
++----------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” with the attribute and it value.
+
+        In case of wrong execution by invalid configuration file, not found the parameter or invalid path to the agent configuration file, return “success: false”.
+
+Update agent parameter v1 (beta)
+********************************
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------+
+|URL                                                                                                                                                                |Method |URL Params                                                   |Definition                                                       |
++===================================================================================================================================================================+=======+=============================================================+=================================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/configuration/agent/cygnus/apache-flume-1.4.0-bin/conf/{{fiware-agent}}?param={{fiware-param}}&value={{fiware-paramValue}} |PUT    |**url**: Link to the service that will be consulted.         |Method to create a new parameter in an agent configuration file. |
+|                                                                                                                                                                   |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                   |       |**port-cygnus**: Port to connect with the service.           |                                                                 |
+|                                                                                                                                                                   |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                   |       |**fiware-agent**: Name of agent configuration file.          |                                                                 |
+|                                                                                                                                                                   |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                   |       |**fiware-param**: Name of parameter we want to update.       |                                                                 |
+|                                                                                                                                                                   |       +-------------------------------------------------------------+                                                                 |
+|                                                                                                                                                                   |       |**fiware-paramValue**: Value of parameter we want to update. |                                                                 |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-----------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid configuration file, not found the parameter or invalid path to the agent configuration file, return “success: false”.
+
+Delete agent parameter v1 (beta)
+********************************
+
++---------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-------------------------------------------------------------+
+|URL                                                                                                                                    |Method |URL Params                                                   |Definition                                                   |
++=======================================================================================================================================+=======+=============================================================+=============================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/configuration/agent/cygnus/apache-flume-1.4.0-bin/conf/{{fiware-agent}}?param={{fiware-param}} |DELETE |**url**: Link to the service that will be consulted.         |Method to delete a parameter in an agent configuration file. |
+|                                                                                                                                       |       +-------------------------------------------------------------+                                                             |
+|                                                                                                                                       |       |**port-cygnus**: Port to connect with the service.           |                                                             |
+|                                                                                                                                       |       +-------------------------------------------------------------+                                                             |
+|                                                                                                                                       |       |**fiware-agent**: Name of agent configuration file.          |                                                             |
+|                                                                                                                                       |       +-------------------------------------------------------------+                                                             |
+|                                                                                                                                       |       |**fiware-param**: Name of parameter we want to delete.       |                                                             |
++---------------------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------------+-------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid configuration file, not found the parameter or invalid path to the instance configuration file, return “success: false”.
+
+Delete parameter instance v1 (beta)
+***********************************
+
++--------------------------------------------------------------------------------------------------------------------------+-------+----------------------------------------------------------+--------------------------------------------------------------------+
+|URL                                                                                                                       |Method |URL Params                                                |Definition                                                          |
++==========================================================================================================================+=======+==========================================================+====================================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/configuration/instance/usr/cygnus/conf/{{fiware-instance}}?param={{fiware-param}} |DELETE |**url**: Link to the service that will be consulted.      |Method to create a new parameter in an instance configuration file. |
+|                                                                                                                          |       +----------------------------------------------------------+                                                                    |
+|                                                                                                                          |       |**port-cygnus**: Port to connect with the service.        |                                                                    |
+|                                                                                                                          |       +----------------------------------------------------------+                                                                    |
+|                                                                                                                          |       |**fiware-instance**: Name of instance configuration file. |                                                                    |
+|                                                                                                                          |       +----------------------------------------------------------+                                                                    |
+|                                                                                                                          |       |**fiware-param**: Name of parameter we want to delete.    |                                                                    |
++--------------------------------------------------------------------------------------------------------------------------+-------+----------------------------------------------------------+--------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid configuration file, not found the attribute or invalid path to the instance configuration file, return “success: false”.
+
+Retrieve version v1 (beta)
+**************************
+
++------------------------------------------+-------+----------------------------------------------------------+--------------------------------------------------------+
+|URL                                       |Method |URL Params                                                |Definition                                              |
++==========================================+=======+==========================================================+========================================================+
+|http://{{url}}:{{port-cygnus}}/v1/version |GET    |**url**: Link to the service that will be consulted.      |Method to retrieve the version of the running software. |
+|                                          |       +----------------------------------------------------------+                                                        |
+|                                          |       |**port-cygnus**: Port to connect with the service.        |                                                        |
++------------------------------------------+-------+----------------------------------------------------------+--------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” and the version.
+
+        In case of wrong execution return “success: false”.
+
+Create grouping rules v1 (beta)
+*******************************
+
++------------------------------------------------+-------+----------------------------------------------------------+-------------------------------------------------------------+
+|URL                                             |Method |URL Params                                                |Definition                                                   |
++================================================+=======+==========================================================+=============================================================+
+|http://{{url}}:{{port-cygnus}}/v1/groupingrules |POST   |**url**: Link to the service that will be consulted.      |Method to create a new grouping rules, to join related data. |
+|                                                |       +----------------------------------------------------------+                                                             |
+|                                                |       |**port-cygnus**: Port to connect with the service.        |                                                             |
++------------------------------------------------+-------+----------------------------------------------------------+-------------------------------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “regex”: “SmartSpot”,
+            “destination”: “othersmartspots”,
+            “fiware_service_path”: “smartspot”,
+            “fields”: [“entityType”]
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution return “success: false”.
+
+Retrieve grouping rules v1 (beta)
+*********************************
+
++------------------------------------------------+-------+-----------------------------------------------------+---------------------------------------+
+|URL                                             |Method |URL Params                                           |Definition                             |
++================================================+=======+=====================================================+=======================================+
+|http://{{url}}:{{port-cygnus}}/v1/groupingrules |GET    |**url**: Link to the service that will be consulted. |Method to retrieve all grouping rules. |
+|                                                |       +-----------------------------------------------------+                                       |
+|                                                |       |**port-cygnus**: Port to connect with the service.   |                                       |
++------------------------------------------------+-------+-----------------------------------------------------+---------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “grouping_rules”: [
+                {
+                    “destination”: “group_id”,
+                    “fields”: [
+                        “entityType”
+                    ],
+                    “fiware_service_path”: “service_path”,
+                    “id”: 1,
+                    “regex”: “entity_id”
+                }
+            ],
+            “success”: “true”
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution return “success: false”.
+
+Update grouping rules v1 (beta)
+*******************************
+
++----------------------------------------------------------------------+-------+-----------------------------------------------------+-----------------------------------+
+|URL                                                                   |Method |URL Params                                           |Definition                         |
++======================================================================+=======+=====================================================+===================================+
+|http://{{url}}:{{port-cygnus}}/v1/groupingrules?id={{fiware-groupID}} |POST   |**url**: Link to the service that will be consulted. |Method to update a grouping rules. |
+|                                                                      |       +-----------------------------------------------------+                                   |
+|                                                                      |       |**port-cygnus**: Port to connect with the service.   |                                   |
+|                                                                      |       +-----------------------------------------------------+                                   |
+|                                                                      |       |**fiware-gropuID**: Name of group we want to update. |                                   |
++----------------------------------------------------------------------+-------+-----------------------------------------------------+-----------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “regex”: “SmartSpot”,
+            “destination”: “othersmartspots”,
+            “fiware_service_path”: “smartspot”,
+            “fields”: [“entityType”]
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution return “success: false”.
+
+Delete grouping rules v1 (beta)
+*******************************
+
++----------------------------------------------------------------------+-------+-----------------------------------------------------+----------------------------------------------------------+
+|URL                                                                   |Method |URL Params                                           |Definition                                                |
++======================================================================+=======+=====================================================+==========================================================+
+|http://{{url}}:{{port-cygnus}}/v1/groupingrules?id={{fiware-groupID}} |DELETE |**url**: Link to the service that will be consulted. |Method to delete a grouping rules defined as a parameter. |
+|                                                                      |       +-----------------------------------------------------+                                                          |
+|                                                                      |       |**port-cygnus**: Port to connect with the service.   |                                                          |
+|                                                                      |       +-----------------------------------------------------+                                                          |
+|                                                                      |       |**fiware-gropuID**: Name of group we want to delete. |                                                          |
++----------------------------------------------------------------------+-------+-----------------------------------------------------+----------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution return “success: false”.
+
+Create subscription for Orion v1 (beta)
+***************************************
+
++------------------------------------------------------------------+-------+-----------------------------------------------------+------------------------------------------------------------------+
+|URL                                                               |Method |URL Params                                           |Definition                                                        |
++==================================================================+=======+=====================================================+==================================================================+
+|http://{{url}}:{{port-cygnus}}/v1/subscriptions?id=ngsi_version=1 |POST   |**url**: Link to the service that will be consulted. |Method to create a subscription to one or many entities in Orion. |
+|                                                                  |       +-----------------------------------------------------+                                                                  |
+|                                                                  |       |**port-cygnus**: Port to connect with the service.   |                                                                  |
++------------------------------------------------------------------+-------+-----------------------------------------------------+------------------------------------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “subscription”:{
+                “entities”: [
+                    {
+                        “type”: “entity_type”,
+                        “isPattern”: “false”,
+                        “id”: “entity_id”
+                    }
+                ],
+                “attributes”: [],
+                “reference”: “http://reference_host:reference_port”,
+                “duration”: “P1M”,
+                “notifyConditions”: [
+                    {
+                        “type”: “ONCHANGE”,
+                        “condValues”: []
+                    }
+                ],
+                “throttling”: “PT5S”
+            },
+            “endpoint”:{
+                “host”:”endpoint_host”,
+                “port”:”endpoint_port”,
+                “ssl”:”false”,
+                “xauthtoken”:”234123123123123”
+            }
+        }
+
+* **isPattern**: Currently is hasn’t use. Always ‘false’.
+* **id**: To which entity it wants to subscribe. In this case, to all entities of those type.
+* **reference**: URL of client that it want to subscribe.
+* **duration**: The duration of the subscription. In ISO 8601 standard format.
+* **notifyConditions**: Define the launcher to notify the subscriptions. In this case, when change a value of attributes passed in the point “condValues” of an entity will launch a notification.
+* **throttling**: Specify a minimum inter-notification arrival time. In this case, 5 seconds.
+* **endpoint**: URL of Orion server.
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” with information about the subscription (duration, throttling, subscriptionId).
+
+        In case of wrong execution return “success: false”.
+
+Create subscription for Orion v2 (beta)
+***************************************
+
++------------------------------------------------------------------+-------+-----------------------------------------------------+------------------------------------------------------------------+
+|URL                                                               |Method |URL Params                                           |Definition                                                        |
++==================================================================+=======+=====================================================+==================================================================+
+|http://{{url}}:{{port-cygnus}}/v1/subscriptions?id=ngsi_version=2 |POST   |**url**: Link to the service that will be consulted. |Method to create a subscription to one or many entities in Orion. |
+|                                                                  |       +-----------------------------------------------------+                                                                  |
+|                                                                  |       |**port-cygnus**: Port to connect with the service.   |                                                                  |
++------------------------------------------------------------------+-------+-----------------------------------------------------+------------------------------------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “subscription”:{
+                “description”: “subscription_description”,
+                “subject”: {
+                    “entities”: [
+                        {
+                            “idPattern”: “.*”,
+                            “type”: “entity_type”
+                        }
+                    ],
+                    “condition”: {
+                        “attrs”: [
+                            “attribute_entity”
+                        ],
+                        “expression”: {
+                            “q”: “attribute_entity>40”
+                        }
+                    }
+                },
+                “notification”: {
+                    “http”: {
+                        “url”: “http://localhost:1234”
+                    },
+                    “attrs”: [
+                        “attribute_entity”
+                    ]
+                },
+                “expires”: “2016-05-05T14:00:00.00Z”,
+                “throttling”: 5
+            },
+            “endpoint”:{
+                “host”:”<endpoint_host>”,
+                “port”:”<endpoint_port>”,
+                “ssl”:”false”,
+                “xauthtoken”:”QsENv6AJj7blCqJ0YvfS5hMWYs”
+            }
+        }
+
+* **type**: To which entity it wants to subscribe. In this case, to all entities of those type.
+* **condition**: Conditions that have to be fulfill for launch to notification.
+* **expires**: The duration of the subscription, when it expires.
+* **notification**: URL of client that it want to subscribe (cygnus_url) and the attributes that we want know.
+* **throttling**: Specify a minimum inter-notification arrival time. In this case, 5 seconds.
+* **endpoint: URL of Orion server.
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” with information about the subscription (duration, throttling, subscriptionId).
+
+        In case of wrong execution return “success: false”.
+
+Retrieve subscription v1 (beta)
+*******************************
+
++--------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------+------------------------------------------------------------------------------+
+|URL                                                                                                                       |Method |URL Params                                             |Definition                                                                    |
++==========================================================================================================================+=======+=======================================================+==============================================================================+
+|http://{{url}}:{{port-cygnus}}/v1/subscriptions?id=ngsi_version={{orion-version}}&subscription_id={{fiware-subscription}} |GET    |**url**: Link to the service that will be consulted.   |Method to retrieve a subscription to one or many entities in Orion of cygnus. |
+|                                                                                                                          |       +-------------------------------------------------------+                                                                              |
+|                                                                                                                          |       |**port-cygnus**: Port to connect with the service.     |                                                                              |
+|                                                                                                                          |       +-------------------------------------------------------+                                                                              |
+|                                                                                                                          |       |**orion-version**: Version of Orion to do this method. |                                                                              |
++--------------------------------------------------------------------------------------------------------------------------+-------+-------------------------------------------------------+------------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” with information about the subscription.
+
+        In case of wrong execution by inexistent subscription id, invalid or not implemented NGSI version or missing parameters return “success: false”.
+
+Retrieve subscriptions v1 (beta)
+********************************
+
++----------------------------------------------------------------------------------+-------+-------------------------------------------------------+---------------------------------------------------------+
+|URL                                                                               |Method |URL Params                                             |Definition                                               |
++==================================================================================+=======+=======================================================+=========================================================+
+|http://{{url}}:{{port-cygnus}}/v1/subscriptions?id=ngsi_version={{orion-version}} |GET    |**url**: Link to the service that will be consulted.   |Method to retrieve all subscriptions in Orion of cygnus. |
+|                                                                                  |       +-------------------------------------------------------+                                                         |
+|                                                                                  |       |**port-cygnus**: Port to connect with the service.     |                                                         |
+|                                                                                  |       +-------------------------------------------------------+                                                         |
+|                                                                                  |       |**orion-version**: Version of Orion to do this method. |                                                         |
++----------------------------------------------------------------------------------+-------+-------------------------------------------------------+---------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” with information about all subscriptions.
+
+        In case of wrong execution by invalid or not implemented NGSI version or missing parameters return “success: false”.
+
+Delete subscription v1 (beta)
+*****************************
+
++----------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------+----------------------------------------------------+
+|URL                                                                                                                   |Method |URL Params                                                 |Definition                                          |
++======================================================================================================================+=======+===========================================================+====================================================+
+|http://{{url}}:{{port-cygnus}}/v1/subscriptions?id=ngsi_version={{orion-version}}&subscription_id={{subscription-id}} |GET    |**url**: Link to the service that will be consulted.       |Method to delete a subscription in Orion of cygnus. |
+|                                                                                                                      |       +-----------------------------------------------------------+                                                    |
+|                                                                                                                      |       |**port-cygnus**: Port to connect with the service.         |                                                    |
+|                                                                                                                      |       +-----------------------------------------------------------+                                                    |
+|                                                                                                                      |       |**orion-version**: Version of Orion to do this method.     |                                                    |
+|                                                                                                                      |       +-----------------------------------------------------------+                                                    |
+|                                                                                                                      |       |**subscription-id**: ID of subscription we want to delete. |                                                    |
++----------------------------------------------------------------------------------------------------------------------+-------+-----------------------------------------------------------+----------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true, result: subscription deleted”.
+
+        In case of wrong execution by invalid or not implemented NGSI version, wrong subscription id, missing authentication token or missing fields return “success: false”.
+
+Create appender v1 (beta)
+*************************
+
++------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+|URL                                                                                 |Method |URL Params                                                                                              |Definition                                        |
++====================================================================================+=======+========================================================================================================+==================================================+
+|http://{{url}}:{{portcygnus}}/v1/admin/log/appenders?transient={{fiware-transient}} |POST   |**url**: Link to the service that will be consulted.                                                    |Method to create an appender in a running logger. |
+|                                                                                    |       +--------------------------------------------------------------------------------------------------------+                                                  |
+|                                                                                    |       |**port-cygnus**: Port to connect with the service.                                                      |                                                  |
+|                                                                                    |       +--------------------------------------------------------------------------------------------------------+                                                  |
+|                                                                                    |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                                  |
++------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “appender”: {
+                “name”:”appender_id”,
+                “class”:”appender_class”
+            },
+            “pattern”: {
+                “layout”:”.....”,
+                “ConversionPattern”:”.....”
+            }
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true, result: Appender ‘appender_id’ put”.
+
+        In case of wrong execution by invalid transient or without JSON return “success: false”.
+
+Retrieve appender v1 (beta)
+***************************
+
++-------------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+---------------------------------------+
+|URL                                                                                                          |Method |URL Params                                                                                              |Definition                             |
++=============================================================================================================+=======+========================================================================================================+=======================================+
+|http://{{url}}:{{portcygnus}}/v1/admin/log/appenders?name={{fiware-appender}}&transient={{fiware-transient}} |GET    |**url**: Link to the service that will be consulted.                                                    |Method to retrieve a defined appender. |
+|                                                                                                             |       +--------------------------------------------------------------------------------------------------------+                                       |
+|                                                                                                             |       |**port-cygnus**: Port to connect with the service.                                                      |                                       |
+|                                                                                                             |       +--------------------------------------------------------------------------------------------------------+                                       |
+|                                                                                                             |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                       |
+|                                                                                                             |       +--------------------------------------------------------------------------------------------------------+                                       |
+|                                                                                                             |       |**fiware-appender**: Name of appender we want to retrieve.                                              |                                       |
++-------------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+---------------------------------------+
+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” join to appender information.
+
+        In case of wrong execution by invalid transient or invalid appender name return “success: false”.
+
+Retrieve appenders v1 (beta)
+****************************
+
++-------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+|URL                                                                                  |Method |URL Params                                                                                              |Definition                                            |
++=====================================================================================+=======+========================================================================================================+======================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/log/appenders?transient={{fiware-transient}} |GET    |**url**: Link to the service that will be consulted.                                                    |Method to retrieve all appenders in a running logger. |
+|                                                                                     |       +--------------------------------------------------------------------------------------------------------+                                                      |
+|                                                                                     |       |**port-cygnus**: Port to connect with the service.                                                      |                                                      |
+|                                                                                     |       +--------------------------------------------------------------------------------------------------------+                                                      |
+|                                                                                     |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                                      |
++-------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+------------------------------------------------------+
+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” join to the information about all appenders.
+
+        In case of wrong execution by invalid transient or appenders not be shown return “success: false”.
+
+Update appender v1 (beta)
+*************************
+
++-------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+|URL                                                                                  |Method |URL Params                                                                                              |Definition                                        |
++=====================================================================================+=======+========================================================================================================+==================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/log/appenders?transient={{fiware-transient}} |PUT    |**url**: Link to the service that will be consulted.                                                    |Method to update an appender in a running logger. |
+|                                                                                     |       +--------------------------------------------------------------------------------------------------------+                                                  |
+|                                                                                     |       |**port-cygnus**: Port to connect with the service.                                                      |                                                  |
+|                                                                                     |       +--------------------------------------------------------------------------------------------------------+                                                  |
+|                                                                                     |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                                  |
++-------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+--------------------------------------------------+
+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “appender”: {
+                “name”:”appender_id”,
+                “class”:”appender_class”
+            },
+            “pattern”: {
+                “layout”:”.....”,
+                “ConversionPattern”:”.....”
+            }
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “{"success": "true","result": "Appender 'appender_id' updated successfully”}”.
+
+        In case of wrong execution by invalid transient or without JSON return “success: false”.
+
+Delete appender v1 (beta)
+*************************
+
++--------------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+|URL                                                                                                           |Method |URL Params                                                                                              |Definition                           |
++==============================================================================================================+=======+========================================================================================================+=====================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/log/appenders?name={{fiware-appender}}&transient={{fiware-transient}} |DELETE |**url**: Link to the service that will be consulted.                                                    |Method to delete a defined appender. |
+|                                                                                                              |       +--------------------------------------------------------------------------------------------------------+                                     |
+|                                                                                                              |       |**port-cygnus**: Port to connect with the service.                                                      |                                     |
+|                                                                                                              |       +--------------------------------------------------------------------------------------------------------+                                     |
+|                                                                                                              |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                     |
+|                                                                                                              |       +--------------------------------------------------------------------------------------------------------+                                     |
+|                                                                                                              |       |**fiware-appender**: Name of appender we want to delete.                                                |                                     |
++--------------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid transient or invalid appender name return “success: false”.
+
+Delete appenders v1 (beta)
+**************************
+
++-------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+--------------------------------+
+|URL                                                                                  |Method |URL Params                                                                                              |Definition                      |
++=====================================================================================+=======+========================================================================================================+================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/log/appenders?transient={{fiware-transient}} |DELETE |**url**: Link to the service that will be consulted.                                                    |Method to delete all appenders. |
+|                                                                                     |       +--------------------------------------------------------------------------------------------------------+                                |
+|                                                                                     |       |**port-cygnus**: Port to connect with the service.                                                      |                                |
+|                                                                                     |       +--------------------------------------------------------------------------------------------------------+                                |
+|                                                                                     |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                |
++-------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+--------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid transient return “success: false”.
+
+Create logger v1 (beta)
+***********************
+
++-----------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+|URL                                                                                |Method |URL Params                                                                                              |Definition                                     |
++===================================================================================+=======+========================================================================================================+===============================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/log/loggers?transient={{fiware-transient}} |POST   |**url**: Link to the service that will be consulted.                                                    |Method to create a logger in a running Cygnus. |
+|                                                                                   |       +--------------------------------------------------------------------------------------------------------+                                               |
+|                                                                                   |       |**port-cygnus**: Port to connect with the service.                                                      |                                               |
+|                                                                                   |       +--------------------------------------------------------------------------------------------------------+                                               |
+|                                                                                   |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                               |
++-----------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “logger”: {
+                “name”:”logger_id”,
+                “level”:”.....”
+            }
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true, result: logger ‘logger_id’ put.”
+
+        In case of wrong execution by invalid transient or without JSON return “success: false”.
+
+Retrieve logger v1 (beta)
+*************************
+
++----------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+|URL                                                                                                       |Method |URL Params                                                                                              |Definition                           |
++==========================================================================================================+=======+========================================================================================================+=====================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/log/loggers?name={{fiware-logger}}&transient={{fiware-transient}} |GET    |**url**: Link to the service that will be consulted.                                                    |Method to retrieve a defined logger. |
+|                                                                                                          |       +--------------------------------------------------------------------------------------------------------+                                     |
+|                                                                                                          |       |**port-cygnus**: Port to connect with the service.                                                      |                                     |
+|                                                                                                          |       +--------------------------------------------------------------------------------------------------------+                                     |
+|                                                                                                          |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                     |
+|                                                                                                          |       +--------------------------------------------------------------------------------------------------------+                                     |
+|                                                                                                          |       |**fiware-logger**: Name of logger we want to retrieve.                                                  |                                     |
++----------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+-------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” join to logger information.
+
+        In case of wrong execution by invalid transient or invalid logger name return “success: false”.
+
+Retrieve loggers v1 (beta)
+**************************
+
++-----------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+|URL                                                                                |Method |URL Params                                                                                              |Definition                                          |
++===================================================================================+=======+========================================================================================================+====================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/log/loggers?transient={{fiware-transient}} |GET    |**url**: Link to the service that will be consulted.                                                    |Method to retrieve all loggers in a running Cygnus. |
+|                                                                                   |       +--------------------------------------------------------------------------------------------------------+                                                    |
+|                                                                                   |       |**port-cygnus**: Port to connect with the service.                                                      |                                                    |
+|                                                                                   |       +--------------------------------------------------------------------------------------------------------+                                                    |
+|                                                                                   |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                                    |
++-----------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true” join to the information about all loggers.
+
+        In case of wrong execution by invalid transient or loggers not be shown return “success: false”.
+
+Update logger v1 (beta)
+***********************
+
++-----------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+|URL                                                                                |Method |URL Params                                                                                              |Definition                                     |
++===================================================================================+=======+========================================================================================================+===============================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/log/loggers?transient={{fiware-transient}} |PUT    |**url**: Link to the service that will be consulted.                                                    |Method to update a logger in a running Cygnus. |
+|                                                                                   |       +--------------------------------------------------------------------------------------------------------+                                               |
+|                                                                                   |       |**port-cygnus**: Port to connect with the service.                                                      |                                               |
+|                                                                                   |       +--------------------------------------------------------------------------------------------------------+                                               |
+|                                                                                   |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                               |
++-----------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+-----------------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “appender”: {
+                “name”:”logger_id”,
+                “class”:”logger_class”
+            },
+            “pattern”: {
+                “layout”:”.....”,
+                “ConversionPattern”:”.....”
+            }
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “{"success": "true","result": "Logger 'logger_id' updated successfully”}”.
+
+        In case of wrong execution by invalid transient or without JSON return “success: false”.
+
+Delete logger v1 (beta)
+***********************
+
++----------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+-----------------------------------+
+|URL                                                                                                       |Method |URL Params                                                                                              |Definition                         |
++==========================================================================================================+=======+========================================================================================================+===================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/log/loggers?name={{fiware-logger}}&transient={{fiware-transient}} |DELETE |**url**: Link to the service that will be consulted.                                                    |Method to delete a defined logger. |
+|                                                                                                          |       +--------------------------------------------------------------------------------------------------------+                                   |
+|                                                                                                          |       |**port-cygnus**: Port to connect with the service.                                                      |                                   |
+|                                                                                                          |       +--------------------------------------------------------------------------------------------------------+                                   |
+|                                                                                                          |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                                   |
+|                                                                                                          |       +--------------------------------------------------------------------------------------------------------+                                   |
+|                                                                                                          |       |**fiware-appender**: Name of logger we want to delete.                                                  |                                   |
++----------------------------------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+-----------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid transient or invalid logger name return “success: false”.
+
+Delete loggers v1 (beta)
+************************
+
++-----------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+------------------------------+
+|URL                                                                                |Method |URL Params                                                                                              |Definition                    |
++===================================================================================+=======+========================================================================================================+==============================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/log/loggers?transient={{fiware-transient}} |DELETE |**url**: Link to the service that will be consulted.                                                    |Method to delete all loggers. |
+|                                                                                   |       +--------------------------------------------------------------------------------------------------------+                              |
+|                                                                                   |       |**port-cygnus**: Port to connect with the service.                                                      |                              |
+|                                                                                   |       +--------------------------------------------------------------------------------------------------------+                              |
+|                                                                                   |       |**fiware-trasient**: If false the appenders are retrieved from Cygnus, if true are retrieved from file. |                              |
++-----------------------------------------------------------------------------------+-------+--------------------------------------------------------------------------------------------------------+------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “success: true”.
+
+        In case of wrong execution by invalid transient return “success: false”.
+
+Metrics
+*******
+
+The metrics defined in a Cygnus agent are:
+
+* **incomingTransactions**: Number of incoming transactions. In other words, number of NGSI notifications received.
+* **incomingTransactionRequestSize**: Total size of the requests related to incoming transactions (bytes).
+* **incomingTransactionResponseSize**: Total size of the responses related to incoming transactions (bytes).
+* **incomingTransactionError**: Number of incoming transactions causing an error.
+* **serviceTime**: Average time between transaction requests reception and transaction responses sending.
+* **outgoingTransactions**: Number of outgoing transactions. In other words, number of persistence operations.
+* **outgoingTransactionRequestSize**: Total size of the requests related to outgoing transactions (bytes).
+* **outgoingTransactionResponseSize**: Total size of the responses related to outgoing transactions (bytes).
+* **outgoingTransactionError**: Number of outgoing transactions causing an error.
+
+Retrieve metrics v1 (beta)
+**************************
+
++-----------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
+|URL                                                                    |Method |URL Params                                                                                                        |Definition                                         |
++=======================================================================+=======+==================================================================================================================+===================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/metrics?reset={{fiware-reset}} |GET    |**url**: Link to the service that will be consulted.                                                              |Method to retrieve all metrics for a Cygnus agent. |
+|                                                                       |       +------------------------------------------------------------------------------------------------------------------+                                                   |
+|                                                                       |       |**port-cygnus**: Port to connect with the service.                                                                |                                                   |
+|                                                                       |       +------------------------------------------------------------------------------------------------------------------+                                                   |
+|                                                                       |       |**fiware-reset**: If true return metrics and inmediatelly after they are deleted , if false metrics don’t delete. |                                                   |
++-----------------------------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “200 OK” join to all metrics information.
+
+Delete metrics v1 (beta)
+************************
+
++------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+|URL                                             |Method |URL Params                                                                                                        |Definition                                                                  |
++================================================+=======+==================================================================================================================+============================================================================+
+|http://{{url}}:{{port-cygnus}}/v1/admin/metrics |DELETE |**url**: Link to the service that will be consulted.                                                              |Method to delete all metrics for a Cygnus agent (putting counters to zero). |
+|                                                |       +------------------------------------------------------------------------------------------------------------------+                                                                            |
+|                                                |       |**port-cygnus**: Port to connect with the service.                                                                |                                                                            |
++------------------------------------------------+-------+------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “200 OK”.
+
+ANNEX 5: IoT Agent LwM2M RESTFul API
+####################################
+
+Create device Provisioning
+**************************
+
++---------------------------------------------+-------+-----------------------------------------------------+-------------------------------------------------------------------+
+|URL                                          |Method |URL Params                                           |Definition                                                         |
++=============================================+=======+=====================================================+===================================================================+
+|http://{{url}}:{{port-iotagent}}/iot/devices |POST   |**url**: Link to the service that will be consulted. |Method to create a device that we want to convert it in an entity. |
+|                                             |       +-----------------------------------------------------+                                                                   |
+|                                             |       |**port-iotagent**: Port to connect with the service. |                                                                   |
++---------------------------------------------+-------+-----------------------------------------------------+-------------------------------------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “devices”: [
+                {
+                    “device_id”: “name_device”,
+                    “entity_type”: “type_id”,
+                    “attributes”: [
+                        {
+                            “name”: “attribute_name “,
+                            “type”: “attribute_type”,
+                        }
+                    ],
+                    “lazy”: [
+                        {
+                            “name”: “attribute_name “,
+                            “type”: “attribute_type”
+                        }
+                    ],
+                    “commands”: [
+                        {
+                            “name”: “command_id”,
+                            “type”: “command_type”
+                        }
+                    ],
+                    “internal_attributes”: {
+                        “lmw2mResourceMapping”: {
+                            “attribute_id”: {
+                                “objectType”:
+                                “objecInstance”:
+                                “objectResource”: 1
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+
+* **lazy**: It a attribute to need explicit specification to can be read.
+* **commands**: Commands you can send to the device.
+* **internal_attributes**: Mapped of m2m language to entity attributes. Type, instance and source of each attribute of a entity.
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns a confirmation that the device has been created correctly “201 Created”. In case of already any device with the same name,
+        return “400 Bad Request” with this message:
+
+        {
+                “name”: “DUPLICATE_DEVICE_ID”,
+                “message”: “A device with the same pair (Service, DeviceId) was found:…”
+        }
+
+ANNEX 6: Deploy and use of Grafana
+##################################
+
+Creation and execution of the image in Docker
+*********************************************
+
+HOP Ubiquitous has a version of their fiware avaiable in a Docker container which “se puede” can download from Github. If you haven´t done this step we recommend you that you download
+the repository https://github.com/HOP-Ubiquitous/fiware-docker-infrastructure and you follow the recommend steps for its running.
+
+Once we have execute the HOP Ubiquitous’s container, we must have the next processes execute on Docker (we can see it using the command “docker ps” in terminal):
+
+.. code-block:: javascript
+
+        CONTAINER ID  IMAGE                           PORTS
+        3996f3dc01b5  iotagent                        0.0.0.0:5693->5683/udp dockercompose_iotagent_1
+        e94378a74a38  smartsdk/quantumleap            0.0.0.0:8668->8668/tcp dockercompose_quantumleap_1
+        a57a750c86c8  grafana/grafana                 0.0.0.0:3000->3000/tcp dockercompose_grafana_1
+        e6ef4afd30f7  telefonicaiot/fiware-sth-comet  0.0.0.0:8666->8666/tcp dockercompose_sth_1
+        fa5fbce0c89e  fiware/orion                    0.0.0.0:1026->1026/tcp dockercompose_orion_1
+        6a22f61d772f  fiware/cygnus-ngsi 5050/tcp     0.0.0.0:8081->8081/tcp dockercompose_cygnus_1
+        a29f3c7f682f  crate:1.0.5                     0.0.0.0:4200->4200/tcp, 0.0.0.0:4300->4300/tcp, 5432-5532/tcp dockercompose_crate_1
+        a4652c49e3fa  mongo:3.2                       0.0.0.0:27016->27017/tcp dockercompose_mongo_1
+
+In case it is not executing some of this processes (as Grafana), we do the next process:
+
+#. We stop the execution from Docker container – “**docker-compose down**”.
+#. We remove the image of the application which is not running. – “**docker rmi imageName**”.
+#. We back to execute the Docker container – “**docker-compose up - d**”.
+
+Data source definition to Grafana
+*********************************
+
+Grafana is an open source API to generate dashboards from data contained in a CrateDB database. CrateDB is an open source SQL database design to store data of IoT devices. CrateDB is
+not suitable with Orion Context Broker, which manage the entire lifecycle of information, so we need a connector between CrateDB and Orion Context Broker.
+
+QuantumLeap is an API to connect CrateDB and Orion Context Broker, in other words, it convert Orion Context Broker information in a suitable datatype with CrateDB and store it
+in this database.
+
+Create QuantumLeap's subscription to Orion
+******************************************
+
+The next step is connect Data Source to Grafana. First we have to create a subscription from QuantumLeap to Orion to receive the changes from devices and it save on CrateDB database.
+For it, we execute the POSTMAN program and we open the Orion collection. We enter in the “**v2**” / “**subscriptions**” / “**create subscription v2**” section and the body section we
+defined the next subscription:
+
+.. code-block:: javascript
+
+        {
+            “description”: “grafana_subscription”,
+            “subject”: {
+                “entities”: [
+                    {
+                        “idPattern”: “.*”,
+                        “type”: “SmartSpot”
+                    }
+                ]
+            },
+            “notification”: {
+                “http”: {
+                    “url”: “http://192.168.1.16:8668/notify”
+                },
+                “attrs”: [
+                    “CO”,
+                    “H2S”,
+                    “NO2”,
+                    “O3”,
+                    “SO2”,
+                    “batteryLevel”,
+                    “humidity0”,
+                    “humidity1”,
+                    “temperature0”,
+                    “temperature1”,
+                    “nearDevicesHour”,
+                    “nearDevicesMinute”,
+                    “nearDevicesTenMinutes”,
+                    “noise”
+                ],
+                “metadata”: [“dateCreated”, “dateModified”]
+            }
+        }
+
+We prove that the subscription has been made correctly and it is active. Once it is active, we check the QuantumLeap log to see if work correctly. To access the log, we execute the command
+“**docker logs --follow dockercompose_quantumleap_1**”. We must prove that QuantumLeap receive the subscription and it support the attributes of an entity type that we want store in CrateDB.
+
+We have already connect our devices with the CrateDB database from QuantumLeap. Now is the moment to defined our data source on Grafana. Before configured CrateDB, we can check if it is
+executing correctly. For it, we execute in Orion a GET method to the next address: http:/your_ip:4200/_sql and we check that exist the adequate data structure.
+
+Connection of Grafana with CrateDB
+**********************************
+
+.. image:: nstatic/grafana-configuration.png
+        :width: 650px
+        :align: center
+        :alt: Grafana Configurantion Screen
+
+The fi rst step is discover what our device ip is (with ifconfig command). Once we know our IP, we access to the next URL: http://your_ip:3000 (3000 is the port of grafana).
+
+In the login from this URL we write in the user field: “**admin**” and in the password field: “**admin**”. We enter the data source section and we leave the setting file like this.
+
+* Data source type in our case is, as we have named before, CrateDB.
+* The URL is you IP again, and 4200 is CrateDB port by default.
+* When everything is working inside the localhost, the access is direct.
+* QuantumLeap create a table “et” + name of the entity type which we have subscribed. In our case, being SmartSpot entities, the table it call “**etsmartspot**”.
+* The name of the index from time column is “dateobserved”. This name can see in the CrateDB structure.
+
+Grafana configuration to administrative level do it in the file **/etc/grafana/grafana.ini**
+
+Create graphs in the dashboard
+******************************
+
+The first step is to go to create menu and then pulse in new dashboard and we select the option “**graph**” and will appears a new graph. We press in “**panel title**” and different options
+will appear.
+
+The first that we have to do to create the graph is select the source where collect the data, for it in the “**Data Source**” section we have to press the “**default**” option and select
+“**Data Source**” that we want to use.
+
+Once the source is selected we have to realise a query to the database so that Grafana creates us a graph with that data. In the next section the Grafana interface provide us a query
+structure to the database.
+
+To select which attribute to show on the graph, we have to write on the “**value**” box of the “**Select**” section the attribute name which we want to look for. If we want to on the graph
+appears the change of more than one attribute we have to press on “+” symbol which place on the right part of the “**Select**” section and another “**Select**” section will be shown us.
+
+The “**Select**” section has by default the “**Avg/Mean**” option. This option returns the data mean of that attribute. This option is useful if we want to know all changes of an attribute
+over time and there are multiple entities in the database. In the case that only we want to show the change of values of an attribute belonging to an entity, we have to insert in the
+“**Where**” section the comparison “**id == EntityName**” and we have to press on “**Avg/Mean**” and select the “**raw**” option so that return us the changes of the attribute underwent
+over time.
+
+Once written the query we press the “**Query Inspector**” button and if the query which we have inserted it has been success then Grafana create a graph with the data of the attributes insert
+in the query, else show us an error and reason for the error.
+
+Realise the query to the CrateDB database
+*****************************************
+
+To realise the query to the database we have to execute the “**POSTMAN**” program and inside “**fiware-grafana**” collection there is a method called “**retrieve grafana database**”.
+This method returns all IDs of the attributes and for each entity the values of their attributes, for it in the method body we define the next query:
+
+.. code-block:: javascript
+
+        {
+            “stmt”: “SELECT * FROM \”doc\”.\”etsmartspot\””
+        }
+
+If we want to realise a query more specific to the database we only have to modify the method body and insert the query which we want to realise.
+
+ANNEX 7: Perseo CEP
+###################
+
+Perseo CEP is a distributed rule engine. It main objective is analyze the Orion’s entities data and perform actions (events) to notify the clients about the service. To notify, Perseo
+can send a SMS or an e-mail. Events are received through a POST that contains the JSON representation, the rules to check and actions to generate in case the rules are complied with.
+
+Basically, the Perseo operation is an event to trigger a rule, causing the selected values by EPL statements to send as a JSON to a set of URLs in a configuration file. In case of
+trigger many of a rule, each will generate their own POST to the defined URL.
+
+ANNEX 7.1: Perseo-Core
+######################
+
+Perseo is compose of Perseo-core and Perseo-fe. Perseo-core is the back-end of the CEP, her rule engine. It is responsible of the incoming event’s checking through a POST that it contains
+the EPL rules defining and, in case of must to execute an action, it informs to the Perseo-fe through a POST request. The defined rules aren’t stored persistently, but kept in memory, and
+it can be update from Perseo-fe.
+
+The rules is defined from a request POST with the rule expression in EPL, rule language of Esper. Esper is a Java library that contains the rule engine and the events processing logic.
+
+.. image:: nstatic/perseo-core-diagram.png
+        :width: 430px
+        :align: center
+        :alt: Perseo Core Diagram
+
+Retrieve rules
+**************
+
++-------------------------------------------------------+-------+--------------------------------------------------------+-------------------------------------+
+|URL                                                    |Method |URL Params                                              |Definition                           |
++=======================================================+=======+========================================================+=====================================+
+|http://{{url}}:{{port-perseo-core}}/perseo-core/rules/ |GET    |**url**: Link to the service that will be consulted.    |Method to retrieve all exists rules. |
+|                                                       |       +--------------------------------------------------------+                                     |
+|                                                       |       |**port-perseo-core**: Port to connect with the service. |                                     |
++-------------------------------------------------------+-------+--------------------------------------------------------+-------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the rules with a JSON representation and “200 OK”.
+
+        In case of not have any rule, return “[]”.
+
+Retrieve rule
+*************
+
++----------------------------------------------------------------------+-------+--------------------------------------------------------+--------------------------------------------------+
+|URL                                                                   |Method |URL Params                                              |Definition                                        |
++======================================================================+=======+========================================================+==================================================+
+|http://{{url}}:{{port-perseo-core}}/perseo-core/rules/{{fiware-rule}} |GET    |**url**: Link to the service that will be consulted.    |Method to retrieve the defined rule as parameter. |
+|                                                                      |       +--------------------------------------------------------+                                                  |
+|                                                                      |       |**port-perseo-core**: Port to connect with the service. |                                                  |
+|                                                                      |       +--------------------------------------------------------+                                                  |
+|                                                                      |       |**fiware-rule**: Name of the rule we want retrieve.     |                                                  |
++----------------------------------------------------------------------+-------+--------------------------------------------------------+--------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the defined rule with a JSON representation and “200 OK”.
+
+        In case of not have any rule with this name, return “404”.
+
+Create/Update rule
+******************
+
++-------------------------------------------------------+-------+--------------------------------------------------------+--------------------------------------------------------------------+
+|URL                                                    |Method |URL Params                                              |Definition                                                          |
++=======================================================+=======+========================================================+====================================================================+
+|http://{{url}}:{{port-perseo-core}}/perseo-core/rules/ |POST   |**url**: Link to the service that will be consulted.    |Method to create a new rule or update it if exist the defined rule. |
+|                                                       |       +--------------------------------------------------------+                                                                    |
+|                                                       |       |**port-perseo-core**: Port to connect with the service. |                                                                    |
++-------------------------------------------------------+-------+--------------------------------------------------------+--------------------------------------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “name”: “
+            CO_email”,
+            “text”: “select *,\”CO_email\” as ruleName, *,smartspot.CO? as CO, smartspot.id? as SmartSpot from pattern [every smartspot=iotEvent(cast(cast(SmartSpot?,String),float)>1.5 and type=\”SmartSpot\”)]”,
+            “action”: [
+                {
+                    “type”: “email”,
+                    “template”: “CO ${SmartSpot} tiene un CO ${CO} (GEN RULE)”,
+                    “parameters”: {
+                            “to”: “user@hopu.eu”,
+                            “from”: “admin@hopu.eu”,
+                            “subject”: “${SmartSpot} ha cambiado”
+                    }
+                }
+            ]
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the new rule created or updated in a JSON representation and “200 OK”.
+
+        In case of wrong execution, return “400 Bad Request”.
+
+Update rule
+***********
+
++-------------------------------------------------------+-------+--------------------------------------------------------+-----------------------------------------+
+|URL                                                    |Method |URL Params                                              |Definition                               |
++=======================================================+=======+========================================================+=========================================+
+|http://{{url}}:{{port-perseo-core}}/perseo-core/rules/ |PUT    |**url**: Link to the service that will be consulted.    |Method to update a rule or set of rules. |
+|                                                       |       +--------------------------------------------------------+                                         |
+|                                                       |       |**port-perseo-core**: Port to connect with the service. |                                         |
++-------------------------------------------------------+-------+--------------------------------------------------------+-----------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “name”: “co_update”,
+            “text”: “select *,\”co_update\” as ruleName from pattern [every ev=iotEvent(cast(cast(CO?,String),float)>1.5 and type=\”SmartSpot\”)]”,
+            “action”: {
+                “type”: “update”,
+                “parameters”: {
+                    “attributes”: [
+                        {
+                            “name”: “abnormal”,
+                            “value”: “true”,
+                            “type”: “boolean”
+                        },
+                        {
+                            “name”: “CO”,
+                            “value”: 12.34,
+                            “type”: “Number”
+                        }
+                    ]
+                }
+            }
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “200 OK” with an empty JSON object “[]”.
+
+        In case of wrong execution, return “400 Bad Request”.
+
+Delete rule
+***********
+
++----------------------------------------------------------------------+-------+--------------------------------------------------------+----------------------------------------------+
+|URL                                                                   |Method |URL Params                                              |Definition                                    |
++======================================================================+=======+========================================================+==============================================+
+|http://{{url}}:{{port-perseo-core}}/perseo-core/rules/{{fiware-rule}} |DELETE |**url**: Link to the service that will be consulted.    |Method to delete a defined rule as parameter. |
+|                                                                      |       +--------------------------------------------------------+                                              |
+|                                                                      |       |**port-perseo-core**: Port to connect with the service. |                                              |
+|                                                                      |       +--------------------------------------------------------+                                              |
+|                                                                      |       |**fiware-rule**: Name of the rule we want retrieve.     |                                              |
++----------------------------------------------------------------------+-------+--------------------------------------------------------+----------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the deleted rule in a JSON representation and “200 OK”.
+
+        In case of not have any rule with this name, return “200” OK with an empty JSON object “[]”.
+
+Create event
+************
+
++-------------------------------------------------------+-------+--------------------------------------------------------+--------------------------------------------+
+|URL                                                    |Method |URL Params                                              |Definition                                  |
++=======================================================+=======+========================================================+============================================+
+|http://{{url}}:{{port-perseo-core}}/perseo-core/events |POST   |**url**: Link to the service that will be consulted.    |Method to send an event to the rule engine. |
+|                                                       |       +--------------------------------------------------------+                                            |
+|                                                       |       |**port-perseo-core**: Port to connect with the service. |                                            |
++-------------------------------------------------------+-------+--------------------------------------------------------+--------------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “noticeId”:”21f12c40-1ca6-11e4-a992-f1e158aa3052”,
+            “received”:”2014-08-05T13:40:58.756Z”,
+            “id”:”Prueba_de_ubicacion”,
+            “type”:”SmartSpot”,
+            “isPattern”:”false”,
+            “CO”:”2.3202312”,
+            “CO type”:”number”,
+            “TimeInstant”:”2014-04-29T13:18:05Z”,
+            “TimeInstant type”:”urn:x-ogc:def:trs:IDAS:1.0:ISO8601”
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “200 OK” with an empty JSON object “[]”.
+
+        In case of wrong execution, return “400 Bad Request”.
+
+Retrieve log
+************
+
++----------------------------------------------------------+-------+--------------------------------------------------------+-----------------------------------------------------+
+|URL                                                       |Method |URL Params                                              |Definition                                           |
++==========================================================+=======+========================================================+=====================================================+
+|http://{{url}}:{{port-perseo-core}}/perseo-core/admin/log |GET    |**url**: Link to the service that will be consulted.    |Method to retrieve the logging level of Perseo-Core. |
+|                                                          |       +--------------------------------------------------------+                                                     |
+|                                                          |       |**port-perseo-core**: Port to connect with the service. |                                                     |
++----------------------------------------------------------+-------+--------------------------------------------------------+-----------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns the logging level of Perseo-Core and “200 OK”. The loggins level can be “DEBUG”, “INFO”, “WARN”, “WARNING”,
+        “ERROR” and “FATAL”.
+
+        In case of wrong execution, return “400 Bad Request”.
+
+Update log level
+****************
+
++--------------------------------------------------------------------------------+-------+----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
+|URL                                                                             |Method |URL Params                                                                                                                  |Definition                                         |
++================================================================================+=======+============================================================================================================================+===================================================+
+|http://{{url}}:{{port-perseocore}}/perseo-core/admin/log?level={{perseo-level}} |PUT    |**url**: Link to the service that will be consulted.                                                                        |Method to update the logging level of Perseo-Core. |
+|                                                                                |       +----------------------------------------------------------------------------------------------------------------------------+                                                   |
+|                                                                                |       |**port-perseo-core**: Port to connect with the service.                                                                     |                                                   |
+|                                                                                |       +----------------------------------------------------------------------------------------------------------------------------+                                                   |
+|                                                                                |       |**perseo-level**: Logging level of Perseo-Core. Can be “*DEBUG*”, “*INFO*”, “*WARN*”, “*WARNING*”, “*ERROR*” and “*FATAL*”. |                                                   |
++--------------------------------------------------------------------------------+-------+----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “200 OK” with an empty JSON object “[]”.
+
+        In case of wrong execution by incorrect value in “perseo-level”, return “400 Bad Request”.
+
+ANNEX 7.2: Perseo-Fe
+####################
+
+Perseo-fe is a component that together with Perseo-core form the Perseo fiware. Perseo-fe refresh all of set of rules of Perseo-core. When Perseo-core send a “action” to Perseo-fe, it is
+responsible of send an action via SMS, email o HTTP.
+
+In order for Perseo can send a notification, it must have configured the following servers: SMPP, SMTP and HTTP.
+
+SMPP server allows Perseo to send an action to a recipient via SMS. In order to create the SMS, the action must have in one of its fields the number of recipient who that to will receive
+the SMS.
+
+SMTP server allows Perseo to send to a recipient an action via SMS. In order to create the e-mail, the action must have in one of its field the e-mail of the sender and the e-mail of the
+recipient.
+
+HTTP server allows an HTTP POST to be performed to a URL provided in a field of the action.
+
+Retrieve version
+****************
+
++-----------------------------------------+-------+-----------------------------------------------------+----------------------------------------------------+
+|URL                                      |Method |URL Params                                           |Definition                                          |
++=========================================+=======+=====================================================+====================================================+
+|http://{{url}}:{{port-perseoFe}}/version |GET    |**url**: Link to the service that will be consulted. |Method to retrieve the currently version of Perseo. |
+|                                         |       +-----------------------------------------------------+                                                    |
+|                                         |       |**port-perseoFe**: Port to connect with the service. |                                                    |
++-----------------------------------------+-------+-----------------------------------------------------+----------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “200 OK” with information of Perseo version.
+
+        In case of wrong execution, return “400 Bad Request”.
+
+Retrieve rules
+**************
+
++---------------------------------------+-------+-----------------------------------------------------+------------------------------------------+
+|URL                                    |Method |URL Params                                           |Definition                                |
++=======================================+=======+=====================================================+==========================================+
+|http://{{url}}:{{port-perseoFe}}/rules |GET    |**url**: Link to the service that will be consulted. |Method to retrieve all rules from Perseo. |
+|                                       |       +-----------------------------------------------------+                                          |
+|                                       |       |**port-perseoFe**: Port to connect with the service. |                                          |
++---------------------------------------+-------+-----------------------------------------------------+------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the rules with a JSON representation and “200 OK”.
+
+        In case of not have any rule, return “[]”.
+
+Retrieve rule
+*************
+
++---------------------------------------------------+-------+-----------------------------------------------------+----------------------------------+
+|URL                                                |Method |URL Params                                           |Definition                        |
++===================================================+=======+=====================================================+==================================+
+|http://{{url}}:{{port-perseoFe}}/rules/{{rule-id}} |GET    |**url**: Link to the service that will be consulted. |Retrieve a rule from the service. |
+|                                                   |       +-----------------------------------------------------+                                  |
+|                                                   |       |**port-perseoFe**: Port to connect with the service. |                                  |
+|                                                   |       +-----------------------------------------------------+                                  |
+|                                                   |       |**rule-id**: ID of the rule which will be retrieved. |                                  |
++---------------------------------------------------+-------+-----------------------------------------------------+----------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the defined rule with a JSON representation and “200 OK”.
+
+        In case of not have any rule with this name, return “404”.
+
+Delete rule
+***********
+
++---------------------------------------------------+-------+---------------------------------------------------------------+-------------------------+
+|URL                                                |Method |URL Params                                                     |Definition               |
++===================================================+=======+===============================================================+=========================+
+|http://{{url}}:{{port-perseoFe}}/rules/{{rule-id}} |DELETE |**url**: Link to the service that will be consulted.           |Method to delete a rule. |
+|                                                   |       +---------------------------------------------------------------+                         |
+|                                                   |       |**port-perseoFe**: Port to connect with the service.           |                         |
+|                                                   |       +---------------------------------------------------------------+                         |
+|                                                   |       |**rule-id**: ID of the rule which will be deleted from Perseo. |                         |
++---------------------------------------------------+-------+---------------------------------------------------------------+-------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the deleted rule in a JSON representation and “200 OK”.
+
+        In case of not have any rule with this name, return “200” OK with an empty JSON object “[]”.
+
+Create rule
+***********
+
++---------------------------------------+-------+---------------------------------------------------------------+-----------------------------+
+|URL                                    |Method |URL Params                                                     |Definition                   |
++=======================================+=======+===============================================================+=============================+
+|http://{{url}}:{{port-perseoFe}}/rules |POST   |**url**: Link to the service that will be consulted.           |Method to create a new rule. |
+|                                       |       +---------------------------------------------------------------+                             |
+|                                       |       |**port-perseoFe**: Port to connect with the service.           |                             |
++---------------------------------------+-------+---------------------------------------------------------------+-----------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “name”: “CO_email”,
+            “text”: “select *,\”CO_email\” as ruleName, *,ev.CO? as CO, ev.id? as SmartSpot from pattern [every ev=iotEvent(cast(cast(CO?,String),float)>1.5 and type=\”SmartSpot\”)]”,
+            “action”: [
+                {
+                    “type”: “email”,
+                    “template”: “SmartSpot ${SmartSpot} has CO ${CO} (GEN RULE)”,
+                    “parameters”: {
+                        “to”: “user@hopu.eu”,
+                        “from”: “admin@hopu.eu”,
+                        “subject”: “${CO} has changed”
+                    }
+                }
+            ]
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the new rule created in a JSON representation and “200 OK”.
+
+        In case of wrong execution, return “400 Bad Request”.
+
+Create notification
+*******************
+
++-----------------------------------------+-------+---------------------------------------------------------------+-------------------------------------+
+|URL                                      |Method |URL Params                                                     |Definition                           |
++=========================================+=======+===============================================================+=====================================+
+|http://{{url}}:{{port-perseoFe}}/notices |POST   |**url**: Link to the service that will be consulted.           |Method to create a new notification. |
+|                                         |       +---------------------------------------------------------------+                                     |
+|                                         |       |**port-perseoFe**: Port to connect with the service.           |                                     |
++-----------------------------------------+-------+---------------------------------------------------------------+-------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “contextResponses”: [
+                {
+                    “contextElement”:{
+                        “attributes”: [
+                            {
+                                “metadatas”: [
+                                    {
+                                        “name”: “previousValue”,
+                                        “type”: “Number”,
+                                        “value”: “11”
+                                    },
+                                    {
+                                        “name”: “actionType”,
+                                        “type”: “Text”,
+                                        “value”: “update”
+                                    }
+                                ],
+                                “name”: “A”,
+                                “type”: “Number”,
+                                “value”: “12”
+                            }
+                        ],
+                        “id”: “Prueba_de_ubicacion”,
+                        “isPattern”: “false”,
+                        “type”: “SmartSpot”
+                    },
+                    “statusCode”: {
+                        “code”: “200”,
+                        “reasonPhrase”: “OK”
+                    }
+                }
+            ],
+            “originator”: “localhost”,
+            “subscriptionId”: “123456789”
+        }
+
+Retrieve visual rules
+*********************
+
++--------------------------------------------+-------+-----------------------------------------------------+-------------------------------------------------+
+|URL                                         |Method |URL Params                                           |Definition                                       |
++============================================+=======+=====================================================+=================================================+
+|http://{{url}}:{{port-perseoFe}}/m2m/vrules |GET    |**url**: Link to the service that will be consulted. |Method to retrieve all visual rules from Perseo. |
+|                                            |       +-----------------------------------------------------+                                                 |
+|                                            |       |**port-perseoFe**: Port to connect with the service. |                                                 |
++--------------------------------------------+-------+-----------------------------------------------------+-------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        All visual rules from Perseo.
+
+Retrieve visual rule
+********************
+
++--------------------------------------------------------+-------+------------------------------------------------------------+-----------------------------------------+
+|URL                                                     |Method |URL Params                                                  |Definition                               |
++========================================================+=======+============================================================+=========================================+
+|http://{{url}}:{{port-perseoFe}}/m2m/vrules/{{rule-id}} |GET    |**url**: Link to the service that will be consulted.        |Retrieve a visual rule from the service. |
+|                                                        |       +------------------------------------------------------------+                                         |
+|                                                        |       |**port-perseoFe**: Port to connect with the service.        |                                         |
+|                                                        |       +------------------------------------------------------------+                                         |
+|                                                        |       |**rule-id**: ID of the visual rule which will be retrieved. |                                         |
++--------------------------------------------------------+-------+------------------------------------------------------------+-----------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the defined visual rule with a JSON representation and “200 OK”.
+
+        In case of not have any rule with this name, return “404”.
+
+Create visual rule
+******************
+
++--------------------------------------------+-------+------------------------------------------------------------+------------------------------------+
+|URL                                         |Method |URL Params                                                  |Definition                          |
++============================================+=======+============================================================+====================================+
+|http://{{url}}:{{port-perseoFe}}/m2m/vrules |POST   |**url**: Link to the service that will be consulted.        |Method to create a new visual rule. |
+|                                            |       +------------------------------------------------------------+                                    |
+|                                            |       |**port-perseoFe**: Port to connect with the service.        |                                    |
++--------------------------------------------+-------+------------------------------------------------------------+------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “name” : “prueba-test”,
+            “active” : 1,
+            “cards” : [
+                {
+                    “type” : “ActionCard”,
+                    “actionData” : {
+                        “userParams” : [
+                            {
+                                “name” : “mail.from”,
+                                “value” : “dca_support@tid.es”
+                            }
+                        ],
+                        “name” : “email”,
+                        “type” : “SendEmailAction”
+                    },
+                    “id” : “card_42”,
+                    “connectedTo” : [ ]
+                }
+            ]
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the new visual rule created in a JSON representation and “200 OK”.
+
+        In case of wrong execution, return “400 Bad Request”.
+
+Delete visual rule
+******************
+
++---------------------------------------------------------+-------+------------------------------------------------------------------------+-------------------------+
+|URL                                                      |Method |URL Params                                                              |Definition               |
++=========================================================+=======+========================================================================+=========================+
+|http://{{url}}:{{port-perseoFe}}/m2m/vrules/{{vrule-id}} |DELETE |**url**: Link to the service that will be consulted.                    |Method to delete a rule. |
+|                                                         |       +------------------------------------------------------------------------+                         |
+|                                                         |       |**port-perseoFe**: Port to connect with the service.                    |                         |
+|                                                         |       +------------------------------------------------------------------------+                         |
+|                                                         |       |**vrule-id**: ID of the virtual rule which will be deleted from Perseo. |                         |
++---------------------------------------------------------+-------+------------------------------------------------------------------------+-------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the deleted virtual rule in a JSON representation and “200 OK”.
+
+        In case of not have any virtual rule with this name, return “200” OK with an empty JSON object.
+
+Update visual rule
+******************
+
++---------------------------------------------------------+-------+------------------------------------------------------------------------+------------------------------------------+
+|URL                                                      |Method |URL Params                                                              |Definition                                |
++=========================================================+=======+========================================================================+==========================================+
+|http://{{url}}:{{port-perseoFe}}/m2m/vrules/{{vrule-id}} |PUT    |**url**: Link to the service that will be consulted.                    |Method to update an existing visual rule. |
+|                                                         |       +------------------------------------------------------------------------+                                          |
+|                                                         |       |**port-perseoFe**: Port to connect with the service.                    |                                          |
+|                                                         |       +------------------------------------------------------------------------+                                          |
+|                                                         |       |**vrule-id**: ID of the virtual rule which will be updated from Perseo. |                                          |
++---------------------------------------------------------+-------+------------------------------------------------------------------------+------------------------------------------+
+
+Body:
+
+.. code-block:: javascript
+
+        {
+            “name” : “prueba-test”,
+            “active” : 1,
+            “cards” : [
+                {
+                    “type” : “ActionCard”,
+                    “actionData” : {
+                        “userParams” : [
+                            {
+                                “name” : “mail.from”,
+                                “value” : “dca_support@tid.es”
+                            }
+                        ],
+                        “name” : “email”,
+                        “type” : “SendEmailAction”
+                    },
+                    “id” : “card_42”,
+                    “connectedTo” : [ ]
+                }
+            ]
+        }
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns in the body the visual rule updated in a JSON representation and “200 OK”.
+
+        In case of wrong execution, return “400 Bad Request”.
+
+Retrieve log
+************
+
++-------------------------------------------+-------+------------------------------------------------------------------------+---------------------------------------------------+
+|URL                                        |Method |URL Params                                                              |Definition                                         |
++===========================================+=======+========================================================================+===================================================+
+|http://{{url}}:{{port-perseoFe}}/admin/log |GET    |**url**: Link to the service that will be consulted.                    |Method to retrieve the logging level of Perseo-Fe. |
+|                                           |       +------------------------------------------------------------------------+                                                   |
+|                                           |       |**port-perseoFe**: Port to connect with the service.                    |                                                   |
++-------------------------------------------+-------+------------------------------------------------------------------------+---------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns the logging level of Perseo-Core and “200 OK”. The loggins level can be “DEBUG”, “INFO”, “WARN”, “WARNING”,
+        “ERROR” and “FATAL”.
+
+        In case of wrong execution, return “400 Bad Request”.
+
+Retrieve log level
+******************
+
++------------------------------------------------------------------+-------+----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
+|URL                                                               |Method |URL Params                                                                                                                  |Definition                                       |
++==================================================================+=======+============================================================================================================================+=================================================+
+|http://{{url}}:{{port-perseoFe}}/admin/log?level={{perseo-level}} |PUT    |**url**: Link to the service that will be consulted.                                                                        |Method to update the logging level of Perseo-Fe. |
+|                                                                  |       +----------------------------------------------------------------------------------------------------------------------------+                                                 |
+|                                                                  |       |**port-perseoFe**: Port to connect with the service.                                                                        |                                                 |
+|                                                                  |       +----------------------------------------------------------------------------------------------------------------------------+                                                 |
+|                                                                  |       |**perseo-level**: Logging level of Perseo-Core. Can be “*DEBUG*”, “*INFO*”, “*WARN*”, “*WARNING*”, “*ERROR*” and “*FATAL*”. |                                                 |
++------------------------------------------------------------------+-------+----------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
+
+Return:
+
+.. code-block:: javascript
+
+        In case of performing the method correctly, returns “200 OK” with an empty JSON object “[]”.
+
+        In case of wrong execution by incorrect value in “perseo-level”, return “400 Bad Request”.
+
+ANNEX 7.3: Perseo Use Cases
+###########################
+
+As we have seen in the introduction, Perseo-Fe makes an action before changes of values of Entities of Orion. These actions usually are notifications to user. Currently, the notification
+to user can be done of the following ways:
+
+* Update. Update the attributes of an Orion entity when some value of an attribute is different to expected.
+* Post. Send to a REST service a HTTP message to notify different situation than normal.
+* Twitter. Post a tweet with the information relevant to notify some value.
+* E-mail. Send an e-mail when an entity has some attribute a value different to the optimum.
+* SMS. Send a SMS when the values of an Orion entity are different to expected.
+
+In addition to normal notifications, there are complex notifications which add on the notification message statistics about the values (as means, totals, etc.).
+
+For our use cases, we go to notify to user when CO value in a concrete SmartSport exceed a determinate value.
+
+In first place, we must make a series of initial steps for the connection of Orion and Perseo:
+
+**1. Create the subscription from Perseo-Fe to Orion.**
+
+Perseo-Fe must be subscribe to Orion for be notified when the values of one or several attributes of one or several entities of a type concrete change. In our case, we want to be
+notify when the CO value of the SmartSpot change. We make the next subscription on Orion:
+
+.. code-block:: javascript
+
+        {
+            “entities”: [
+                {
+                    “type”: “SmartSpot”,
+                    “isPattern”: “true”,
+                    “id”: “.*”
+                }
+            ],
+            “attributes”: [
+                “CO”
+            ],
+            “reference”: “http://perseo-fe:9090/notices”,
+            “duration”: “P1Y”,
+            “notifyConditions”: [
+                {
+                    “type”: “ONCHANGE”,
+                    “condValues”: [
+                        “CO”
+                    ]
+                }
+            ],
+            “throttling”: “PT1S”
+        }
+
+**2. Create a SmartSpot.**
+
+In case don´t have some SmartSpot create on Orion, we create the next test SmartSpot.
+
+.. code-block:: javascript
+
+        {
+            “contextElements”: [
+                {
+                    “type”: “SmartSpot”,
+                    “isPattern”: “false”,
+                    “id”: “Prueba_de_ubicacion”,
+                    “attributes”: [
+                        {
+                            “name”: “CO”,
+                            “type”: “Number”,
+                            “value”: “0.7626428598980013”
+                        }
+                    ]
+                }
+            ],
+            “updateAction”: “APPEND”
+        }
+
+We can verify if Perseo-Fe receive correct notifications from Orion checking their log, for it, we execute about terminal
+the next command: **docker logs dockercompose_perseo-fe_1 --follow**
+
+Update
+******
+
+It serves to update or put attributes of an Orion entity when the value of the CO of the SmartSport excedes 1’5. The steps to follow:
+
+**1. Create an UPDATE rule in Peseo-Fe.**
+
+We create the next rule which add the attributes “abnormal” and “other” in case the CO of any “SmartSpot” entity have a value greater than 1’5.
+
+.. code-block:: javascript
+
+        {
+            “name”: “CO_update”,
+            “text”: “select *,\”CO_update\” as ruleName from pattern [every ev=iotEvent(cast(cast(CO?,String),float)>1.5 and type=\”SmartSpot\”)]”,
+            “action”: {
+                “type”: “update”,
+                “parameters”: {
+                    “attributes”: [
+                        {
+                            “name”: “abnormal”,
+                            “value”: “true”,
+                            “type”: “boolean”
+                        },
+                        {
+                            “name”: “other”,
+                            “value”: 12.34,
+                            “type”: “Number”
+                        }
+                    ]
+                }
+            }
+        }
+
+**2. Update our SmartSpot.**
+
+We update the value of the CO of our SmartSpot of test increasing the CO to a value greater than 1’5.
+
+.. code-block:: javascript
+
+        {
+            “contextElements”: [
+                {
+                    “type”: “SmartSpot”,
+                    “isPattern”: “false”,
+                    “id”: “Prueba_de_ubicacion”,
+                    “attributes”: [
+                        {
+                            “name”: “CO”,
+                            “type”: “Number”,
+                            “value”: “1.7626428598980013”
+                        }
+                    ]
+                }
+            ],
+            “updateAction”: “UPDATE”
+        }
+
+**3. Check the results.**
+
+We back obtain the entity of test of our SmartSpot to check that , in effect, these two attributes have been created.
+
+.. code-block:: javascript
+
+        [
+            {
+                “id”: “Prueba_de_ubicacion”,
+                “type”: “SmartSpot”,
+                “CO”: {
+                    “type”: “Number”,
+                    “value”: “1.7626428598980013”,
+                    “metadata”: {}
+                },
+                “abnormal”: {
+                    “type”: “boolean”,
+                    “value”: “true”,
+                    “metadata”: {}
+                },
+                “other”: {
+                    “type”: “Number”,
+                    “value”: “12.34”,
+                    “metadata”: {}
+                }
+            }
+        ]
+
+Post
+****
+
+In this example: Perseo-Fe sends a HTTP message when the value of the CO of the SmartSpot of test exceed 10’5. The steps to follow:
+
+**1. Create a POST rule in Perseo-Fe.**
+
+When the CO of some SmartSpot entity is greater than 10’5, we send a HTTP message with PUT method to URL http://localhost:8080/${type}/${id}. We define also header and body of the method.
+
+.. code-block:: javascript
+
+        {
+            “name”:”CO_post”,
+            “text”:”select \”CO_post\” as ruleName, * from pattern [everyev=iotEvent(cast(cast(CO?,String),float)>10.5 and type=\”SmartSpot\”)]”,
+            “action”:{
+                “type”:”post”,
+                “parameters”:{
+                    “url”: “http://localhost:8080/${type}/${id}”,
+                    “method”: “PUT”,
+                    “headers”: {
+                        “Content-type”: “application/json”,
+                        “X-CO”: “${CO}”
+                    },
+                    “qs”: {
+                        “bp”: “${CO}”,
+                        “id”: “${id}”,
+                        “${type}”: “${type}”
+                    },
+                    “json”: {
+                        “CO”: “${CO}”
+                    }
+                }
+            }
+        }
+
+**2. Update our SmartSpot.**
+
+We update the value of the CO of our SmartSpot of test increasing the CO to a value greater that 10`5.
+
+.. code-block:: javascript
+
+        {
+            “contextElements”: [
+                {
+                    “type”: “SmartSpot”,
+                    “isPattern”: “false”,
+                    “id”: “Prueba_de_ubicacion”,
+                    “attributes”: [
+                        {
+                            “name”: “CO”,
+                            “type”: “Number”,
+                            “value”: “20.7626428598980013”
+                        }
+                    ]
+                }
+            ],
+            “updateAction”: “UPDATE”
+        }
+
+Twitter
+*******
+
+In this use case, Perseo-Fe publish a tweet in the Twitter account that we have passed the keys when, again, the CO value of the SmartSpot exceeds 1’5.
+
+To normal operation of this action, we must obtain the Twitter keys to Perseo can connect with a defined Twitter account.
+
+**1. Create a Twitter rule in Perseo-Fe.**
+
+This rule is launched when the CO value of any entity of SmartSpot type exceeds 1’5. In this moment, Perseo publish the next Tweet: “SmartSpot ${SmartSpot} tiene un CO ${CO}.
+Prueba realizada en @HOPUbiquitous”. As parameters, we must have passed the Twitter keys.
+
+.. code-block:: javascript
+
+        {
+            “name”:”CO_twitter”,
+            “text”:”select *,\”CO_twitter\” as ruleName, *, ev.CO? as CO, ev.id? as SmartSpot from pattern [every ev=iotEvent(cast(cast(CO?,String),float)>1.5 and type=\”SmartSpot\”)]”,
+            “action”:{
+                “type”:”twitter”,
+                “template”:”SmartSpot ${SmartSpot} tiene un CO ${CO}. Prueba realizada en @HOPUbiquitous”,
+                “parameters”:{
+                    “consumer_key”: “XX”,
+                    “consumer_secret”: “XX”,
+                    “access_token_key”: “XX”,
+                    “access_token_secret”: “XX”
+                }
+            }
+        }
+
+**2. Update our SmartSpot.**
+
+We update the CO value of our SmartSpot increase the CO to a value greater than 1’5.
+
+.. code-block:: javascript
+
+        {
+            “contextElements”: [
+                {
+                    “type”: “SmartSpot”,
+                    “isPattern”: “false”,
+                    “id”: “Prueba_de_ubicacion”,
+                    “attributes”: [
+                        {
+                            “name”: “CO”,
+                            “type”: “Number”,
+                            “value”: “1.7626428598980013”
+                        }
+                    ]
+                }
+            ],
+            “updateAction”: “Update”
+        }
+
+E-mail
+******
+
+In this example, Perseo-Fe send an e-mail to defined recipient when, again, the CO value of the SmartSpot exceeds 1’5.
+
+To normal operation of this action, first, we must configured Perseo-Fe to define the SMTP server parameters.
+
+**1. Configure the SMTP Server.**
+
+We must configure SMTP server in the Perseo-Fe configuration. To that, in docker-compose.yml file, inside of Docker container fiware-docker-infraestructure of Hop Ubiquitous,
+we added in the Perseo-Fe configuration file the next configuration lines:
+
+* PERSEO_SMTP_HOST = smtp.servidor.com -> Host of the SMTP server.
+* PERSEO_SMTP_PORT = 465 -> Port of the SMTP server.
+* PERSEO_SMTP_SECURE = true -> true if SSL should be used with the SMTP server.
+* PERSEO_SMTP_AUTH_USER = usuario@hopu.eu -> Authentication data, the username.
+* PERSEO_SMTP_AUTH_PATH = xxx -> Authentication data, the password for the user.
+
+In order for this changes have effect, we must reset the Docker container in case it is already booted.
+
+**2. Create an E-mail rule in Perseo-Fe.**
+
+This rule is launched when the CO value of any entity of SmartSpot type exceeds 1’5. In this moment, Perseo send the next e-mail: “CO ${SmartSpot} tiene un CO ${CO}. Es peligroso.”.
+The e-mail will have “${SmartSpot} ha cambiado” as subject, the sender will be usuario@hopu.eu and the recipient will be usuario@gmail.com.
+
+.. code-block:: javascript
+
+        {
+            “name”: “CO_email”,
+            “text”: “select *,\”CO_email\” as ruleName, *,smartspot.CO? as CO, smartspot.id? as Smart-Spot from pattern [every smartspot=iotEvent(cast(cast(SmartSpot?,String),float)>1.5 and type=\”SmartSpot\”)]”,
+            “action”: [
+                {
+                    “type”: “email”,
+                    “template”: “CO ${SmartSpot} tiene un CO ${CO}. Es peligroso.”,
+                    “parameters”: {
+                        “to”: “usuario@gmail.com”,
+                        “from”: “usuario@hopu.eu”,
+                        “subject”: “${SmartSpot} ha cambiado”
+                    }
+                }
+            ]
+        }
+
+**3. Update our SmartSpot.**
+
+We update the CO value of our SmartSpot increase the CO to a value greater than 1’5.
+
+.. code-block:: javascript
+
+        {
+            “contextElements”: [
+                {
+                    “type”: “SmartSpot”,
+                    “isPattern”: “false”,
+                    “id”: “Prueba_de_ubicacion”,
+                    “attributes”: [
+                        {
+                            “name”: “CO”,
+                            “type”: “Number”,
+                            “value”: “20.7626428598980013”
+                        }
+                    ]
+                }
+            ],
+            “updateAction”: “Update”
+        }
+
+SMS
+****
+
+In this example, Perseo-Fe send an SMS to defined recipient when, again, the CO value of the SmartSpot exceeds 1’5.
+
+To normal operation of this action, first, we must configured Perseo-Fe to define the SMPP server parameters and the SMS parameters.
+
+**1. Configure the SMPP Server.**
+
+We must configure SMTP server in the Perseo-Fe configuration. To that, in docker-compose.yml file, inside of Docker container fiware-docker-infraestructure of Hop Ubiquitous,
+we added in the Perseo-Fe configuration file the next configuration lines:
+
+* PERSEO_SMS_URL = localhost -> URL for sending SMSs (SMPP Adapter).
+* PERSEO_SMS_API_KEY API KEY = XXX -> API KEY for sending SMS, if necessary.
+* PERSEO_SMS_API_SECRET API SECRET = XXX -> API SECRET for sending SMS, if necessary.
+* PERSEO_SMS_FROM = 987654123 -> Field from for the outgoing SMSs.
+* PERSEO_SMPP_HOST = localhost -> Host of the SMPP server.
+* PERSEO_SMPP_PORT = 3550 -> Port of the SMPP server.
+* PERSEO_SMPP_SYSTEMID = user -> SystemID for the user of the SMPP server.
+* PERSEO_SMPP_PASSWORD = password -> Password for the user of the SMPP server.
+* PERSEO_SMPP_FROM = 987654123 -> Number from SMS are sending by SMPP server.
+* PERSEO_SMPP_ENABLED = true -> SMPP is default method for SMS instead of use SMS gateway.
+
+In order for this changes have effect, we must reset the Docker container in case it is already booted.
+
+**2. Create a SMS rule in Perseo-Fe.**
+
+This rule is launched when the CO value of any entity of SmartSpot type exceeds 1’5. In this moment, Perseo send the next SMS: “SmartSpot ${SmartSpot} tiene un CO ${CO}.”.
+The recipient will be 636254XXX.
+
+.. code-block:: javascript
+
+        {
+            “name”:”CO_sms”,
+            “text”:”select *,\”CO_sms\” as ruleName, *, smartspot.CO? as CO, smartspot.id? as SmartSpot from pattern [every smartspot=iotEvent(cast(cast(CO?,String),float)>1.5 and type=\”SmartSpot\”)]”,
+            “action”:{
+                “type”:”sms”,
+                “template”:”SmartSpot ${SmartSpot} tiene un CO ${CO}.”,
+                “parameters”:{
+                    “to”:”636254XXX”
+                }
+            }
+        }
+
+**3. Update our SmartSpot.**
+
+We update the CO value of our SmartSpot increase the CO to a value greater than 1’5.
+
+.. code-block:: javascript
+
+        {
+            “contextElements”: [
+                {
+                    “type”: “SmartSpot”,
+                    “isPattern”: “false”,
+                    “id”: “Prueba_de_ubicacion”,
+                    “attributes”: [
+                        {
+                            “name”: “CO”,
+                            “type”: “Number”,
+                            “value”: “20.7626428598980013”
+                        }
+                    ]
+                }
+            ],
+            “updateAction”: “Update”
+        }
