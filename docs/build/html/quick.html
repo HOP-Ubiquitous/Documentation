@@ -95,7 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#what-is-a-smart-spot">What is a Smart Spot?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#smart-spot-features">Smart Spot Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#first-steps-with-your-smart-spot-set-up-connectivity">First steps with your Smart Spot (Set up connectivity)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-install-the-device-on-a-pole-or-on-a-wall">How to install the device on a pole or on a wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-install-the-device-on-a-pole-or-on-a-wall">How to install the device on a pole or on a wall?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-is-homard-dashboard">What is Homard Dashboard?</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#software-management">Software Management</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#diagnostics-and-monitoring">Diagnostics and monitoring</a></li>
@@ -184,92 +184,14 @@
 <a class="reference internal image-reference" href="_images/smart-spot-diagram.png"><img alt="HOP Ubiquitous Smart Spot Diagram" class="align-center" src="_images/smart-spot-diagram.png" style="width: 600px; height: 690px;" /></a>
 <div class="section" id="what-is-a-smart-spot">
 <h2>What is a Smart Spot?<a class="headerlink" href="#what-is-a-smart-spot" title="Permalink to this headline">¶</a></h2>
-<p>Smart Spot is a connected device that has the ability to create an area of interaction with citizens and visitors. These devices send a URL (Web page link to open it in any browser such as smart phone Internet browser) to allow users to connect to online content and discover websites from physical locations. In addition, Smart Spot can optionally captures data regarding energy consumption, noise level and crowd-monitoring (people counting based on WiFi detection); thereby, Smart Spot allows to monitor, define metrics and estimate the confort level in a city area.</p>
-<p>Smart Spot contextualizes the information of each Point of Interest sending notifications by proximity to mobile phones through Bluetooth Low Energy in a range of 1 to 80 meters, without requiring to install any native App over Android OS or iOS, since it is directly supported by the Operating Systems via Physical Web and iBeacon technologies.</p>
+<p>Smart Spot is a connected device that has the ability to create an area of interaction with citizens and visitors. These devices send a URL (website link to open it in any browser such as
+smartphone Internet browser) to allow users to connect to online contents and discover websites from physical locations. In addition, Smart Spot can optionally capture data regarding energy
+consumption, noise level and crowd-monitoring (people counting based on WiFi detection); thereby, Smart Spot allows to monitor, define metrics and estimate the comfort level in a city area.</p>
+<p>Smart Spot contextualizes the information of each Point of Interest sending notifications by proximity to mobile phones through Bluetooth Low Energy in a range of 1 to 80 meters, without
+requiring to installing any native App over Android OS or iOS, since it is directly supported by the Operating Systems via Physical Web and iBeacon technologies.</p>
 </div>
 <div class="section" id="smart-spot-features">
 <h2>Smart Spot Features<a class="headerlink" href="#smart-spot-features" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="13%" />
-<col width="87%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Hardware Component</th>
-<th class="head">Features</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td rowspan="7">Smart Spot main board V1.4</td>
-<td>Gas Board connector.</td>
-</tr>
-<tr class="row-odd"><td>5x HOP Expansion Board connector.</td>
-</tr>
-<tr class="row-even"><td>1x SPI and 1x UART connectors.</td>
-</tr>
-<tr class="row-odd"><td>RGB LED.</td>
-</tr>
-<tr class="row-even"><td>Reset Factory Button.</td>
-</tr>
-<tr class="row-odd"><td>BME280 (Temperature/Humidity/Pressure).</td>
-</tr>
-<tr class="row-even"><td>MPU6050 (Accelerometer/Gyroscope).</td>
-</tr>
-<tr class="row-odd"><td rowspan="3">Antennas</td>
-<td>External WiFi 802.11 b/g/n/e/i (STA-AP) / Bluetooth Low Energy Antenna.</td>
-</tr>
-<tr class="row-even"><td>External GSM/GPRS Antenna (Cellular).</td>
-</tr>
-<tr class="row-odd"><td>Internal GPS Antenna to provide precise location of the device.</td>
-</tr>
-<tr class="row-even"><td rowspan="8">GSM (SIMCom 868)</td>
-<td>Quad-band 850/900/1800/1900MHz.</td>
-</tr>
-<tr class="row-odd"><td>GPRS multi-slot class 12/10.</td>
-</tr>
-<tr class="row-even"><td>GPRS mobile station class B.</td>
-</tr>
-<tr class="row-odd"><td>Compliant to GSM phase 2/2+:</td>
-</tr>
-<tr class="row-even"><td><ul class="first last simple">
-<li>Class 4 (2 W &#64; 850/900MHz).</li>
-<li>Class 1 (1 W &#64; 1800/1900MHz).</li>
-</ul>
-</td>
-</tr>
-<tr class="row-odd"><td>GPRS class 12: max. 85.6 kbps (downlink/uplink).</td>
-</tr>
-<tr class="row-even"><td>Coding schemes CS 1, 2, 3, 4.</td>
-</tr>
-<tr class="row-odd"><td>Micro-SIM card slot (15mm x 12mm – 3FF).</td>
-</tr>
-<tr class="row-even"><td rowspan="6">GAS Sensors Extension</td>
-<td>Integration of the Advanced Air Quality Monitoring board to allow observe gas concentrations (NO2, SO2, O3, CO, H2S) based on Alphasense sensors.</td>
-</tr>
-<tr class="row-odd"><td>Measurements from 0 to 10 particles per million (ppm), covering from PM1, PM2.5 and PM10 particles flows.</td>
-</tr>
-<tr class="row-even"><td>Sensors sensibility is greater than most of the manufacturers.</td>
-</tr>
-<tr class="row-odd"><td>Response time of the sensors is about 60 seconds, depending on the sensor.</td>
-</tr>
-<tr class="row-even"><td>Temperature range -20 °C to 50 °C.</td>
-</tr>
-<tr class="row-odd"><td>A fourth electrode is included to improve temperature correction. The electrode output current does not change with the gas concentration. Thereby, offering a fine tune field calibration.</td>
-</tr>
-<tr class="row-even"><td rowspan="4">Noise Pollution monitoring</td>
-<td>Developed under the conditions of the intenational standard IEC-61672.</td>
-</tr>
-<tr class="row-odd"><td>Dynamic Range from 40 to 130 dB.</td>
-</tr>
-<tr class="row-even"><td>Quality Category: A-frecuency weighting.</td>
-</tr>
-<tr class="row-odd"><td>0.1 dB Resolution.</td>
-</tr>
-<tr class="row-even"><td>Temperature/Humidity probe</td>
-<td>Measure ambient temperature and humidity.</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="section" id="first-steps-with-your-smart-spot-set-up-connectivity">
 <h2>First steps with your Smart Spot (Set up connectivity)<a class="headerlink" href="#first-steps-with-your-smart-spot-set-up-connectivity" title="Permalink to this headline">¶</a></h2>
@@ -287,15 +209,15 @@
 </ol>
 <a class="reference internal image-reference" href="_images/smart-spot-top-screws-close-diagram.png"><img alt="HOP Ubiquitous Smart Spot Diagram" class="align-center" src="_images/smart-spot-top-screws-close-diagram.png" style="width: 300px;" /></a>
 <ol class="arabic simple" start="4">
-<li>Put the cover back and place the screws in its place.</li>
+<li>Put the cover back and place the screws in their place.</li>
 </ol>
 <a class="reference internal image-reference" href="_images/smart-spot-back-diagram.png"><img alt="HOP Ubiquitous Smart Spot Diagram" class="align-center" src="_images/smart-spot-back-diagram.png" style="width: 400px;" /></a>
 <ol class="arabic simple" start="5">
-<li>When everything is ready inside the Smart Spot can start putting the probes and antennas on the back of the device following the scheme of this figure.</li>
+<li>When everything is ready inside the Smart Spot, you can start putting the probes and antennas on the back of the device following the scheme of this figure.</li>
 </ol>
 <a class="reference internal image-reference" href="_images/smart-spot-back-complet-diagram.png"><img alt="HOP Ubiquitous Smart Spot Diagram" class="align-center" src="_images/smart-spot-back-complet-diagram.png" style="width: 400px;" /></a>
 <ol class="arabic simple" start="6">
-<li>Once all the probes and antennas are placed, the appearance of the Smart Spot would look like the diagram.</li>
+<li>Once all the probes and antennas are placed, the appearance of the Smart Spot would look like the figure.</li>
 </ol>
 <a class="reference internal image-reference" href="_images/smart-spot-top-complet-diagram.png"><img alt="HOP Ubiquitous Smart Spot Diagram" class="align-center" src="_images/smart-spot-top-complet-diagram.png" style="width: 300px;" /></a>
 <ol class="arabic simple" start="7">
@@ -303,14 +225,14 @@
 </ol>
 </div>
 <div class="section" id="how-to-install-the-device-on-a-pole-or-on-a-wall">
-<h2>How to install the device on a pole or on a wall<a class="headerlink" href="#how-to-install-the-device-on-a-pole-or-on-a-wall" title="Permalink to this headline">¶</a></h2>
+<h2>How to install the device on a pole or on a wall?<a class="headerlink" href="#how-to-install-the-device-on-a-pole-or-on-a-wall" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="_images/smart-spot-install-1.png"><img alt="HOP Ubiquitous Smart Spot Installation Diagram" class="align-center" src="_images/smart-spot-install-1.png" style="width: 180px;" /></a>
 <ol class="arabic simple">
 <li>Put the clamps around the pole to hold the support. Screw the clamps until the support is fixed. On wall, hold the support on the wall directly.</li>
 </ol>
 <a class="reference internal image-reference" href="_images/smart-spot-install-2.png"><img alt="HOP Ubiquitous Smart Spot Installation Diagram" class="align-center" src="_images/smart-spot-install-2.png" style="width: 161px;" /></a>
 <ol class="arabic simple" start="2">
-<li>Put the device on the support fitting the three pins in the three slots that the Smart Spot has in the back. Then drop it and fit it into the lower pin.</li>
+<li>Put the device on the support fitting the three pins in the three slots that the Smart Spot has in the back. Then, drop it and fit it into the lower pin.</li>
 </ol>
 <a class="reference internal image-reference" href="_images/smart-spot-install-3.png"><img alt="HOP Ubiquitous Smart Spot Installation Diagram" class="align-center" src="_images/smart-spot-install-3.png" style="width: 120px;" /></a>
 <ol class="arabic simple" start="3">
@@ -328,7 +250,8 @@
 </div>
 <div class="section" id="diagnostics-and-monitoring">
 <h3>Diagnostics and monitoring<a class="headerlink" href="#diagnostics-and-monitoring" title="Permalink to this headline">¶</a></h3>
-<p>Enabling remote diagnostics and data models to check devices status, memory status, battery status, radio performance, Quality of Services (QoS) parameters, peripherals status, sensors status, and other relevant parameters for remote monitoring.</p>
+<p>Enabling remote diagnostics and data models to check devices status, memory status, battery status, radio performance, Quality of Services (QoS) parameters, peripherals status, sensors
+status, and other relevant parameters for remote monitoring.</p>
 </div>
 <div class="section" id="connectivity-and-security">
 <h3>Connectivity and Security<a class="headerlink" href="#connectivity-and-security" title="Permalink to this headline">¶</a></h3>
@@ -336,29 +259,33 @@
 </div>
 <div class="section" id="device-capabilities">
 <h3>Device Capabilities<a class="headerlink" href="#device-capabilities" title="Permalink to this headline">¶</a></h3>
-<p>Allowing to the Management Authority to remotely enable and disable device peripherals like cameras, Bluetooth, USB, sensors (ultrasound, temperature, humidity, etc.) and other relevant peripherals from the nodes.</p>
+<p>Allowing to the Management Authority to remotely enable and disable device peripherals like cameras, Bluetooth, USB, sensors (ultrasound, temperature, humidity, etc.) and other relevant
+peripherals from the nodes.</p>
 </div>
 <div class="section" id="lock-and-wipe">
 <h3>Lock and wipe<a class="headerlink" href="#lock-and-wipe" title="Permalink to this headline">¶</a></h3>
-<p>Allowing to remotely lock and/or wipe the device, for instance when the device is lost (relevant for devices in open air, outdoor, etc.), or when the devices are stolen or sold. It enables the remote erase of personal/enterprise data when they are compromised.</p>
+<p>Allowing to remotely lock and/or wipe the device, for instance when the device is lost (relevant for devices in open air, outdoor, etc.), or when the devices are stolen or sold. It enables
+the remote erase of personal/enterprise data when they are compromised.</p>
 </div>
 <div class="section" id="policy-management">
 <h3>Policy management<a class="headerlink" href="#policy-management" title="Permalink to this headline">¶</a></h3>
-<p>Allowing the deployment on the device of policies which the client (node, device, sensor) can execute and enforce independently under some specifi c conditions, i.e., if some events happen, then perform some operations.</p>
+<p>Allowing the deployment on the device policies which the client (node, device, sensor) can execute and enforce independently under some specifi c conditions, i.e., if some events happen,
+then it performs some operations.</p>
 </div>
 </div>
 <div class="section" id="connecting-and-managing-the-device-default-configuration">
 <h2>Connecting and managing the device (default configuration)<a class="headerlink" href="#connecting-and-managing-the-device-default-configuration" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="_images/homard-login.png"><img alt="Homard Dashboard Login" class="align-center" src="_images/homard-login.png" style="width: 650px;" /></a>
-<p>The Smart Spots have a pre-configured WiFi Station where devices will connect, this Access Point (AP) can be easily deployed from GSM/GPRS Routers, MiFi Routers, WiFi Access Points, etc.</p>
+<p>The Smart Spots have a pre-configured WiFi Station where devices will connect. This Access Point (AP) can be easily deployed from GSM/GPRS Routers, MiFi Routers, WiFi Access Points, etc.</p>
 <p>The default configuration is:</p>
 <ul class="simple">
 <li>SSID name: <strong>defaultSSAP</strong></li>
 <li>Password: <strong>defaultSSAP1234</strong></li>
 </ul>
 <p>It means that Smart Spot will search and try to connect by default to a WiFi network with the mentioned SSID and password.</p>
-<p>You need to create an access point in your smartphone or router with the default SSID name and Password for the device to connect to the network. When this access point is created the device connect automatically and it is visible in Homard Dashboard.</p>
-<p>From <a class="reference external" href="http://staging.hopu.eu">http://staging.hopu.eu</a> enter with your User and Password that we give you and can see the Homard Dashboard options.</p>
+<p>You need to create an access point in your smartphone or router with the default SSID name and Password for the device to connect to the network. When this access point is created, the
+device will connect automatically and it will be visible in Homard Dashboard.</p>
+<p>From <a class="reference external" href="http://staging.hopu.eu">http://staging.hopu.eu</a>, enter with your User and Password that we give you and can see the Homard Dashboard options.</p>
 <p>There are two ways to connect the Smart Spot to network other than default network:</p>
 <ul class="simple">
 <li>WiFi Connectivity.</li>
@@ -369,22 +296,22 @@
 <a class="reference internal image-reference" href="_images/homard-wifi-connection.png"><img alt="Homard Dashboard WiFi Connectivity" class="align-center" src="_images/homard-wifi-connection.png" style="width: 650px;" /></a>
 <p>To connect to a network other than default network:</p>
 <ol class="arabic simple">
-<li>Firstly create a access point with de default configuration of device.</li>
-<li>Go to <strong>Device Management</strong> and can see a list of devices connect to the network.</li>
-<li>Locate the device to be confi gured and click it.</li>
-<li>In the next column appears a list of object of this device, search the <strong>WLAN Connectivity</strong> object.</li>
+<li>Firstly create an access point with the default configuration of device.</li>
+<li>Go to <strong>Device Management</strong> and you will see a list of devices connect to the network.</li>
+<li>Locate the device to be configured and click it.</li>
+<li>In the next column, a list of object of this device appears, therefore search the <strong>WLAN Connectivity</strong> object.</li>
 <li>Create a new Instance and enter data:</li>
 </ol>
 <blockquote>
 <div><ul class="simple">
 <li><strong>Instance ID:</strong> Number not equal to zero.</li>
-<li><strong>Interface name:</strong> Human-readable identifi er.</li>
+<li><strong>Interface name:</strong> Human-readable identifier.</li>
 <li><strong>Enable (True or False):</strong> True to connect with this configuration.</li>
 <li><strong>SSID:</strong> SSID name of network to connect the device.</li>
 <li><strong>Mode:</strong> Normally must be 1 (client), but there are others options.</li>
 <li><strong>Channels:</strong> Choose a number of channel.</li>
 <li><strong>Standard:</strong> Network type. Normally is the option 2.</li>
-<li><strong>Authentication Mode:</strong> Resource can be anyone, it will be automatically confi gured by the stack.</li>
+<li><strong>Authentication Mode:</strong> Resource can be anyone. It will be automatically configured by the stack.</li>
 <li><strong>Encryption Mode:</strong> Defines which key is expected and used:
 * <strong>WPA2/WPA:</strong> Will require fi ll the “WPA Pre Shared Key” field.
 * <strong>WEP:</strong> Will require fi ll the “WEP Key Index” and “WEP Key Index” must be 1.</li>
@@ -394,26 +321,27 @@
 <li>In the list of objects, search Device object and click it.</li>
 <li>Search the Reboot option and click on play icon.</li>
 </ol>
-<p>Finally, the device reboot and connect to the configured network. Note that multiple access points configurations can be stored and Smart Spot will try to connect to all of them, until that it gets Internet connectivity.</p>
+<p>Finally, the device will reboot and connect to the configured network. Note that multiple access points configurations can be stored and Smart Spot will try to connect to all of them until
+that it gets Internet connectivity.</p>
 </div>
 <div class="section" id="apn-connectivity-cellular-m2m">
 <h3>APN Connectivity (Cellular / M2M)<a class="headerlink" href="#apn-connectivity-cellular-m2m" title="Permalink to this headline">¶</a></h3>
 <a class="reference internal image-reference" href="_images/homard-apn-connection.png"><img alt="Homard Dashboard APN Connectivity" class="align-center" src="_images/homard-apn-connection.png" style="width: 650px;" /></a>
-<p>To connect the device a APN network other than the default network:</p>
+<p>To connect the device to an APN network other than the default network:</p>
 <ol class="arabic simple">
-<li>Firstly create a access point with de default configuration of device.</li>
-<li>Go to <strong>Device Management</strong> and can see a list of devices connect to the network.</li>
+<li>Firstly create an access point with the default configuration of device.</li>
+<li>Go to <strong>Device Management</strong> and you will see a list of devices connect to the network.</li>
 <li>Locate the device to be configured and click it.</li>
-<li>In the next column appear a list of object of this device, search the <strong>APN Connection</strong> object.</li>
+<li>In the next column, a list of object of this device appears, therefore search the <strong>APN Connection</strong> object.</li>
 <li>Create a new Instance and enter data:</li>
 </ol>
 <blockquote>
 <div><ul class="simple">
-<li><strong>Profile name:</strong> This name cannot be longer than 16 characters, identifi es the profile name on the device.</li>
+<li><strong>Profile name:</strong> This name cannot be longer than 16 characters. Identifies the profile name on the device.</li>
 <li><strong>APN:</strong> This resource contains the APN which will be used to achieve cellular connectivity. This value is provided by the SIM card telco provider.</li>
-<li><strong>Enable Status:</strong> This resource allows to enable o disable the configuration. Usually will be true. The OMA Object only allow to add one instance corresponding to the SIM card inserted on the device. Modify or delete/add the instance to change the configuration.</li>
-<li><strong>Authentication Type:</strong> This resource has a value &gt;=0 and &lt;=3. The value introduced by default should be 0, the authentication type will be automatically selected based on the connectivity provider.</li>
-<li><strong>User name:</strong> Resource is used to specify the user name used to acces the APN. Unless specifi ed by the telco provider, this resource could be empty.</li>
+<li><strong>Enable Status:</strong> This resource allows to enable o disable the configuration. Usually it will be true. The OMA Object only allows to add one instance corresponding to the SIM card inserted on the device. Modify or delete/add the instance to change the configuration.</li>
+<li><strong>Authentication Type:</strong> This resource has a value &gt;=0 and &lt;=3. The value introduced by default should be 0. The authentication type will be automatically selected based on the connectivity provider.</li>
+<li><strong>User name:</strong> Resource is used to specify the user name used to access the APN. Unless specified by the telco provider, this resource could be empty.</li>
 <li><strong>Secret:</strong> Resource is used to specify the user name used to access the APN. Unless specified by the telco provider, this resource could be empty.</li>
 <li><strong>SIM card PIN:</strong> Resource is used to introduce the PIN used to unblock the SIM card.</li>
 </ul>
